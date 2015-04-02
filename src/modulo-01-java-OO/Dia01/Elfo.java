@@ -1,6 +1,6 @@
 
 /**
- * Define objetos Elfo
+ * Define o  objeto Elfo
  * 
  * @author CWI Software
  */
@@ -10,7 +10,7 @@ public class Elfo
     
     private String nome;
     private int flechas, experiencia;
-    
+ 
     // type initializer
     {
         flechas = 42;

@@ -1,6 +1,6 @@
 
 /**
- * Define objeto Orc
+ * Define o objeto Orc
  * 
  * @author Lucas Kauer
  */
@@ -23,5 +23,9 @@ public class Orc
      */
     public void recebeFlecha() {
         vida = vida - 10;
+    }
+    
+    public int getVida() {
+        return this.vida;
     }
 }
