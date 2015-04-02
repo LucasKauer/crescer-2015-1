@@ -10,7 +10,7 @@ public class Elfo
     
     private String nome;
     private int flechas, experiencia;
-
+    
     // type initializer
     {
         flechas = 42;
@@ -35,13 +35,15 @@ public class Elfo
     
     /**
      * Atira uma flecha e perde uma unidade.
+     * @param umOrc Orc que receberá uma flechada.
      */
-    public void atirarFlecha() {
+    public void atiraFlecha(Orc umOrc) {
         //flechas = flechas - 1;
         flechas--;
         experiencia++;
+        umOrc.recebeFlecha();
     }
-    
+   
     /*public void setFlechas(int novaQtdFlechas) {
         if (novaQtdFlechas > flechas) {
             flechas = novaQtdFlechas;
