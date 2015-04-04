@@ -21,4 +21,13 @@ public class OrcTeste
         int resultadoObtido = umOrc.getVida();
         assertEquals(resultadoObtido, esperado);
     }
+    
+    @Test
+    public void orcPerde10vidaComFlechada() {
+        Orc umOrc = new Orc();
+        
+        int esperado = umOrc.getVida() - 10;
+        int resultadoObtido = umOrc.getRecebeFlecha();
+        assertEquals(resultadoObtido, esperado);
+    }
 }
