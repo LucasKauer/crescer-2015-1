@@ -1,11 +1,9 @@
-
 /**
  * Define o  objeto Elfo
  * 
- * @author CWI Software
+ * @author Lucas Kauer
  */
-public class Elfo
-{
+public class Elfo {
     // Versão correção do tema!!
     
     private String nome;
@@ -17,14 +15,14 @@ public class Elfo
     }
     
     /**
-     * Cria objetos Elfo
+     * Cria objetos Elfo (construtores)
      * 
      * @param umNome Nome que o elfo receberá
      * @param flechas Quantidade inicial de flechas
      */
-    public Elfo(String umNome, int flechas)
-    {
-        this(umNome);
+    
+    public Elfo(String nome, int flechas) {
+        this(nome);
         // this.nome = nome;
         this.flechas = flechas;
     }
@@ -33,14 +31,22 @@ public class Elfo
         this.nome = nome;
     }
     
+    // Construtor adicionado para que não haja elfos sem nome
+    public Elfo() {
+        int cont = 0;
+        ++cont;
+        this.nome = "Elfo " + cont;
+    }
+    
     /**
-     * Atira uma flecha e perde uma unidade.
+     * Atira uma flecha em um Orc e perde uma unidade de flechas.
      * @param umOrc Orc que receberá uma flechada.
      */
     public void atiraFlecha(Orc umOrc) {
-        //flechas = flechas - 1;
         flechas--;
+        //flechas = flechas - 1;
         experiencia++;
+        // experiencia = experiencia + 1;
         umOrc.recebeFlecha();
     }
    
@@ -53,9 +59,30 @@ public class Elfo
     // camelCase: public void atirarFlechaDourada
     // PascalCase: public void AtirarFlechaDourada
     
+    public String getNome() {
+        return this.nome;
+    }
     
+    public int getFlechas() {
+        return this.flechas;
+    }
     
+    public int getExperiencia() {
+        return this.experiencia;
+    }
     
+    public void getAtirarFlecha() {
+        Orc umOrc = new Orc();
+        atiraFlecha(umOrc);
+    }
     
+    public int getPerdeFlecha() {
+        getAtirarFlecha();
+        return flechas;
+    }
     
+    public int getGanhaExperiencia() {
+        getAtirarFlecha();
+        return experiencia;
+    }
 }
