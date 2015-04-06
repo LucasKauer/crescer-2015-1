@@ -44,8 +44,8 @@ public class OrcTest
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc();
         // Act
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
         // Assert - Verificação
         int esperado = 90;
         int resultadoObtido = umOrc.getVida();
@@ -58,11 +58,11 @@ public class OrcTest
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc();
         // Act
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
         // Assert - Verificação
         int esperado = 60;
         int resultadoObtido = umOrc.getVida();
@@ -75,18 +75,18 @@ public class OrcTest
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc();
         // Act
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
-        umOrc.getRecebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
         // Assert - Verificação
         int esperado = -10;
         int resultadoObtido = umOrc.getVida();
@@ -94,7 +94,3 @@ public class OrcTest
         assertEquals(esperado, resultadoObtido);
     }
 }
-
-
-
-
