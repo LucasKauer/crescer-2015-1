@@ -31,13 +31,6 @@ public class Elfo {
         this.nome = nome;
     }
     
-    // Construtor adicionado para que não haja elfos sem nome
-    public Elfo() {
-        int cont = 0;
-        ++cont;
-        this.nome = "Elfo " + cont;
-    }
-    
     /**
      * Atira uma flecha em um Orc e perde uma unidade de flechas.
      * @param umOrc Orc que receberá uma flechada.

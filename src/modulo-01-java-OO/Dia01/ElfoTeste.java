@@ -15,41 +15,35 @@ public class ElfoTeste
         // Arange - Montagem dos dados testes
         // Act - Execução de ação de testes
         // Assert - Verificação se o resultado é o esperado
-        Elfo umElfo = new Elfo();
-        umElfo = new Elfo(umElfo.getNome());
-        umElfo = new Elfo(umElfo.getNome(), 0);
+        String esperado = "umNome";
+        Elfo umElfo = new Elfo(esperado);
         
-        boolean esperado = true;
-        String resultadoObtido = umElfo.getNome();
-        boolean resultadoObtido2 = (resultadoObtido != null) && true;
-        
-        assertEquals(resultadoObtido2, esperado);
+        boolean resultadoObtido = (umElfo.getNome() != null);
+        assertEquals(resultadoObtido, esperado);
     }
     
     @Test
     public void elfoNasceComFlechas() {
-       Elfo umElfo = new Elfo();
+       Elfo umElfo = new Elfo("umNome");
         
        boolean esperado = true;
        int resultadoObtido = umElfo.getFlechas();
        boolean resultadoObtido2 = (resultadoObtido != 0) && true;
-        
        assertEquals(resultadoObtido2, esperado);
     }
     
     @Test
     public void elfoNasceCom0experiencia() {
-       Elfo umElfo = new Elfo();
+       Elfo umElfo = new Elfo("umNome");
         
        int esperado = 0;
        int resultadoObtido = umElfo.getExperiencia();
-        
        assertEquals(resultadoObtido, esperado);
     }
     
     @Test
     public void elfoPerdeFlechaQuandoAtira1Flecha() {
-        Elfo umElfo = new Elfo();
+        Elfo umElfo = new Elfo("umNome");
         
         int esperado = umElfo.getFlechas() - 1;
         int resultadoObtido = umElfo.getPerdeFlecha();
@@ -58,7 +52,7 @@ public class ElfoTeste
     
     @Test
     public void elfoGanha1experienciaQuandoAtira1Flecha() {
-        Elfo umElfo = new Elfo();
+        Elfo umElfo = new Elfo("umNome");
         
         int esperado = umElfo.getExperiencia() + 1;
         int resultadoObtido = umElfo.getGanhaExperiencia();
