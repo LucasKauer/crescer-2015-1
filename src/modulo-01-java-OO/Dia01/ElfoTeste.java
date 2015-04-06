@@ -118,4 +118,48 @@ public class ElfoTeste
         int resultadoObtido = umElfo.getGanhaExperiencia();
         assertEquals(resultadoObtido, esperado);
     }
+    
+    @Test
+    public void elfoToStringRetornaVidaPadrao() {
+        Elfo umElfo = new Elfo("umNome");
+        
+        String resultadoObtido = umElfo.toString();
+        
+        String esperado = umElfo.getNome() + " possui " + umElfo.getFlechas() + " flechas e " + umElfo.getExperiencia() + " níveis de experiência.";
+        assertEquals(esperado, resultadoObtido);
+    }
+    
+    @Test
+    public void elfoToStringRetornaVidaAposAtirarUmaFlecha() {
+        Elfo umElfo = new Elfo("umNome");
+        Orc umOrc = new Orc();
+        
+        umElfo.atiraFlecha(umOrc);
+        String resultadoObtido = umElfo.toString();
+        
+        String esperado = umElfo.getNome() + " possui " + umElfo.getFlechas() + " flechas e " + umElfo.getExperiencia() + " níveis de experiência.";
+        assertEquals(esperado, resultadoObtido);
+    }
+    
+    @Test
+    public void elfoToStringRetornaVidaAposAtirarDezFlecha() {
+        Elfo umElfo = new Elfo("umNome");
+        Orc umOrc = new Orc();
+        
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        
+        String resultadoObtido = umElfo.toString();
+        
+        String esperado = umElfo.getNome() + " possui " + umElfo.getFlechas() + " flechas e " + umElfo.getExperiencia() + " níveis de experiência.";
+        assertEquals(esperado, resultadoObtido);
+    }
 }
