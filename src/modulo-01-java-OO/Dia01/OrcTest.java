@@ -31,7 +31,7 @@ public class OrcTest
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc();
         // Act
-        umOrc.recebeAtaque();
+        umOrc.getRecebeFlecha();
         // Assert - Verificação
         int esperado = 100;
         int resultadoObtido = umOrc.getVida();
@@ -44,8 +44,8 @@ public class OrcTest
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc();
         // Act
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
         // Assert - Verificação
         int esperado = 90;
         int resultadoObtido = umOrc.getVida();
@@ -58,11 +58,11 @@ public class OrcTest
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc();
         // Act
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
         // Assert - Verificação
         int esperado = 60;
         int resultadoObtido = umOrc.getVida();
@@ -75,26 +75,24 @@ public class OrcTest
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc();
         // Act
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
         // Assert - Verificação
         int esperado = -10;
         int resultadoObtido = umOrc.getVida();
-        
+  
         assertEquals(esperado, resultadoObtido);
     }
-    
-    
 }
 
 

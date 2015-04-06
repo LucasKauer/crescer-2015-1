@@ -13,7 +13,7 @@ public class ElfoTest
     @Test
     public void elfoNasceComNomeInformado() {
         // Arrange
-        String esperado = "Celeborn";        
+        String esperado = "Celeborn";
         // Act
         Elfo elfo = new Elfo(esperado);
         // Assert
@@ -85,17 +85,6 @@ public class ElfoTest
         assertEquals(nomeEsperado, elfo.getNome());
         assertEquals(flechasEsperadas, elfo.getFlechas());
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 

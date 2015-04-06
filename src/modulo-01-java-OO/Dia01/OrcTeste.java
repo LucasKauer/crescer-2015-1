@@ -12,9 +12,6 @@ public class OrcTeste
 {
     @Test
     public void orcNasceCom110vida() {
-        // Arange - Montagem dos dados testes
-        // Act - Execução de ação de testes
-        // Assert - Verificação se o resultado é o esperado
         Orc umOrc = new Orc();
         
         int esperado = 110;
@@ -67,5 +64,28 @@ public class OrcTeste
         int esperado = 60;
         int resultadoObtido = umOrc.getVida();
         assertEquals(resultadoObtido, esperado);
+    }
+    
+    @Test
+    public void orcRecebeAtaqueDozeVezes() {
+        Orc umOrc = new Orc();
+ 
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+
+        int esperado = -10;
+        int resultadoObtido = umOrc.getVida();
+        
+        assertEquals(esperado, resultadoObtido);
     }
 }
