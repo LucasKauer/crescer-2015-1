@@ -15,7 +15,7 @@ public class Elfo {
     }
     
     /**
-     * Cria objetos Elfo (construtores)
+     * Cria objetos Elfo (construtor)
      * 
      * @param umNome Nome que o elfo receberá
      * @param flechas Quantidade inicial de flechas
@@ -26,6 +26,12 @@ public class Elfo {
         // this.nome = nome;
         this.flechas = flechas;
     }
+    
+    /**
+     * Cria objetos Elfo (construtor) que recebe nome e usa a quantidade de flechas padrão
+     * 
+     * @param nome Nome a ser dado para o Elfo.
+     */
     
     public Elfo(String nome) {
         this.nome = nome;

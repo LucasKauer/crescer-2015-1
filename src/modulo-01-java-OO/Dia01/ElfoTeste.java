@@ -14,22 +14,31 @@ public class ElfoTeste
     public void elfoNasceComNome() {
         // Arange - Montagem dos dados testes
         // Act - Execução de ação de testes
-        // Assert - Verificação se o resultado é o esperado
         String esperado = "umNome";
         Elfo umElfo = new Elfo(esperado);
         
-        boolean resultadoObtido = (umElfo.getNome() != null);
-        assertEquals(resultadoObtido, esperado);
+        // Assert - Verificação se o resultado é o esperado
+        assertEquals(esperado, umElfo.getNome());
     }
     
     @Test
-    public void elfoNasceComFlechas() {
+    public void elfoNasceComNomeEMuitasFlechasInformadas() {
+       String nomeEsperado = "Robin";
+       int flechasEsperadas = 12;
+        
+       Elfo umElfo = new Elfo(nomeEsperado, flechasEsperadas);
+        
+       assertEquals(nomeEsperado, umElfo.getNome());
+       assertEquals(flechasEsperadas, umElfo.getFlechas());
+    }
+    
+    @Test
+    public void elfoNasceCom42FlechasPorPadrao() {
        Elfo umElfo = new Elfo("umNome");
         
-       boolean esperado = true;
+       int esperado = 42;
        int resultadoObtido = umElfo.getFlechas();
-       boolean resultadoObtido2 = (resultadoObtido != 0) && true;
-       assertEquals(resultadoObtido2, esperado);
+       assertEquals(resultadoObtido, esperado);
     }
     
     @Test

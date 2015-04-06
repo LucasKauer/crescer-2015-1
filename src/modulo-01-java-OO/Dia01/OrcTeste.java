@@ -30,4 +30,42 @@ public class OrcTeste
         int resultadoObtido = umOrc.getRecebeFlecha();
         assertEquals(resultadoObtido, esperado);
     }
+    
+    @Test
+    public void orcRecebeAtaqueUmVez() {
+        Orc umOrc = new Orc();
+        
+        umOrc.getRecebeFlecha();
+        
+        int esperado = 100;
+        int resultadoObtido = umOrc.getVida();
+        assertEquals(resultadoObtido, esperado);
+    }
+    
+    @Test
+    public void orcRecebeAtaqueDuasVezes() {
+        Orc umOrc = new Orc();
+        
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        
+        int esperado = 90;
+        int resultadoObtido = umOrc.getVida();
+        assertEquals(resultadoObtido, esperado);
+    }
+    
+    @Test
+    public void orcRecebeAtaqueCincoVezes() {
+        Orc umOrc = new Orc();
+        
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        umOrc.getRecebeFlecha();
+        
+        int esperado = 60;
+        int resultadoObtido = umOrc.getVida();
+        assertEquals(resultadoObtido, esperado);
+    }
 }
