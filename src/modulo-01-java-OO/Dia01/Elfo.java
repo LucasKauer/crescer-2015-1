@@ -95,6 +95,44 @@ public class Elfo {
      */
     
     public String toString() {
-        return this.nome + " possui " + this.flechas + " flechas e " + this.experiencia + " níveis de experiência.";
+        // Método pedreiro (StringBuilder)
+        // Poderia remover o StringBuild quando usa String.format
+        StringBuilder builder = new StringBuilder();
+        
+        // Operador terneiro (ternário)
+        /* String textoFlechas = this.flechas == 1 ? "flecha" : "flechas";
+        String textoNiveis = this.experiencia == 1 ? "nível" : "níveis"; */
+        
+        // substitui builder.append por return
+        builder.append(
+            String.format("%s possui $d %s e %d %s de experiência.",
+                this.nome,
+                this.flechas,
+                // ternerio (in line) na linha
+                this.flechas == 1 ? "flecha" : "flechas",
+                this.experiencia,
+                // ternerio (in line) na linha
+                this.experiencia == 1 ? "nível" : "níveis"
+                )
+        );
+        
+        /* builder.append(this.nome);
+        builder.append(" possui");
+        builder.append(this.flechas);
+        builder.append(" ");
+        builder.append(textoFlechas);
+        builder.append(" e ");
+        builder.append(this.experiencia);
+        builder.append(" ");
+        builder.append(textoNiveis);
+        builder.append("de experiência"); */
+        
+        return builder.toString();
+        
+        /* return this.nome + " possui "
+        + this.flechas + " "
+        + textoFlechas + " e "
+        + this.experiencia + " "
+        + textoNiveis + "de experiência."; */
     }
 }

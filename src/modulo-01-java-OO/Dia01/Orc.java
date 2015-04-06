@@ -6,10 +6,12 @@
  */
 
 public class Orc {
-    private int vida ;
+    private int vida;
+    private Status status;
     
     {
         vida = 110;
+        status = Status.VIVO;
     }
     
     /**
