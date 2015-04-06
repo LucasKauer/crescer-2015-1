@@ -17,8 +17,8 @@ public class TestesIntegrados
         Orc orc1 = new Orc();
         Orc orc2 = new Orc();
         // Act
-        elfo.atirarFlecha(orc1);
-        elfo.atirarFlecha(orc2);
+        elfo.atiraFlecha(orc1);
+        elfo.atiraFlecha(orc2);
         // Assert
         int experienciaEsperada = 2;
         int flechasEsperadas = 40;
@@ -30,16 +30,4 @@ public class TestesIntegrados
         assertEquals(vidaEsperadaOrc1, orc1.getVida());
         assertEquals(vidaEsperadaOrc2, orc2.getVida());
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
