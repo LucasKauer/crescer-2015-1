@@ -84,4 +84,17 @@ public class Elfo {
         getAtirarFlecha();
         return experiencia;
     }
+    
+    /**
+     * Imprime a vida, as flechas e a experiencia atual do Elfo.
+     * 
+     * @return String com a vida atual do elfo
+     * @return Int com as flechas atual do elfo
+     * @return Int com a experiência atual do elfo
+     * Ex: "Légolas possui 10 flechas e 2 níveis de experiência."
+     */
+    
+    public String toString() {
+        return this.nome + " possui " + this.flechas + " flechas e " + this.experiencia + " níveis de experiência.";
+    }
 }
