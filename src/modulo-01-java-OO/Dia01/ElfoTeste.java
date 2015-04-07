@@ -125,24 +125,40 @@ public class ElfoTeste
         
         String resultadoObtido = umElfo.toString();
         
-        String esperado = umElfo.getNome() + " possui " + umElfo.getFlechas() + " flechas e " + umElfo.getExperiencia() + " níveis de experiência.";
+        String esperado = String.format("%s possui $d %s e %d %s de experiência.",
+                umElfo.getNome(),
+                umElfo.getFlechas(),
+                // ternerio (in line) na linha
+                umElfo.getFlechas() == 1 ? "flecha" : "flechas",
+                umElfo.getExperiencia(),
+                // ternerio (in line) na linha
+                umElfo.getExperiencia() == 1 ? "nível" : "níveis"
+                );
         assertEquals(esperado, resultadoObtido);
     }
     
     @Test
-    public void elfoToStringRetornaVidaAposAtirarUmaFlecha() {
+    public void elfoToStringRetornaVidaAposAtirarUmaFlechas() {
         Elfo umElfo = new Elfo("umNome");
         Orc umOrc = new Orc();
         
         umElfo.atiraFlecha(umOrc);
         String resultadoObtido = umElfo.toString();
         
-        String esperado = umElfo.getNome() + " possui " + umElfo.getFlechas() + " flechas e " + umElfo.getExperiencia() + " níveis de experiência.";
+        String esperado = String.format("%s possui $d %s e %d %s de experiência.",
+                umElfo.getNome(),
+                umElfo.getFlechas(),
+                // ternerio (in line) na linha
+                umElfo.getFlechas() == 1 ? "flecha" : "flechas",
+                umElfo.getExperiencia(),
+                // ternerio (in line) na linha
+                umElfo.getExperiencia() == 1 ? "nível" : "níveis"
+                );
         assertEquals(esperado, resultadoObtido);
     }
     
     @Test
-    public void elfoToStringRetornaVidaAposAtirarDezFlecha() {
+    public void elfoToStringRetornaVidaAposAtirarDezFlechas() {
         Elfo umElfo = new Elfo("umNome");
         Orc umOrc = new Orc();
         
@@ -159,7 +175,15 @@ public class ElfoTeste
         
         String resultadoObtido = umElfo.toString();
         
-        String esperado = umElfo.getNome() + " possui " + umElfo.getFlechas() + " flechas e " + umElfo.getExperiencia() + " níveis de experiência.";
+        String esperado = String.format("%s possui $d %s e %d %s de experiência.",
+                umElfo.getNome(),
+                umElfo.getFlechas(),
+                // ternerio (in line) na linha
+                umElfo.getFlechas() == 1 ? "flecha" : "flechas",
+                umElfo.getExperiencia(),
+                // ternerio (in line) na linha
+                umElfo.getExperiencia() == 1 ? "nível" : "níveis"
+                );
         assertEquals(esperado, resultadoObtido);
     }
 }
