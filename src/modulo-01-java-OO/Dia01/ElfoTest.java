@@ -85,6 +85,67 @@ public class ElfoTest
         assertEquals(nomeEsperado, elfo.getNome());
         assertEquals(flechasEsperadas, elfo.getFlechas());
     }
+
+    @Test
+    public void elfoAtiraFlechaEmUmOrc() {
+        // Arrange
+        Elfo elfo = new Elfo("Legolas");
+        Orc orc = new Orc();
+        // Act
+        elfo.atirarFlecha(orc);
+        // Assert
+        int experienciaEsperada = 1;
+        int flechasEsperadas = 41;
+        
+        assertEquals(experienciaEsperada, elfo.getExperiencia());
+        assertEquals(flechasEsperadas, elfo.getFlechas());
+    }
+    
+    @Test
+    public void elfoAtiraFlechasDuasVezesNoMesmoOrc() {
+        // Arrange
+        Elfo elfo = new Elfo("Legolas");
+        Orc orc = new Orc();
+        // Act
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        // Assert
+        int experienciaEsperada = 2;
+        int flechasEsperadas = 40;
+        
+        assertEquals(experienciaEsperada, elfo.getExperiencia());
+        assertEquals(flechasEsperadas, elfo.getFlechas());
+    }
+    
+    @Test
+    public void elfoAtiraFlechasCincoVezesNoMesmoOrc() {
+        // Arrange
+        Elfo elfo = new Elfo("Legolas", 4);
+        Orc orc = new Orc();
+        // Act
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        elfo.atirarFlecha(orc);
+        // Assert
+        int experienciaEsperada = 5;
+        int flechasEsperadas = -1;
+        
+        assertEquals(experienciaEsperada, elfo.getExperiencia());
+        assertEquals(flechasEsperadas, elfo.getFlechas());
+    }
+    
+    @Test
+    public void elfoToStringPadrao() {
+        // Arrange
+        Elfo elfo = new Elfo("Faustão");
+        String resultadoEsperado = "Faustão possui 42 flechas e 0 níveis de experiência.";
+        // Act
+        String resultadoObtido = elfo.toString();
+        // Assert
+        assertEquals(resultadoEsperado, resultadoObtido);
+    }
 }
 
 
