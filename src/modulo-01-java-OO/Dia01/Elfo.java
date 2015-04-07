@@ -129,6 +129,17 @@ public class Elfo {
         
         return builder.toString();
         
+        // Ruby ou CoffeeScript:
+        // "#{nome} possui #{flechas} #{textoFlechas} e #{experiencia} #{textoNiveis} de experiência."
+        // C# null-coalsing:
+        // String texto = this.nome ?? "Sem Nome";
+        
+        /*if (this.flechas == 1) {
+            textoFlechas = "flecha";
+        } else {
+            textoFlechas = "flechas";
+        }*/
+        
         /* return this.nome + " possui "
         + this.flechas + " "
         + textoFlechas + " e "

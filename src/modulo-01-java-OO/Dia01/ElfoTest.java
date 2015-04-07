@@ -15,9 +15,9 @@ public class ElfoTest
         // Arrange
         String esperado = "Celeborn";
         // Act
-        Elfo elfo = new Elfo(esperado);
+        Elfo umElfo = new Elfo(esperado);
         // Assert
-        assertEquals(esperado, elfo.getNome());
+        assertEquals(esperado, umElfo.getNome());
     }
     
     @Test
@@ -25,9 +25,9 @@ public class ElfoTest
         // Arrange
         String esperado = "";        
         // Act
-        Elfo elfo = new Elfo(esperado);
+        Elfo umElfo = new Elfo(esperado);
         // Assert
-        assertEquals(esperado, elfo.getNome());
+        assertEquals(esperado, umElfo.getNome());
     }
     
     @Test
@@ -35,9 +35,9 @@ public class ElfoTest
         // Arrange
         String esperado = null;        
         // Act
-        Elfo elfo = new Elfo(esperado);
+        Elfo umElfo = new Elfo(esperado);
         // Assert
-        assertEquals(esperado, elfo.getNome());
+        assertEquals(esperado, umElfo.getNome());
     }
     
     @Test
@@ -45,9 +45,9 @@ public class ElfoTest
         // Arrange
         int esperado = 42;
         // Act
-        Elfo elfo = new Elfo("um nome qualquer");
+        Elfo umElfo = new Elfo("um nome qualquer");
         // Assert
-        assertEquals(esperado, elfo.getFlechas());
+        assertEquals(esperado, umElfo.getFlechas());
     }
     
     @Test
@@ -56,10 +56,10 @@ public class ElfoTest
         String nomeEsperado = "Robin";
         int flechasEsperadas = 567853;
         // Act
-        Elfo elfo = new Elfo(nomeEsperado, flechasEsperadas);
+        Elfo umElfo = new Elfo(nomeEsperado, flechasEsperadas);
         // Assert
-        assertEquals(nomeEsperado, elfo.getNome());
-        assertEquals(flechasEsperadas, elfo.getFlechas());
+        assertEquals(nomeEsperado, umElfo.getNome());
+        assertEquals(flechasEsperadas, umElfo.getFlechas());
     }
     
     @Test
@@ -68,10 +68,10 @@ public class ElfoTest
         String nomeEsperado = "Robin";
         int flechasEsperadas = 12;
         // Act
-        Elfo elfo = new Elfo(nomeEsperado, flechasEsperadas);
+        Elfo umElfo = new Elfo(nomeEsperado, flechasEsperadas);
         // Assert
-        assertEquals(nomeEsperado, elfo.getNome());
-        assertEquals(flechasEsperadas, elfo.getFlechas());
+        assertEquals(nomeEsperado, umElfo.getNome());
+        assertEquals(flechasEsperadas, umElfo.getFlechas());
     }
     
     @Test
@@ -80,69 +80,69 @@ public class ElfoTest
         String nomeEsperado = "Robin";
         int flechasEsperadas = -567853;
         // Act
-        Elfo elfo = new Elfo(nomeEsperado, flechasEsperadas);
+        Elfo umElfo = new Elfo(nomeEsperado, flechasEsperadas);
         // Assert
-        assertEquals(nomeEsperado, elfo.getNome());
-        assertEquals(flechasEsperadas, elfo.getFlechas());
+        assertEquals(nomeEsperado, umElfo.getNome());
+        assertEquals(flechasEsperadas, umElfo.getFlechas());
     }
 
     @Test
     public void elfoAtiraFlechaEmUmOrc() {
         // Arrange
-        Elfo elfo = new Elfo("Legolas");
-        Orc orc = new Orc();
+        Elfo umElfo = new Elfo("Legolas");
+        Orc umOrc = new Orc();
         // Act
-        elfo.atirarFlecha(orc);
+        umElfo.atiraFlecha(umOrc);
         // Assert
         int experienciaEsperada = 1;
         int flechasEsperadas = 41;
         
-        assertEquals(experienciaEsperada, elfo.getExperiencia());
-        assertEquals(flechasEsperadas, elfo.getFlechas());
+        assertEquals(experienciaEsperada, umElfo.getExperiencia());
+        assertEquals(flechasEsperadas, umElfo.getFlechas());
     }
     
     @Test
     public void elfoAtiraFlechasDuasVezesNoMesmoOrc() {
         // Arrange
-        Elfo elfo = new Elfo("Legolas");
-        Orc orc = new Orc();
+        Elfo umElfo = new Elfo("Legolas");
+        Orc umOrc = new Orc();
         // Act
-        elfo.atirarFlecha(orc);
-        elfo.atirarFlecha(orc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
         // Assert
         int experienciaEsperada = 2;
         int flechasEsperadas = 40;
         
-        assertEquals(experienciaEsperada, elfo.getExperiencia());
-        assertEquals(flechasEsperadas, elfo.getFlechas());
+        assertEquals(experienciaEsperada, umElfo.getExperiencia());
+        assertEquals(flechasEsperadas,umElfo.getFlechas());
     }
     
     @Test
     public void elfoAtiraFlechasCincoVezesNoMesmoOrc() {
         // Arrange
-        Elfo elfo = new Elfo("Legolas", 4);
-        Orc orc = new Orc();
+        Elfo umElfo = new Elfo("Legolas", 4);
+        Orc umOrc = new Orc();
         // Act
-        elfo.atirarFlecha(orc);
-        elfo.atirarFlecha(orc);
-        elfo.atirarFlecha(orc);
-        elfo.atirarFlecha(orc);
-        elfo.atirarFlecha(orc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
+        umElfo.atiraFlecha(umOrc);
         // Assert
         int experienciaEsperada = 5;
         int flechasEsperadas = -1;
         
-        assertEquals(experienciaEsperada, elfo.getExperiencia());
-        assertEquals(flechasEsperadas, elfo.getFlechas());
+        assertEquals(experienciaEsperada, umElfo.getExperiencia());
+        assertEquals(flechasEsperadas, umElfo.getFlechas());
     }
     
     @Test
     public void elfoToStringPadrao() {
         // Arrange
-        Elfo elfo = new Elfo("Faustão");
+        Elfo umElfo = new Elfo("Faustão");
         String resultadoEsperado = "Faustão possui 42 flechas e 0 níveis de experiência.";
         // Act
-        String resultadoObtido = elfo.toString();
+        String resultadoObtido = umElfo.toString();
         // Assert
         assertEquals(resultadoEsperado, resultadoObtido);
     }

@@ -106,10 +106,10 @@ public class OrcTest
     @Test
     public void orcToStringAposReceberAtaque() {
         // Arrange
-        Orc orc = new Orc();
+        Orc umOrc = new Orc();
         // Act
-        orc.recebeAtaque();
-        String resultadoObtido = orc.toString();
+        umOrc.recebeFlecha();
+        String resultadoObtido = umOrc.toString();
         // Assert
         String esperado = "Vida atual: 100";
         assertEquals(esperado, resultadoObtido);
@@ -120,18 +120,18 @@ public class OrcTest
         // Arrange - Montagem dos dados de teste
         Orc umOrc = new Orc();
         // Act
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
-        umOrc.recebeAtaque();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
         String resultadoObtido = umOrc.toString();
         // Assert
         String esperado = "Vida atual: -10";

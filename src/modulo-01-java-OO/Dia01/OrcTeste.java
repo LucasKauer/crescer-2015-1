@@ -109,4 +109,27 @@ public class OrcTeste
         String esperado = "Vida atual: 100";
         assertEquals(esperado, resultadoObtido);
     }
+    
+    @Test
+    public void orcToStringAposReceberDozeAtaques() {
+        // Arrange - Montagem dos dados de teste
+        Orc umOrc = new Orc();
+        // Act
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        umOrc.recebeFlecha();
+        String resultadoObtido = umOrc.toString();
+        // Assert
+        String esperado = "Vida atual: -10";
+        assertEquals(esperado, resultadoObtido);
+    }
 }
