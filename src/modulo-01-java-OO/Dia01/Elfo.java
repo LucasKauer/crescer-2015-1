@@ -4,8 +4,6 @@
  * @author Lucas Kauer
  */
 public class Elfo {
-    // Versão correção do tema!!
-    
     private String nome;
     private int flechas, experiencia;
  
@@ -70,6 +68,7 @@ public class Elfo {
         return this.experiencia;
     }
     
+    // 07/04: OS TRÊS MÉTODOS ABAIXO DEVEM SER VERIFICADOS.
     public void getAtirarFlecha() {
         Orc umOrc = new Orc();
         atiraFlecha(umOrc);
@@ -86,12 +85,11 @@ public class Elfo {
     }
     
     /**
-     * Imprime a vida, as flechas e a experiencia atual do Elfo.
+     * Retorna o nome do elfo, sua quantidade de flechas e seus níveis de experiência.
      * 
-     * @return String com a vida atual do elfo
-     * @return Int com as flechas atual do elfo
-     * @return Int com a experiência atual do elfo
-     * Ex: "Légolas possui 10 flechas e 2 níveis de experiência."
+     * @return Informações gerais sobre o elfo, ex:
+     * 
+     * "Legolas possui 42 flechas e 0 níveis de experiência."
      */
     
     public String toString() {
@@ -105,7 +103,7 @@ public class Elfo {
         
         // substitui builder.append por return
         builder.append(
-            String.format("%s possui $d %s e %d %s de experiência.",
+            String.format("%s possui %d %s e %d %s de experiência.",
                 this.nome,
                 this.flechas,
                 // ternerio (in line) na linha

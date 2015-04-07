@@ -6,35 +6,52 @@
  */
 
 public class Orc {
-    private String nome;
     private int vida, experiencia;
-    private double numero;
-    private Status status;
+    private String nome;
+    private Status status = Status.VIVO;
     
     {
         vida = 110;
-        status = Status.VIVO;
     }
     
+    /**
+     * Construtor para objetos da classe Orc
+     */
     public Orc(String nome) {
+        // vida = 110
         this.nome = nome;
     }
     
     public Orc() {
     }
     
+    public void orcMorto() {
+        if(this.vida == 0) {
+            this.status = Status.MORTO;
+        }
+    }
+    
     /**
-     * Recebe uma flechada e perde 10 unidades de vida.
+     * Faz o Orc sofrer um ataque
+     * Atualmente 10 de dano será decrementado
      */
     
     public void recebeFlecha() {
-        if(gerarNumero() < 0) {
-            this.experiencia += 2;
-        } else if (gerarNumero() > 0 && gerarNumero() < 100) {
-            // Orc não recebe flecha e não recebe experiência
-        } else {
-            vida = vida - 10;
-        }
+        if (vida>0){
+                double numeroGerado = gerarNumero();
+                    if (numeroGerado < 0){
+                        this.experiencia += 2;
+                        return;
+                    }else if (numeroGerado > 100) {
+                        int danoVida = 10;
+                        if (this.vida >= danoVida) {
+                            this.vida -= danoVida;
+                            this.status = Status.FERIDO;
+                        }
+                    }
+            }else {
+                this.status = Status.MORTO;
+            }
     }
     
     // metódo responsável por retornar o nome do Orc
@@ -53,9 +70,21 @@ public class Orc {
     }
     
     // metódo responsável por testar se o método recebeFlecha está sendo executado corretamente
-    public int getRecebeFlecha() {
+    /* public int getRecebeFlecha() {
         recebeFlecha();
         return vida;
+    } */
+    
+    public Status getStatus() {
+        return this.status;
+    }
+    
+    public void setStatus(Status novoStatus) {
+        this.status = novoStatus;
+    }
+    
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
     }
     
     /**
@@ -69,39 +98,48 @@ public class Orc {
         return "Vida atual: " + this.vida;
     }
     
-    public Status setStatus() {
-        return this.status;
-    }
-    
     private double gerarNumero() {
-        // A
-        if((this.nome != null) && (this.nome.length() > 5)) {
-            numero += 65;
+        double numeroGerado = 0.0;
+        
+        // A. Se o orc possuir nome e o mesmo tiver mais de 5 letras, some 65 ao número.
+        // Caso contrário, subtraia 60.
+        boolean possuiNomeComMaisDe5Caracteres = (this.nome != null && this.nome.length() > 5);
+        if(possuiNomeComMaisDe5Caracteres) {
+            numeroGerado += 65;
         } else {
-            numero -= 60;
+            numeroGerado -= 60;
         }
         
-        //B
-        if (this.vida > 30 && this.vida < 60) {
-            this.numero *= 2;
+        // B. Se o orc possuir vida entre 30 e 60, multiple o número por dois,
+        // senão se a vida for menor que 20 multiplique por 3.
+        boolean possuiVidaEntre30e60 = (this.vida >= 30 && this.vida <=60);
+        if (possuiVidaEntre30e60) {
+            numeroGerado *= 2;
         } else if (this.vida < 20) {
-            this.numero *= 3;
+            numeroGerado *= 3;
         }
         
-        //C
-        if (setStatus() == Status.FUGINDO) {
-            this.numero /= 2;
-        } else if (setStatus() == Status.CAÇANDO || setStatus() == Status.DORMINDO){
-            this.numero += 1;
+        // C. Se o orc estiver fugindo, divida o número por 2. Senão se o orc estiver caçando
+        // ou dormindo adicione 1 ao número.
+        boolean estaFugindo = (this.status == Status.FUGINDO);
+        boolean estaCacandoOuDormindo = ((this.status == Status.CAÇANDO) || (this.status == Status.DORMINDO));
+        if (estaFugindo) {
+            numeroGerado /= 2;
+        } else if (estaCacandoOuDormindo){
+            numeroGerado += 1;
         }
         
-        //D
-        if (this.experiencia % 2 == 0) {
-            Math.pow(numero, 3);
-        } else if ((this.experiencia % 2 != 0) && (this.experiencia > 2)){
-            Math.pow(numero, 2);
+        // D. Se a experiência do orc for par, eleve o número ao cubo. 
+        // Se for ímpar e o orc tiver mais que 2 de experiência, eleve o número ao quadrado.
+        boolean experienciaEPar = this.experiencia % 2 == 0;
+        if (experienciaEPar) {
+            // numeroGerado = numeroGerado * numeroGerado * numeroGerado;
+            Math.pow(numeroGerado, 3);
+        } else if (this.experiencia > 2){
+            // numeroGerado = numeroGerado * numeroGerado;
+            Math.pow(numeroGerado, 2);
         }
         
-        return numero;
+        return numeroGerado;
     }
 }
