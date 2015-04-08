@@ -24,4 +24,11 @@ public class ItemDoInventario
     public String getDescricao() {
         return this.descricao;
     }
+    
+    public void setDescricao(String novaDescricao) {
+        this.descricao = novaDescricao;
+    }
+    public void setQuantidade(int novaQuantidade) {
+        this.quantidade = novaQuantidade;
+    }
 }
