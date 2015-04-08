@@ -9,7 +9,9 @@ public class Orc {
     private int vida, experiencia;
     private String nome;
     private Status status = Status.VIVO;
-    ArrayList<ItemDoInventario> item = new ArrayList<ItemDoInventario>();
+    private ArrayList<ItemDoInventario> inventario = new ArrayList<ItemDoInventario>();
+    // final não deixa que o valor atribuído a variável seja mudado.
+    private final int NUMERO_SORTE = 3481;
     
     // C#
     // public Status StatusOrc { get; set }
@@ -107,6 +109,11 @@ public class Orc {
         return "Vida atual: " + this.vida;
     }
     
+    
+    /**
+     * Gera um número.
+     * O número gerado vai ser passado para a classe recebeAtaque.
+     */
     private double gerarNumero() {
         
         double numeroGerado = 0.0;
@@ -160,20 +167,149 @@ public class Orc {
         
         return numeroGerado;
     }
-    
+
     // Tema: Permitir que Orcs ganhem e percam itens (ArrayList)
     // Método para adicionar itens ao inventário.
+    /**
+     * Adiciona um item ao inventário.
+     * 
+     * @param item Item a ser adicionado.
+     */
     public void adicionarItem(ItemDoInventario i) {
-        item.add(i);
+        inventario.add(i);
     }
     // Método para remover itens ao inventário.
+     /**
+     * Remove o item do inventário do orc.
+     * 
+     * @param item Item a ser perdido do inventário.
+     */
     public void perderItem(ItemDoInventario i) {
-        if(item.size() > 0){
-            item.remove(i);
+        if(inventario.size() > 0){
+            inventario.remove(i);
         }
     }
     
+    public ArrayList getInventario() {
+        return inventario;
+    }
+    
     public int getTamanhoDoInventario() {
-        return item.size();
+        return inventario.size();
+    }
+    
+    /**
+     * Concatena as descrições dos itens, separados por vírgulas
+     * 
+     * SEM ESPAÇO ENTRE AS VÍRGULAS E SEM PONTO FINAL
+     * 
+     * @return Descrições. Ex:
+     * 
+     * "Adaga,Escudo,Bracelete"
+     */
+    
+    /* It's mine!
+     * 
+     * public String getDescricoesInventario() {
+     *  String descricoesInventario = null;
+     *  for (int i = 0; i <= inventario.size(); i++) {
+     *      // Lembrar de separar os algoritmos por parte para não se confundir!
+     *      // ItemDoInventario (Construtor)
+     *      // itemAtual (Nome Informado ao Construtor)
+     *      // inventario.get(i) (Item Atual);
+     *      ItemDoInventario itemAtual = inventario.get(i);
+     *      if (i == inventario.size()) {
+     *          descricoesInventario = itemAtual.getDescricao();
+     *          break;
+     *      } else {
+     *          descricoesInventario = itemAtual.getDescricao() + ",";
+     *      }
+     *  }
+     *  return descricoesInventario;
+     *  }
+     */
+    
+    public String getDescricoesItens() {
+        StringBuilder builder = new StringBuilder();
+        
+        /* int numeroDeItens = this.inventario.size();
+        
+         for (int i = 0; i < numeroDeItens; i++) {
+           ItemDoInventario itemAtual = this.inventario.get(i);
+             
+           boolean eUltimoIndice = i == numeroDeItens - 1;
+           
+           builder.append(
+               eUltimoIndice ?
+               itemAtual.getDescricao() :
+               itemAtual.getDescricao() + ","
+           );
+        } */
+        
+        // C#
+        // foreach (ItemDoInventario item in this.itens) { }
+        
+        /*
+         * Utilizando foreach
+           for (ItemDoInventario itemAtual : this.inventario) {
+            int i = this.inventario.indexOf(itemAtual);
+            int numeroDeItens = this.inventario.size();
+            boolean eUltimoIndice = i == numeroDeItens - 1;
+            
+            builder.append(
+                eUltimoIndice ?
+                itemAtual.getDescricao() :
+                itemAtual.getDescricao() + ","
+            );
+        }
+        */
+        
+        int i = 0;
+        int numeroDeItens = this.inventario.size();
+        
+        // JavaScript
+        // for (var i = 0, numeroDeItens = this.inventario.size(); i < numeroDeItens; i++) {
+        // }
+        
+        /* while (i < numeroDeItens) {
+            ItemDoInventario itemAtual = this.inventario.get(i);
+            boolean eUltimoIndice = i == numeroDeItens - 1;
+            
+            builder.append(
+                eUltimoIndice ?
+                itemAtual.getDescricao() :
+                itemAtual.getDescricao() + ","
+            );
+            i++;
+        } */
+        
+        do {
+            if (numeroDeItens > 0) {
+                ItemDoInventario itemAtual = this.inventario.get(i);
+                boolean eUltimoIndice = i == numeroDeItens - 1;
+            
+                builder.append(
+                    eUltimoIndice ?
+                    itemAtual.getDescricao() :
+                    itemAtual.getDescricao() + ","
+                    );
+            }
+            i++;
+        } while (i < numeroDeItens);
+        
+        return builder.toString();
+    }
+    
+    // Exercício 5.2: um Orc pode tentarSorte() e
+    // ganhar 1000 unidades de cada item em seu inventário
+    // Como isso acontece? Caso um número sorteado seja 3481
+    public void tentarSorte() {
+        if (gerarNumero() == NUMERO_SORTE) {
+            int numeroDeItens = this.inventario.size();
+            for(int i = 0; i < numeroDeItens; i++) {
+                ItemDoInventario itemAtual = this.inventario.get(i);
+                itemAtual.setQuantidade(itemAtual.getQuantidade() + 1000);
+            }
+        }
     }
 }

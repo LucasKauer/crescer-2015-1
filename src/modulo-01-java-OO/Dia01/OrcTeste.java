@@ -1,3 +1,4 @@
+import java.util.*;
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -268,5 +269,144 @@ public class OrcTeste
         int tamanhoDoInventarioEsperado = 1;
         
         assertEquals(tamanhoDoInventarioEsperado, umOrc.getTamanhoDoInventario());
+    }
+    
+    @Test
+    public void orcPerdeUmItem() {
+        // Arrange
+        Orc umOrc = new Orc("Nome Grande Aqui");
+        // Act
+        ItemDoInventario i = new ItemDoInventario("Espada", 2); 
+        umOrc.adicionarItem(i);
+        umOrc.perderItem(i);
+        // Assert
+        int tamanhoDoInventarioEsperado = 0;
+        
+        assertEquals(tamanhoDoInventarioEsperado, umOrc.getTamanhoDoInventario());
+    }
+    
+    // [!] KEEP CALM!
+    @Test
+    public void orcRecebeAdaga() {
+        // Arrange
+        Orc umOrc = new Orc();
+        ItemDoInventario adaga = new ItemDoInventario("Adaga", 10);
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<>();
+        inventarioEsperado.add(adaga);
+        // Act
+        umOrc.adicionarItem(adaga);
+        ArrayList<ItemDoInventario> inventarioObtido = umOrc.getInventario();
+        // Assert
+        assertEquals(inventarioEsperado, inventarioObtido);
+    }
+
+    @Test
+    public void orcRecebeAdagaEEscudo() {
+        // Arrange
+        Orc umOrc = new Orc();
+        ItemDoInventario adaga = new ItemDoInventario("Adaga", 11);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 10);
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<>();
+        inventarioEsperado.add(adaga);
+        inventarioEsperado.add(escudo);
+        // Act
+        umOrc.adicionarItem(adaga);
+        umOrc.adicionarItem(escudo);
+        ArrayList<ItemDoInventario> inventarioObtido = umOrc.getInventario();
+        // Assert
+        assertEquals(inventarioEsperado, inventarioObtido);
+    }
+
+    @Test
+    public void orcRecebeAdagaEPerdeAdaga() {
+        // Arrange
+        Orc umOrc = new Orc();
+        ItemDoInventario adaga = new ItemDoInventario("Adaga", 12);
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<>();
+        umOrc.adicionarItem(adaga);
+        // Act
+        umOrc.perderItem(adaga);
+        ArrayList<ItemDoInventario> inventarioObtido = umOrc.getInventario();
+        // Assert
+        assertEquals(inventarioEsperado, inventarioObtido);
+    }
+
+    @Test
+    public void orcRecebeAdagaEEscudoEPerdeEscudo() {
+        // Arrange
+        Orc umOrc = new Orc();
+        ItemDoInventario adaga = new ItemDoInventario("Adaga", 13);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 11);
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<>();
+        inventarioEsperado.add(adaga);
+        umOrc.adicionarItem(adaga);
+        umOrc.adicionarItem(escudo);
+        // Act
+        umOrc.perderItem(escudo);
+        ArrayList<ItemDoInventario> inventarioObtido = umOrc.getInventario();
+        // Assert
+        assertEquals(inventarioEsperado, inventarioObtido);
+    }
+    
+    // [!] KEEP CALM²
+    @Test
+    public void getDescricoesComNenhumItem() {
+        // Arrange
+        Orc umOrc = new Orc();
+        String descricoesEsperada = "";
+        // Act
+        String resultadoDescricoes = umOrc.getDescricoesItens();
+        // Assert
+        assertEquals(descricoesEsperada, resultadoDescricoes);
+    }
+    
+    @Test
+    public void getDescricoesComUmItem() {
+        // Arrange
+        Orc umOrc = new Orc();
+        ItemDoInventario adaga = new ItemDoInventario("Adaga", 34);
+        umOrc.adicionarItem(adaga);
+        String descricoesEsperada = "Adaga";
+        // Act
+        String resultadoDescricoes = umOrc.getDescricoesItens();
+        // Assert
+        assertEquals(descricoesEsperada, resultadoDescricoes);
+    }
+    
+    @Test
+    public void getDescricoesComDoisItens() {
+        // Arrange
+        Orc umOrc = new Orc();
+        ItemDoInventario adaga = new ItemDoInventario("Adaga", 34);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo de carvalho", 12);
+        umOrc.adicionarItem(adaga);
+        umOrc.adicionarItem(escudo);
+        String descricoesEsperada = "Adaga,Escudo de carvalho";
+        // Act
+        String resultadoDescricoes = umOrc.getDescricoesItens();
+        // Assert
+        assertEquals(descricoesEsperada, resultadoDescricoes);
+    }
+    
+    @Test
+    public void orcTentaSorte() {
+        // Nome menor que 5
+        // Status dormindo ou caçando
+        // Experiência ímpar maior que 2
+        Orc umOrc = new Orc();
+        umOrc.setStatus(Status.DORMINDO);
+        umOrc.setExperiencia(3);
+        // "Eu não faço elfos terem MANA para evitar insesto" - CWI, Bernardo.
+        // Dê um getMana e seja feliz ;D
+        umOrc.adicionarItem(new ItemDoInventario ("Poção de mana", 3));
+        umOrc.adicionarItem(new ItemDoInventario ("Poção Lança", 1));
+        
+        umOrc.tentarSorte();
+        
+        ItemDoInventario pocao = umOrc.getItens().get(0);
+        ItemDoInventario lanca = umOrc.getItens().get(1);
+        
+        assertEquals(1003, pocao.getQuantidade());
+        assertEquals(1001, lanca.getQuantidade());
     }
 }
