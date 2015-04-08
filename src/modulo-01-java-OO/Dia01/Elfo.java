@@ -44,7 +44,7 @@ public class Elfo {
         //flechas = flechas - 1;
         experiencia++;
         // experiencia = experiencia + 1;
-        umOrc.recebeFlecha();
+        umOrc.recebeAtaque();
     }
    
     /*public void setFlechas(int novaQtdFlechas) {
