@@ -520,13 +520,87 @@ public class OrcTeste
         assertEquals(esperado, resultadoObtido);
     }
     
-    // DESAFIO
+    // TESTE DESAFIO 1
     @Test
-    public void orcOrdenarItensQuandoOUltimoForOMenor() {
+    public void orcOrdenarItens() {
         Orc umOrc = new Orc();
-        ItemDoInventario espada = new ItemDoInventario("Espada", 3);
+        ItemDoInventario espada = new ItemDoInventario("Espada", 2);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 1);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 7);
+        ItemDoInventario pocaoDeMana = new ItemDoInventario("Poção de Mana", 5);
+        ItemDoInventario pedraPreciosa = new ItemDoInventario("Pedra Preciosa", 3);
+        
+        umOrc.adicionarItem(espada);
+        umOrc.adicionarItem(escudo);
+        umOrc.adicionarItem(pocaoDeVida);
+        umOrc.adicionarItem(pocaoDeMana);
+        umOrc.adicionarItem(pedraPreciosa);
+               
+        umOrc.ordenarItens();
+        
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<ItemDoInventario>();
+        inventarioEsperado.add(escudo);
+        inventarioEsperado.add(espada);
+        inventarioEsperado.add(pedraPreciosa);
+        inventarioEsperado.add(pocaoDeMana);
+        inventarioEsperado.add(pocaoDeVida);
+        
+        ArrayList<ItemDoInventario> esperado = inventarioEsperado;
+        
+        assertEquals(esperado, umOrc.getInventario());
+    }
+    
+    // TESTE DESAFIO 2
+    @Test
+    public void orcOrdenarItensQuandoOInventarioEstiverEmOrdem() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 1);
         ItemDoInventario escudo = new ItemDoInventario("Escudo", 2);
-        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 1);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 3);
+        ItemDoInventario pocaoDeMana = new ItemDoInventario("Poção de Mana", 4);
+        ItemDoInventario pedraPreciosa = new ItemDoInventario("Pedra Preciosa", 5);
+        
+        umOrc.adicionarItem(espada);
+        umOrc.adicionarItem(escudo);
+        umOrc.adicionarItem(pocaoDeVida);
+        umOrc.adicionarItem(pocaoDeMana);
+        umOrc.adicionarItem(pedraPreciosa);
+               
+        umOrc.ordenarItens();
+        
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<ItemDoInventario>();
+        inventarioEsperado.add(espada);
+        inventarioEsperado.add(escudo);
+        inventarioEsperado.add(pocaoDeVida);
+        inventarioEsperado.add(pocaoDeMana);
+        inventarioEsperado.add(pedraPreciosa);
+        
+        ArrayList<ItemDoInventario> esperado = inventarioEsperado;
+        
+        assertEquals(esperado, umOrc.getInventario());
+    }
+    
+    // TESTE DESAFIO 3
+    @Test
+    public void orcOrdenarItensQuandoOInventarioEstiverVazio() {
+        Orc umOrc = new Orc();
+        
+        umOrc.ordenarItens();
+        
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<ItemDoInventario>();
+        
+        ArrayList<ItemDoInventario> esperado = inventarioEsperado;
+        
+        assertEquals(esperado, umOrc.getInventario());
+    }
+    
+    // TESTE DESAFIO 4
+    @Test
+    public void orcOrdenarItensQuandoOSegundoForOMenor() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 2);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 1);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 3);
         
         umOrc.adicionarItem(espada);
         umOrc.adicionarItem(escudo);
@@ -535,9 +609,93 @@ public class OrcTeste
         umOrc.ordenarItens();
         
         ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<ItemDoInventario>();
+        inventarioEsperado.add(escudo);
+        inventarioEsperado.add(espada);
+        inventarioEsperado.add(pocaoDeVida);
+        
+        ArrayList<ItemDoInventario> esperado = inventarioEsperado;
+        
+        assertEquals(esperado, umOrc.getInventario());
+    }
+    
+    // TESTE DESAFIO 5
+    @Test
+    public void orcOrdenarItensQuandoOTerceiroForOMenor() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 3);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 2);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 1);
+        
+        umOrc.adicionarItem(pocaoDeVida);
+        umOrc.adicionarItem(escudo);
+        umOrc.adicionarItem(espada);
+        
+        umOrc.ordenarItens();
+        
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<ItemDoInventario>();
         inventarioEsperado.add(pocaoDeVida);
         inventarioEsperado.add(escudo);
         inventarioEsperado.add(espada);
+        
+        ArrayList<ItemDoInventario> esperado = inventarioEsperado;
+        
+        assertEquals(esperado, umOrc.getInventario());
+    }
+    
+    // TESTE DESAFIO 6
+    @Test
+    public void orcOrdenarItensQuandoOUltimoForOMenor() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 5);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 2);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 7);
+        ItemDoInventario pocaoDeMana = new ItemDoInventario("Poção de Mana", 6);
+        ItemDoInventario pedraPreciosa = new ItemDoInventario("Pedra Preciosa", 1);
+        
+        umOrc.adicionarItem(espada);
+        umOrc.adicionarItem(escudo);
+        umOrc.adicionarItem(pocaoDeVida);
+        umOrc.adicionarItem(pocaoDeMana);
+        umOrc.adicionarItem(pedraPreciosa);
+        
+        umOrc.ordenarItens();
+        
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<ItemDoInventario>();
+        inventarioEsperado.add(pedraPreciosa);
+        inventarioEsperado.add(escudo);
+        inventarioEsperado.add(espada);
+        inventarioEsperado.add(pocaoDeMana);
+        inventarioEsperado.add(pocaoDeVida);
+        
+        ArrayList<ItemDoInventario> esperado = inventarioEsperado;
+        
+        assertEquals(esperado, umOrc.getInventario());
+    }
+    
+    // TESTE DESAFIO 7
+    @Test
+    public void orcOrdenarItensQuandoODoisItensTemAMesmaQuantidade() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 5);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 1);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 7);
+        ItemDoInventario pocaoDeMana = new ItemDoInventario("Poção de Mana", 6);
+        ItemDoInventario pedraPreciosa = new ItemDoInventario("Pedra Preciosa", 1);
+        
+        umOrc.adicionarItem(espada);
+        umOrc.adicionarItem(escudo);
+        umOrc.adicionarItem(pocaoDeVida);
+        umOrc.adicionarItem(pocaoDeMana);
+        umOrc.adicionarItem(pedraPreciosa);
+        
+        umOrc.ordenarItens();
+        
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<ItemDoInventario>();
+        inventarioEsperado.add(escudo);
+        inventarioEsperado.add(pedraPreciosa);
+        inventarioEsperado.add(espada);
+        inventarioEsperado.add(pocaoDeMana);
+        inventarioEsperado.add(pocaoDeVida);
         
         ArrayList<ItemDoInventario> esperado = inventarioEsperado;
         
