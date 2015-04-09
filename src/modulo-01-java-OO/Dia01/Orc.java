@@ -285,12 +285,13 @@ public class Orc {
             if (numeroDeItens > 0) {
                 ItemDoInventario itemAtual = this.inventario.get(i);
                 boolean eUltimoIndice = i == numeroDeItens - 1;
-            
+                // boolean false!
+                
                 builder.append(
                     eUltimoIndice ?
                     itemAtual.getDescricao() :
                     itemAtual.getDescricao() + ","
-                    );
+                );
             }
             i++;
         } while (i < numeroDeItens);
@@ -308,6 +309,24 @@ public class Orc {
                     itemComMaiorQuantidade = inventario.get(i);
                 }           
             }
+        
+        // Exemplo: Bernardo
+        /* boolean temItens = !this.inventario.isEmpty();
+        if (temItens) {
+            itemMaiorQuantidade = this.inventario.get(0)
+            
+            for (int i = 1; i < this.inventario.size(); i++) {
+                ItemDoInventario itemAtual = this.inventario.get(i);
+                boolean encontreiAMaiorQuantidade =
+                    itemAtual.getQuantidade > itemMaiorQuantidade();
+                    
+                if (encontreiAMaiorQuantidade) {
+                    // autalizar a minha referência para o maior parcial
+                    itemMaiorQuantidade = itemAtual;
+                }
+            }
+        } */
+            
         return itemComMaiorQuantidade;
     }
     
