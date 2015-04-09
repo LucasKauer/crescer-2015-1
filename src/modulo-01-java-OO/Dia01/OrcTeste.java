@@ -409,6 +409,27 @@ public class OrcTeste
         assertEquals(1001, lanca.getQuantidade());
     }
     
+    // Exemplo proposto em aula
+    @Test
+    public void orcPegaOItemComMaiorQuantidadeDeUnidades() {
+        Orc umOrc = new Orc();
+        ItemDoInventario adaga = new ItemDoInventario("Adaga", 15);
+        ItemDoInventario pocao = new ItemDoInventario("Poção", 2);
+        ItemDoInventario flechas = new ItemDoInventario("Flechas", 17);
+        ItemDoInventario pedrasPreciosas = new ItemDoInventario("Pedras Preciosas", 9);
+        ItemDoInventario beyblade = new ItemDoInventario("Beyblade", 18);
+        
+        umOrc.adicionarItem(adaga);
+        umOrc.adicionarItem(pocao);
+        umOrc.adicionarItem(flechas);
+        umOrc.adicionarItem(pedrasPreciosas);
+        umOrc.adicionarItem(beyblade);
+        
+        ItemDoInventario resultadoObtido = umOrc.getItemComMaiorQuantidade();
+        
+        assertEquals(beyblade, resultadoObtido);
+    }
+    
     @Test
     public void orcPegaOItemComMaiorQuantidade() {
         Orc umOrc = new Orc();
