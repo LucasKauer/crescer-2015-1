@@ -165,6 +165,7 @@ public class Orc {
         }
     }
     
+    // http://pt.wikipedia.org/wiki/Selection_sort
     /**
      * Ordena os itens do inventário em ordem ascendente.
      */
@@ -180,15 +181,17 @@ public class Orc {
 
                 for (int i = j + 1; i < inventario.size(); i++) {
                     
-                ItemDoInventario itemAtual = this.inventario.get(i);
-                ItemDoInventario itemAnterior = this.inventario.get(i - 1);
-                
-                if (menorQuantidade > itemAtual.getQuantidade()) {
-                    inventario.set(j, itemAtual);
-                    inventario.set(i, itemComMenorQuantidade);
-                    itemComMenorQuantidade = itemAtual;
-                    menorQuantidade = itemAtual.getQuantidade();
-                }
+                    ItemDoInventario itemAtual = this.inventario.get(i);
+                    ItemDoInventario itemAnterior = this.inventario.get(i - 1);
+                    
+                    if (menorQuantidade > itemAtual.getQuantidade()) {
+                        // inventario.set(nova posição, elemento);
+                        inventario.set(j, itemAtual);
+                        inventario.set(i, itemComMenorQuantidade);
+                        
+                        itemComMenorQuantidade = itemAtual;
+                        menorQuantidade = itemAtual.getQuantidade();
+                    }
                 }
             }
         }
