@@ -285,7 +285,7 @@ public class Orc {
             if (numeroDeItens > 0) {
                 ItemDoInventario itemAtual = this.inventario.get(i);
                 boolean eUltimoIndice = i == numeroDeItens - 1;
-                // boolean false!
+                // boolean eUltimoIndice = true
                 
                 builder.append(
                     eUltimoIndice ?
@@ -337,6 +337,8 @@ public class Orc {
     public void setExperiencia(int novaExperiencia) {
         this.experiencia = novaExperiencia;
     }
+    
+    
     
     /**
      * Imprime a vida atual do Orc.
