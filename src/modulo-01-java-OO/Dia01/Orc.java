@@ -4,13 +4,12 @@ import java.util.*;
  * 
  * @author Lucas Kauer
  */
-
 public class Orc {
     private int vida, experiencia;
     private String nome;
     private Status status = Status.VIVO;
     private ArrayList<ItemDoInventario> inventario = new ArrayList<ItemDoInventario>();
-    // final não deixa que o valor atribuído a variável seja mudado.
+    // final não deixa que o valor atribuído a variável seja alterado posteriormente.
     private final int NUMERO_SORTE = 3481;
     
     // C#
@@ -35,7 +34,6 @@ public class Orc {
      * Faz o Orc sofrer um ataque
      * Atualmente 10 de dano será decrementado
      */
-    
     public void recebeAtaque() {
         // Caso o resultado seja menor que 0, o Orc não deverá receber a flecha e ainda
         // ganhará 2 pontos de experiência.
@@ -64,51 +62,6 @@ public class Orc {
             this.status = Status.MORTO;
         }       
     }
-    
-    // metódo responsável por retornar o nome do Orc
-    public String getNome() {
-        return this.nome;
-    }
-    
-    // metódo responsável por retornar a experência do Orc
-    public int getExperiencia() {
-        return this.experiencia;
-    }
-    
-    // metódo responsável por testar se o Orc está nascendo com 110 de vida.
-    public int getVida() {
-        return this.vida;
-    }
-    
-    // metódo responsável por testar se o método recebeFlecha está sendo executado corretamente
-    /* public int getRecebeFlecha() {
-        recebeFlecha();
-        return vida;
-    } */
-    
-    public Status getStatus() {
-        return this.status;
-    }
-    
-    /* public void setStatus(Status novoStatus) {
-        this.status = novoStatus;
-    } */
-    
-    public void setExperiencia(int novaExperiencia) {
-        this.experiencia = novaExperiencia;
-    }
-    
-    /**
-     * Imprime a vida atual do Orc.
-     * 
-     * @return String com a vida atual do orc
-     * Ex: "Vida atual: " + this.vida
-     */
-    
-    public String toString() {
-        return "Vida atual: " + this.vida;
-    }
-    
     
     /**
      * Gera um número.
@@ -167,7 +120,20 @@ public class Orc {
         
         return numeroGerado;
     }
-
+    
+    // Exercício 5.2: um Orc pode tentarSorte() e
+    // ganhar 1000 unidades de cada item em seu inventário
+    // Como isso acontece? Caso um número sorteado seja 3481
+    public void tentarSorte() {
+        if (gerarNumero() == NUMERO_SORTE) {
+            int numeroDeItens = this.inventario.size();
+            for(int i = 0; i < numeroDeItens; i++) {
+                ItemDoInventario itemAtual = this.inventario.get(i);
+                itemAtual.setQuantidade(itemAtual.getQuantidade() + 1000);
+            }
+        }
+    }
+    
     // Tema: Permitir que Orcs ganhem e percam itens (ArrayList)
     // Método para adicionar itens ao inventário.
     /**
@@ -178,8 +144,9 @@ public class Orc {
     public void adicionarItem(ItemDoInventario i) {
         inventario.add(i);
     }
+    
     // Método para remover itens ao inventário.
-     /**
+    /**
      * Remove o item do inventário do orc.
      * 
      * @param item Item a ser perdido do inventário.
@@ -190,8 +157,33 @@ public class Orc {
         }
     }
     
-    public ArrayList getInventario() {
-        return inventario;
+    // metódo responsável por retornar o nome do Orc
+    public String getNome() {
+        return this.nome;
+    }
+    
+    // metódo responsável por retornar a experência do Orc
+    public int getExperiencia() {
+        return this.experiencia;
+    }
+    
+    // metódo responsável por testar se o Orc está nascendo com 110 de vida.
+    public int getVida() {
+        return this.vida;
+    }
+    
+    // metódo responsável por testar se o método recebeFlecha está sendo executado corretamente
+    /* public int getRecebeFlecha() {
+        recebeFlecha();
+        return vida;
+    } */
+    
+    public Status getStatus() {
+        return this.status;
+    }
+    
+    public ArrayList<ItemDoInventario> getInventario() {
+        return this.inventario;
     }
     
     public int getTamanhoDoInventario() {
@@ -207,7 +199,6 @@ public class Orc {
      * 
      * "Adaga,Escudo,Bracelete"
      */
-    
     /* It's mine!
      * 
      * public String getDescricoesInventario() {
@@ -228,7 +219,6 @@ public class Orc {
      *  return descricoesInventario;
      *  }
      */
-    
     public String getDescricoesItens() {
         StringBuilder builder = new StringBuilder();
         
@@ -300,16 +290,36 @@ public class Orc {
         return builder.toString();
     }
     
-    // Exercício 5.2: um Orc pode tentarSorte() e
-    // ganhar 1000 unidades de cada item em seu inventário
-    // Como isso acontece? Caso um número sorteado seja 3481
-    public void tentarSorte() {
-        if (gerarNumero() == NUMERO_SORTE) {
-            int numeroDeItens = this.inventario.size();
-            for(int i = 0; i < numeroDeItens; i++) {
+    public ItemDoInventario getItemComMaiorQuantidade() {
+        int maiorQuantidade = 0;
+        ItemDoInventario itemComMaiorQuantidade = null;
+        if (this.inventario.size() > 0) {
+            for(int i = 0; i < inventario.size(); i++) {
                 ItemDoInventario itemAtual = this.inventario.get(i);
-                itemAtual.setQuantidade(itemAtual.getQuantidade() + 1000);
+                if(maiorQuantidade < itemAtual.getQuantidade()) {
+                    maiorQuantidade = itemAtual.getQuantidade();
+                    itemComMaiorQuantidade = inventario.get(i);
+                }           
             }
         }
+        return itemComMaiorQuantidade;
+    }
+    
+    public void setStatus(Status novoStatus) {
+        this.status = novoStatus;
+    }
+    
+    public void setExperiencia(int novaExperiencia) {
+        this.experiencia = novaExperiencia;
+    }
+    
+    /**
+     * Imprime a vida atual do Orc.
+     * 
+     * @return String com a vida atual do orc
+     * Ex: "Vida atual: " + this.vida
+     */
+    public String toString() {
+        return "Vida atual: " + this.vida;
     }
 }
