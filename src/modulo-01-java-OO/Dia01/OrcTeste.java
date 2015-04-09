@@ -403,10 +403,58 @@ public class OrcTeste
         
         umOrc.tentarSorte();
         
-        ItemDoInventario pocao = umOrc.getItens().get(0);
-        ItemDoInventario lanca = umOrc.getItens().get(1);
+        ItemDoInventario pocao = umOrc.getInventario().get(0);
+        ItemDoInventario lanca = umOrc.getInventario().get(1);
         
         assertEquals(1003, pocao.getQuantidade());
         assertEquals(1001, lanca.getQuantidade());
+    }
+    
+    @Test
+    public void orcPegaOItemComMaiorQuantidade() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 10);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 20);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 30);
+        
+        umOrc.adicionarItem(espada);
+        umOrc.adicionarItem(escudo);
+        umOrc.adicionarItem(pocaoDeVida);
+        
+        ItemDoInventario resultadoObtido = umOrc.getItemComMaiorQuantidade();
+        
+        assertEquals(pocaoDeVida, resultadoObtido);
+    }
+    
+    @Test
+    public void orcPegaOItemComMaiorQuantidadeQuandoEleEstaNaPosicaoDois() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 10);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 30);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 20);
+        
+        umOrc.adicionarItem(espada);
+        umOrc.adicionarItem(escudo);
+        umOrc.adicionarItem(pocaoDeVida);
+        
+        ItemDoInventario resultadoObtido = umOrc.getItemComMaiorQuantidade();
+        
+        assertEquals(escudo, resultadoObtido);
+    }
+    
+    @Test
+    public void orcPegaOItemComMaiorQuantidadeQuandoTodosItensTemAMesmaQuantidade() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 10);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 10);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 10);
+        
+        umOrc.adicionarItem(espada);
+        umOrc.adicionarItem(escudo);
+        umOrc.adicionarItem(pocaoDeVida);
+        
+        ItemDoInventario resultadoObtido = umOrc.getItemComMaiorQuantidade();
+        
+        assertEquals(espada, resultadoObtido);
     }
 }
