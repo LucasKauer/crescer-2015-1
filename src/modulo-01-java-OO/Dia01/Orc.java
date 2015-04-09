@@ -165,6 +165,48 @@ public class Orc {
         }
     }
     
+    
+    /*
+     * auxiliar = get(i);  
+     * elementos[cont2] = elementos[cont2+1];  
+     * elementos[cont2+1] = aux;   
+     */
+    public void ordenarItens() {
+        if (inventario.size() > 0) {
+            ArrayList<ItemDoInventario> inventarioModificado;
+            inventarioModificado = new ArrayList<ItemDoInventario>();
+            int x = 0;
+            for (x = 0; x < inventario.size(); x++) {
+                ItemDoInventario itemComMenorQuantidade = this.inventario.get(x);
+                int menorQuantidade = this.inventario.get(x).getQuantidade();
+                for (int i = 1; i < inventario.size(); i++) {
+                    //http://pt.wikipedia.org/wiki/Selection_sort
+                ItemDoInventario itemAtual = this.inventario.get(i);
+                ItemDoInventario itemAnterior = this.inventario.get(i - 1);
+                
+                if (menorQuantidade > itemAtual.getQuantidade()) {
+                    
+                    
+                    
+                    /*inventarioModificado.remove(itemAnterior);
+                    inventarioModificado.add(itemAtual);
+                    inventarioModificado.add(itemAnterior);
+                    */
+                    inventario.set(x, itemAtual);
+                    inventario.set(i, itemComMenorQuantidade);
+                    itemComMenorQuantidade = itemAtual;
+                    menorQuantidade = itemAtual.getQuantidade();
+                    x=i;
+                }
+                
+                }
+                
+            }
+            
+        }
+        
+    }
+    
     // metódo responsável por retornar o nome do Orc
     public String getNome() {
         return this.nome;
@@ -337,8 +379,6 @@ public class Orc {
     public void setExperiencia(int novaExperiencia) {
         this.experiencia = novaExperiencia;
     }
-    
-    
     
     /**
      * Imprime a vida atual do Orc.

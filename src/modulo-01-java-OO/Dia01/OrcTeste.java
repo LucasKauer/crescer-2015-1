@@ -519,4 +519,28 @@ public class OrcTeste
         
         assertEquals(esperado, resultadoObtido);
     }
+    
+    // DESAFIO
+    @Test
+    public void orcOrdenarItensQuandoOUltimoForOMenor() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 3);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 2);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 1);
+        
+        umOrc.adicionarItem(espada);
+        umOrc.adicionarItem(escudo);
+        umOrc.adicionarItem(pocaoDeVida);
+        
+        umOrc.ordenarItens();
+        
+        ArrayList<ItemDoInventario> inventarioEsperado = new ArrayList<ItemDoInventario>();
+        inventarioEsperado.add(pocaoDeVida);
+        inventarioEsperado.add(escudo);
+        inventarioEsperado.add(espada);
+        
+        ArrayList<ItemDoInventario> esperado = inventarioEsperado;
+        
+        assertEquals(esperado, umOrc.getInventario());
+    }
 }
