@@ -410,6 +410,7 @@ public class OrcTeste
     }
     
     // Exemplo proposto em aula
+    // Vários itens com diferentes quantidades
     @Test
     public void orcPegaOItemComMaiorQuantidadeDeUnidades() {
         Orc umOrc = new Orc();
@@ -446,6 +447,19 @@ public class OrcTeste
         assertEquals(pocaoDeVida, resultadoObtido);
     }
     
+    // Um item
+    @Test
+    public void orcPegaOItemComMaiorQuantidadeQuandoTemUmItem() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 10);
+        
+        umOrc.adicionarItem(espada);
+        
+        ItemDoInventario resultadoObtido = umOrc.getItemComMaiorQuantidade();
+        
+        assertEquals(espada, resultadoObtido);
+    }
+    
     @Test
     public void orcPegaOItemComMaiorQuantidadeQuandoEleEstaNaPosicaoDois() {
         Orc umOrc = new Orc();
@@ -462,6 +476,23 @@ public class OrcTeste
         assertEquals(escudo, resultadoObtido);
     }
     
+    // Dois itens com a mesma quantidade
+    @Test
+    public void orcPegaOItemComMaiorQuantidadeQuandoDoisItensTemAMesmaQuantidade() {
+        Orc umOrc = new Orc();
+        ItemDoInventario espada = new ItemDoInventario("Espada", 20);
+        ItemDoInventario escudo = new ItemDoInventario("Escudo", 10);
+        ItemDoInventario pocaoDeVida = new ItemDoInventario("Poção de Vida", 20);
+        
+        umOrc.adicionarItem(espada);
+        umOrc.adicionarItem(escudo);
+        umOrc.adicionarItem(pocaoDeVida);
+        
+        ItemDoInventario resultadoObtido = umOrc.getItemComMaiorQuantidade();
+        
+        assertEquals(espada, resultadoObtido);
+    }
+    
     @Test
     public void orcPegaOItemComMaiorQuantidadeQuandoTodosItensTemAMesmaQuantidade() {
         Orc umOrc = new Orc();
@@ -476,5 +507,16 @@ public class OrcTeste
         ItemDoInventario resultadoObtido = umOrc.getItemComMaiorQuantidade();
         
         assertEquals(espada, resultadoObtido);
+    }
+    
+    // Nenhum item
+    @Test
+    public void orcPegaOItemComMaiorQuantidadeQuandoNaoTemItens() {
+        Orc umOrc = new Orc();
+        
+        ItemDoInventario esperado = null;
+        ItemDoInventario resultadoObtido = umOrc.getItemComMaiorQuantidade();
+        
+        assertEquals(esperado, resultadoObtido);
     }
 }
