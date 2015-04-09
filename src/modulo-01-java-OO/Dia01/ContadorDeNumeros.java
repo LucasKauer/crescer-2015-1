@@ -2,7 +2,7 @@
 /**
  * Objeto que sabe contar números em ordem!
  * 
- * @author CWI Software
+ * @author Lucas Kauer
  */
 public class ContadorDeNumeros {
     public void contarAte3() {

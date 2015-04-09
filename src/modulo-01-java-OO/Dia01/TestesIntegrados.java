@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Testes integrados entre objetos Elfo e Orc.
  *
- * @author  CWI Software
+ * @author  Lucas Kauer
  */
 public class TestesIntegrados
 {

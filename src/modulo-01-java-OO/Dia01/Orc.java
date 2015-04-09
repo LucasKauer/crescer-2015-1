@@ -20,13 +20,18 @@ public class Orc {
     }
     
     /**
-     * Construtor para objetos da classe Orc
+     * Cria objetos Orc (construtor)
+     * 
+     * @param nome Nome que o elfo receberá
      */
     public Orc(String nome) {
         // vida = 110
         this.nome = nome;
     }
     
+    /**
+     * Cria objetos Orc (construtor) sem nome
+     */
     public Orc() {
     }
            
@@ -121,10 +126,13 @@ public class Orc {
         return numeroGerado;
     }
     
-    // Exercício 5.2: um Orc pode tentarSorte() e
-    // ganhar 1000 unidades de cada item em seu inventário
-    // Como isso acontece? Caso um número sorteado seja 3481
+    /**
+     * Caso o Orc tenha sorte, adiciona 1000 quantidades para cada item do inventário.
+     */
     public void tentarSorte() {
+        // Exercício 5.2: um Orc pode tentarSorte() e
+        // ganhar 1000 unidades de cada item em seu inventário
+        // Como isso acontece? Caso um número sorteado seja 3481
         if (gerarNumero() == NUMERO_SORTE) {
             int numeroDeItens = this.inventario.size();
             for(int i = 0; i < numeroDeItens; i++) {
@@ -293,7 +301,6 @@ public class Orc {
     public ItemDoInventario getItemComMaiorQuantidade() {
         int maiorQuantidade = 0;
         ItemDoInventario itemComMaiorQuantidade = null;
-        if (this.inventario.size() > 0) {
             for(int i = 0; i < inventario.size(); i++) {
                 ItemDoInventario itemAtual = this.inventario.get(i);
                 if(maiorQuantidade < itemAtual.getQuantidade()) {
@@ -301,7 +308,6 @@ public class Orc {
                     itemComMaiorQuantidade = inventario.get(i);
                 }           
             }
-        }
         return itemComMaiorQuantidade;
     }
     

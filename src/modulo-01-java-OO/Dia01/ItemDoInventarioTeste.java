@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe de teste do ItemDoInventarioTest.
+ * Classe de teste do ItemDoInventarioTeste.
  *
  * @autor Lucas Kauer
  */

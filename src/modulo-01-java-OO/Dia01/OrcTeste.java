@@ -5,10 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * A classe de teste OrcTest.
+ * Testa o objeto Orc.
  *
- * @author  (seu nome)
- * @version (um número de versão ou data)
+ * @author  Lucas Kauer
  */
 public class OrcTeste
 {
