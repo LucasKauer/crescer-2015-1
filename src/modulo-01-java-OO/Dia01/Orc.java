@@ -165,46 +165,33 @@ public class Orc {
         }
     }
     
-    
-    /*
-     * auxiliar = get(i);  
-     * elementos[cont2] = elementos[cont2+1];  
-     * elementos[cont2+1] = aux;   
+    /**
+     * Ordena os itens do inventário em ordem ascendente.
      */
     public void ordenarItens() {
         if (inventario.size() > 0) {
             ArrayList<ItemDoInventario> inventarioModificado;
             inventarioModificado = new ArrayList<ItemDoInventario>();
             int x = 0;
-            for (x = 0; x < inventario.size(); x++) {
+            for (x = 0; x < inventario.size() - 1; x++) {
+                int j = x;
                 ItemDoInventario itemComMenorQuantidade = this.inventario.get(x);
                 int menorQuantidade = this.inventario.get(x).getQuantidade();
-                for (int i = 1; i < inventario.size(); i++) {
-                    //http://pt.wikipedia.org/wiki/Selection_sort
+
+                for (int i = j + 1; i < inventario.size(); i++) {
+                    
                 ItemDoInventario itemAtual = this.inventario.get(i);
                 ItemDoInventario itemAnterior = this.inventario.get(i - 1);
                 
                 if (menorQuantidade > itemAtual.getQuantidade()) {
-                    
-                    
-                    
-                    /*inventarioModificado.remove(itemAnterior);
-                    inventarioModificado.add(itemAtual);
-                    inventarioModificado.add(itemAnterior);
-                    */
-                    inventario.set(x, itemAtual);
+                    inventario.set(j, itemAtual);
                     inventario.set(i, itemComMenorQuantidade);
                     itemComMenorQuantidade = itemAtual;
                     menorQuantidade = itemAtual.getQuantidade();
-                    x=i;
                 }
-                
                 }
-                
             }
-            
         }
-        
     }
     
     // metódo responsável por retornar o nome do Orc
