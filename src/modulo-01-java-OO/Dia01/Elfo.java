@@ -4,7 +4,7 @@
  * @author Lucas Kauer
  */
 public class Elfo extends Personagem {
-    private int flechas;
+    protected int flechas;
  
     // type initializer
     {
