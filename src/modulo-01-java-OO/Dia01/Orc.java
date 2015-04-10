@@ -1,4 +1,5 @@
 import java.util.*;
+// IONIC!!! OLHAR ;DDD 10/04
 /**
  * Define o objeto Orc
  * 
@@ -166,15 +167,13 @@ public class Orc {
     }
     
     // http://pt.wikipedia.org/wiki/Selection_sort
+    // www.sorting-algoritthms.com
     /**
-     * Ordena os itens do inventário em ordem ascendente.
+     * Ordena os itens do inventário por quantidade ascendente.
      */
     public void ordenarItens() {
         if (inventario.size() > 0) {
-            ArrayList<ItemDoInventario> inventarioModificado;
-            inventarioModificado = new ArrayList<ItemDoInventario>();
-            int x = 0;
-            for (x = 0; x < inventario.size() - 1; x++) {
+            for (int x = 0; x < inventario.size() - 1; x++) {
                 int j = x;
                 ItemDoInventario itemComMenorQuantidade = this.inventario.get(x);
                 int menorQuantidade = this.inventario.get(x).getQuantidade();
@@ -186,6 +185,8 @@ public class Orc {
                     
                     if (menorQuantidade > itemAtual.getQuantidade()) {
                         // inventario.set(nova posição, elemento);
+                        // .set adiciona o elemento a posição informada,
+                        // mas não troca a posição do item que ocupava a posição anteriormente.
                         inventario.set(j, itemAtual);
                         inventario.set(i, itemComMenorQuantidade);
                         
@@ -195,6 +196,35 @@ public class Orc {
                 }
             }
         }
+        
+        /* Collections.sort(this.itens, new Comparator<ItemDoInventario>() {
+            public int compare(ItemDoInventario item, ItemDoInventario outroItem) {
+                return Integer.compare(item.getQuantidade(), outroItem.getQuantidade());
+            }
+        }); */
+        
+        // C#:
+        // return this.itens.OrderBy(x => x.getQuantidade());
+        
+        // Ruby:
+        // this.itens.sort_by { |x| x.get_quantidade }
+        
+        
+        // Algoritmo: Bubblesort
+        /* for (int i = 0; i < this.itens.size(); i++) {
+            for (int j = 0; j < this.itens.size() - 1; j++) {
+                ItemDoInventario itemAtual = this.itens.get(j);
+                ItemDoInventario proximo = this.itens.get(j + 1);
+                
+                boolean precisaTrocar = 
+                    itemAtual.getQuantidade() > proximo.getQuantidade();
+                
+                if (precisaTrocar) {
+                    this.itens.set(j, proximo);
+                    this.itens.set(j + 1, itemAtual);
+                }
+            }
+        } */
     }
     
     // metódo responsável por retornar o nome do Orc
