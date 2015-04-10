@@ -3,9 +3,8 @@
  * 
  * @author Lucas Kauer
  */
-public class Elfo {
-    private String nome;
-    private int flechas, experiencia;
+public class Elfo extends Personagem {
+    private int flechas;
  
     // type initializer
     {
@@ -21,7 +20,6 @@ public class Elfo {
     
     public Elfo(String nome, int flechas) {
         this(nome);
-        // this.nome = nome;
         this.flechas = flechas;
     }
     
@@ -32,7 +30,7 @@ public class Elfo {
      */
     
     public Elfo(String nome) {
-        this.nome = nome;
+        super(nome, 0);
     }
     
     /**
@@ -62,10 +60,6 @@ public class Elfo {
     
     public int getFlechas() {
         return this.flechas;
-    }
-    
-    public int getExperiencia() {
-        return this.experiencia;
     }
     
     // 07/04: OS TRÊS MÉTODOS ABAIXO DEVEM SER VERIFICADOS.

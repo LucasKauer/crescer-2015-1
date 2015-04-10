@@ -5,20 +5,12 @@ import java.util.*;
  * 
  * @author Lucas Kauer
  */
-public class Orc {
-    private int vida, experiencia;
-    private String nome;
-    private Status status = Status.VIVO;
-    private ArrayList<ItemDoInventario> inventario = new ArrayList<ItemDoInventario>();
+public class Orc extends Personagem {
     // final não deixa que o valor atribuído a variável seja alterado posteriormente.
     private final int NUMERO_SORTE = 3481;
     
     // C#
     // public Status StatusOrc { get; set }
-    
-    {
-        vida = 110;
-    }
     
     /**
      * Cria objetos Orc (construtor)
@@ -26,14 +18,14 @@ public class Orc {
      * @param nome Nome que o elfo receberá
      */
     public Orc(String nome) {
-        // vida = 110
-        this.nome = nome;
+        super(nome, 110);
     }
     
     /**
-     * Cria objetos Orc (construtor) sem nome
+     * Cria objetos Orc (construtor) com novo vazio (empty)
      */
     public Orc() {
+        this("");
     }
            
     /**
@@ -60,7 +52,7 @@ public class Orc {
                 if (this.vida >= danoVida) {
                     this.vida -= danoVida;
                     // this.vida = this.vida - 10;
-                    this.status = Status.FERIDO;
+                    super.status = Status.FERIDO;
                 }
             }
         }
@@ -141,255 +133,6 @@ public class Orc {
                 itemAtual.setQuantidade(itemAtual.getQuantidade() + 1000);
             }
         }
-    }
-    
-    // Tema: Permitir que Orcs ganhem e percam itens (ArrayList)
-    // Método para adicionar itens ao inventário.
-    /**
-     * Adiciona um item ao inventário.
-     * 
-     * @param item Item a ser adicionado.
-     */
-    public void adicionarItem(ItemDoInventario i) {
-        inventario.add(i);
-    }
-    
-    // Método para remover itens ao inventário.
-    /**
-     * Remove o item do inventário do orc.
-     * 
-     * @param item Item a ser perdido do inventário.
-     */
-    public void perderItem(ItemDoInventario i) {
-        if(inventario.size() > 0){
-            inventario.remove(i);
-        }
-    }
-    
-    // http://pt.wikipedia.org/wiki/Selection_sort
-    // www.sorting-algoritthms.com
-    /**
-     * Ordena os itens do inventário por quantidade ascendente.
-     */
-    public void ordenarItens() {
-        if (inventario.size() > 0) {
-            for (int x = 0; x < inventario.size() - 1; x++) {
-                int j = x;
-                ItemDoInventario itemComMenorQuantidade = this.inventario.get(x);
-                int menorQuantidade = this.inventario.get(x).getQuantidade();
-
-                for (int i = j + 1; i < inventario.size(); i++) {
-                    
-                    ItemDoInventario itemAtual = this.inventario.get(i);
-                    ItemDoInventario itemAnterior = this.inventario.get(i - 1);
-                    
-                    if (menorQuantidade > itemAtual.getQuantidade()) {
-                        // inventario.set(nova posição, elemento);
-                        // .set adiciona o elemento a posição informada,
-                        // mas não troca a posição do item que ocupava a posição anteriormente.
-                        inventario.set(j, itemAtual);
-                        inventario.set(i, itemComMenorQuantidade);
-                        
-                        itemComMenorQuantidade = itemAtual;
-                        menorQuantidade = itemAtual.getQuantidade();
-                    }
-                }
-            }
-        }
-        
-        /* Collections.sort(this.itens, new Comparator<ItemDoInventario>() {
-            public int compare(ItemDoInventario item, ItemDoInventario outroItem) {
-                return Integer.compare(item.getQuantidade(), outroItem.getQuantidade());
-            }
-        }); */
-        
-        // C#:
-        // return this.itens.OrderBy(x => x.getQuantidade());
-        
-        // Ruby:
-        // this.itens.sort_by { |x| x.get_quantidade }
-        
-        
-        // Algoritmo: Bubblesort
-        /* for (int i = 0; i < this.itens.size(); i++) {
-            for (int j = 0; j < this.itens.size() - 1; j++) {
-                ItemDoInventario itemAtual = this.itens.get(j);
-                ItemDoInventario proximo = this.itens.get(j + 1);
-                
-                boolean precisaTrocar = 
-                    itemAtual.getQuantidade() > proximo.getQuantidade();
-                
-                if (precisaTrocar) {
-                    this.itens.set(j, proximo);
-                    this.itens.set(j + 1, itemAtual);
-                }
-            }
-        } */
-    }
-    
-    // metódo responsável por retornar o nome do Orc
-    public String getNome() {
-        return this.nome;
-    }
-    
-    // metódo responsável por retornar a experência do Orc
-    public int getExperiencia() {
-        return this.experiencia;
-    }
-    
-    // metódo responsável por testar se o Orc está nascendo com 110 de vida.
-    public int getVida() {
-        return this.vida;
-    }
-    
-    // metódo responsável por testar se o método recebeFlecha está sendo executado corretamente
-    /* public int getRecebeFlecha() {
-        recebeFlecha();
-        return vida;
-    } */
-    
-    public Status getStatus() {
-        return this.status;
-    }
-    
-    public ArrayList<ItemDoInventario> getInventario() {
-        return this.inventario;
-    }
-    
-    public int getTamanhoDoInventario() {
-        return inventario.size();
-    }
-    
-    /**
-     * Concatena as descrições dos itens, separados por vírgulas
-     * 
-     * SEM ESPAÇO ENTRE AS VÍRGULAS E SEM PONTO FINAL
-     * 
-     * @return Descrições. Ex:
-     * 
-     * "Adaga,Escudo,Bracelete"
-     */
-    /* It's mine!
-     * 
-     * public String getDescricoesInventario() {
-     *  String descricoesInventario = null;
-     *  for (int i = 0; i <= inventario.size(); i++) {
-     *      // Lembrar de separar os algoritmos por parte para não se confundir!
-     *      // ItemDoInventario (Construtor)
-     *      // itemAtual (Nome Informado ao Construtor)
-     *      // inventario.get(i) (Item Atual);
-     *      ItemDoInventario itemAtual = inventario.get(i);
-     *      if (i == inventario.size()) {
-     *          descricoesInventario = itemAtual.getDescricao();
-     *          break;
-     *      } else {
-     *          descricoesInventario = itemAtual.getDescricao() + ",";
-     *      }
-     *  }
-     *  return descricoesInventario;
-     *  }
-     */
-    public String getDescricoesItens() {
-        StringBuilder builder = new StringBuilder();
-        
-        /* int numeroDeItens = this.inventario.size();
-        
-         for (int i = 0; i < numeroDeItens; i++) {
-           ItemDoInventario itemAtual = this.inventario.get(i);
-             
-           boolean eUltimoIndice = i == numeroDeItens - 1;
-           
-           builder.append(
-               eUltimoIndice ?
-               itemAtual.getDescricao() :
-               itemAtual.getDescricao() + ","
-           );
-        } */
-        
-        // C#
-        // foreach (ItemDoInventario item in this.itens) { }
-        
-        /*
-         * Utilizando foreach
-           for (ItemDoInventario itemAtual : this.inventario) {
-            int i = this.inventario.indexOf(itemAtual);
-            int numeroDeItens = this.inventario.size();
-            boolean eUltimoIndice = i == numeroDeItens - 1;
-            
-            builder.append(
-                eUltimoIndice ?
-                itemAtual.getDescricao() :
-                itemAtual.getDescricao() + ","
-            );
-        }
-        */
-        
-        int i = 0;
-        int numeroDeItens = this.inventario.size();
-        
-        // JavaScript
-        // for (var i = 0, numeroDeItens = this.inventario.size(); i < numeroDeItens; i++) {
-        // }
-        
-        /* while (i < numeroDeItens) {
-            ItemDoInventario itemAtual = this.inventario.get(i);
-            boolean eUltimoIndice = i == numeroDeItens - 1;
-            
-            builder.append(
-                eUltimoIndice ?
-                itemAtual.getDescricao() :
-                itemAtual.getDescricao() + ","
-            );
-            i++;
-        } */
-        
-        do {
-            if (numeroDeItens > 0) {
-                ItemDoInventario itemAtual = this.inventario.get(i);
-                boolean eUltimoIndice = i == numeroDeItens - 1;
-                // boolean eUltimoIndice = true
-                
-                builder.append(
-                    eUltimoIndice ?
-                    itemAtual.getDescricao() :
-                    itemAtual.getDescricao() + ","
-                );
-            }
-            i++;
-        } while (i < numeroDeItens);
-        
-        return builder.toString();
-    }
-    
-    public ItemDoInventario getItemComMaiorQuantidade() {
-        int maiorQuantidade = 0;
-        ItemDoInventario itemComMaiorQuantidade = null;
-            for(int i = 0; i < inventario.size(); i++) {
-                ItemDoInventario itemAtual = this.inventario.get(i);
-                if(maiorQuantidade < itemAtual.getQuantidade()) {
-                    maiorQuantidade = itemAtual.getQuantidade();
-                    itemComMaiorQuantidade = inventario.get(i);
-                }           
-            }
-        
-        // Exemplo: Bernardo
-        /* boolean temItens = !this.inventario.isEmpty();
-        if (temItens) {
-            itemMaiorQuantidade = this.inventario.get(0)
-            
-            for (int i = 1; i < this.inventario.size(); i++) {
-                ItemDoInventario itemAtual = this.inventario.get(i);
-                boolean encontreiAMaiorQuantidade =
-                    itemAtual.getQuantidade > itemMaiorQuantidade();
-                    
-                if (encontreiAMaiorQuantidade) {
-                    // autalizar a minha referência para o maior parcial
-                    itemMaiorQuantidade = itemAtual;
-                }
-            }
-        } */
-            
-        return itemComMaiorQuantidade;
     }
     
     public void setStatus(Status novoStatus) {
