@@ -14,7 +14,7 @@ public class Elfo extends Personagem {
     /**
      * Cria objetos Elfo (construtor)
      * 
-     * @param umNome Nome que o elfo receberá
+     * @param nome Nome que o elfo receberá
      * @param flechas Quantidade inicial de flechas
      */
     
@@ -38,9 +38,9 @@ public class Elfo extends Personagem {
      * @param umOrc Orc que receberá uma flechada.
      */
     public void atiraFlecha(Orc umOrc) {
-        flechas--;
+        this.flechas--;
         //flechas = flechas - 1;
-        experiencia++;
+        super.experiencia++;
         // experiencia = experiencia + 1;
         umOrc.recebeAtaque();
     }
@@ -53,10 +53,6 @@ public class Elfo extends Personagem {
     
     // camelCase: public void atirarFlechaDourada
     // PascalCase: public void AtirarFlechaDourada
-    
-    public String getNome() {
-        return this.nome;
-    }
     
     public int getFlechas() {
         return this.flechas;
@@ -85,7 +81,6 @@ public class Elfo extends Personagem {
      * 
      * "Legolas possui 42 flechas e 0 níveis de experiência."
      */
-    
     public String toString() {
         // Método pedreiro (StringBuilder)
         // Poderia remover o StringBuild quando usa String.format
