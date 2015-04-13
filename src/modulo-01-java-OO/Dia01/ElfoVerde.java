@@ -2,8 +2,7 @@
 /**
  * Escreva a descrição da classe ElfoVerde aqui.
  * 
- * @author (seu nome) 
- * @version (número de versão ou data)
+ * @author Lucas Kauer
  */
 public class ElfoVerde extends Elfo {
     
