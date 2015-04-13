@@ -128,4 +128,61 @@ public class ElfoNoturnoTeste
         int resultadoObtido = umElfo.getVida();
         assertEquals(resultadoObtido, esperado);
     }
+    
+    @Test
+    public void elfoNoturnoMorreQuandoAtira45Flechas() {
+        // Arrange
+        // Act
+        ElfoNoturno umElfo = new ElfoNoturno("umNome");
+        // Assert
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        umElfo.atiraFlecha(new Orc());
+        
+        Status esperado = Status.MORTO;
+        Status resultadoObtido = umElfo.getStatus();
+        assertEquals(resultadoObtido, esperado);
+    }
 }

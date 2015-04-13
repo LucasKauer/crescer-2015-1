@@ -1,11 +1,9 @@
-
 /**
  * Escreva a descrição da classe ElfoNoturno aqui.
  * 
  * @author Lucas Kauer
  */
-public class ElfoNoturno extends Elfo
-{
+public class ElfoNoturno extends Elfo {
     /**
      * Cria objetos Elfo Noturno(construtor)
      * 
@@ -30,9 +28,12 @@ public class ElfoNoturno extends Elfo
      * Atira uma flecha em um Orc e perde uma unidade de flechas.
      * @param umOrc Orc que receberá uma flechada.
      */
+    @Override
     public void atiraFlecha(Orc umOrc) {
         super.atiraFlecha(umOrc);
         super.experiencia += 2;
-        super.vida -= (5 * vida) / 100;
+        super.vida -= (double) (5 * vida) / 100;
+        
+        super.atualizarStatus();
     }
 }

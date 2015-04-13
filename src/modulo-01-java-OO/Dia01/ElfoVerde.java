@@ -1,4 +1,3 @@
-
 /**
  * Escreva a descrição da classe ElfoVerde aqui.
  * 
@@ -30,11 +29,13 @@ public class ElfoVerde extends Elfo {
      * Atira uma flecha em um Orc e perde uma unidade de flechas.
      * @param umOrc Orc que receberá uma flechada.
      */
+    @Override
     public void atiraFlecha(Orc umOrc) {
         super.atiraFlecha(umOrc);
         super.experiencia++;
     }
     
+    @Override
     public void adicionarItem(ItemDoInventario i) {
         String descricaoDoItem = i.getDescricao();
         boolean EEspadaDeAcoValirianoOuArcoEFlechaDeVidro = descricaoDoItem.equalsIgnoreCase("Espada de aço valiriano") || descricaoDoItem.equalsIgnoreCase("Arco e Flecha de vidro");; 

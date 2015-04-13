@@ -1,4 +1,3 @@
-
 /**
  * Objeto que sabe contar números em ordem!
  * 
