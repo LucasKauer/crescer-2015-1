@@ -2,8 +2,7 @@
 /**
  * Escreva a descrição da classe ElfoNoturno aqui.
  * 
- * @author (seu nome) 
- * @version (número de versão ou data)
+ * @author Lucas Kauer
  */
 public class ElfoNoturno extends Elfo
 {
