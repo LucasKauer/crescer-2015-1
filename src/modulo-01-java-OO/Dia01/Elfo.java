@@ -143,4 +143,15 @@ public class Elfo extends Personagem {
         + this.experiencia + " "
         + textoNiveis + "de experiência."; */
     }
+    
+    @Override
+    public boolean equals(Object outro) {
+        // return ((Elfo)outro).getNome().equals(this.nome);
+        
+        Elfo outroElfo = (Elfo) outro;
+        
+        boolean saoIguais = this.nome.equals(outroElfo.getNome());
+        
+        return saoIguais;
+    }
 }
