@@ -5,10 +5,12 @@
  */
 public class Elfo extends Personagem {
     protected int flechas;
+    private static int contadorElfosCriados;
  
     // type initializer
     {
         flechas = 42;
+        Elfo.contadorElfosCriados++;
     }
     
     /**
@@ -72,6 +74,14 @@ public class Elfo extends Personagem {
     public int getGanhaExperiencia() {
         getAtirarFlecha();
         return experiencia;
+    }
+    
+    public static int getContadorElfosCriados() {
+        return contadorElfosCriados;
+    }
+    
+    public static void resetarContadorElfosCriados() {
+        contadorElfosCriados = 0;
     }
     
     /**

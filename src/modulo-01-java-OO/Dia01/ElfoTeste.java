@@ -165,4 +165,50 @@ public class ElfoTeste
                 umElfo.getNome());
         assertEquals(esperado, resultadoObtido);
     }
+    
+    // Exercício 9.1
+    @Test
+    public void elfoContadorRetorna1() {
+        Elfo umElfo = new Elfo("umNome");
+        
+        int resultadoObtido = Elfo.getContadorElfosCriados();
+        int esperado = 1;
+        assertEquals(esperado, resultadoObtido);
+    }
+    
+    @Test
+    public void elfoContadorRetorna5() {
+        Elfo umElfo = new Elfo("umNome");
+        Elfo doisElfo = new Elfo("doisNome");
+        Elfo tresElfo = new Elfo("trêsNome");
+        Elfo quatroElfo = new Elfo("quatroNome");
+        Elfo cincoElfo = new Elfo("cincoNome");
+        
+        int resultadoObtido = Elfo.getContadorElfosCriados();
+        int esperado = 5;
+        assertEquals(esperado, resultadoObtido);
+    }
+    
+    @Test
+    public void elfoContadorRetorna10() {
+        Elfo umElfo = new Elfo("umNome");
+        Elfo doisElfo = new Elfo("doisNome");
+        Elfo tresElfo = new Elfo("trêsNome");
+        Elfo quatroElfo = new Elfo("quatroNome");
+        Elfo cincoElfo = new Elfo("cincoNome");
+        Elfo seisElfo = new Elfo("seisNome");
+        Elfo seteElfo = new Elfo("seteNome");
+        Elfo oitoElfo = new Elfo("oitoNome");
+        Elfo noveElfo = new Elfo("noveNome");
+        Elfo dezElfo = new Elfo("dezNome");
+        
+        int resultadoObtido = Elfo.getContadorElfosCriados();
+        int esperado = 10;
+        assertEquals(esperado, resultadoObtido);
+    }
+    
+    @Before
+    public void setUp() {
+        Elfo.resetarContadorElfosCriados();
+    }
 }
