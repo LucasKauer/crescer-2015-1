@@ -42,5 +42,10 @@ public class ElfoVerde extends Elfo {
         if (EEspadaDeAcoValirianoOuArcoEFlechaDeVidro) {
             super.adicionarItem(i);
         }
+    } 
+    
+    @Override
+    public String toString() {
+        return "Elfo Verde: " + super.toString();
     }
 }
