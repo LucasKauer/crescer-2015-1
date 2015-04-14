@@ -32,8 +32,14 @@ public class ElfoNoturno extends Elfo {
     public void atiraFlecha(Orc umOrc) {
         super.atiraFlecha(umOrc);
         super.experiencia += 2;
-        super.vida -= (double) (5 * vida) / 100;
+        super.vida -= (5 * vida) / 100;
         
-        super.atualizarStatus();
+        super.status = this.vida < 1 ? Status.MORTO : super.status;
+        // super.atualizarStatus();
+    }
+    
+    @Override
+    public String toString() {
+        return "Elfo Noturno: " + super.toString();
     }
 }

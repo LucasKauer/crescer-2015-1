@@ -9,7 +9,7 @@ import java.util.*;
 // public final class Personagem
 public class Personagem {
     protected Status status = Status.VIVO;
-    protected int vida = 0;
+    protected double vida = 0;
     protected String nome;
     protected int experiencia;
     protected ArrayList<ItemDoInventario> inventario = new ArrayList<ItemDoInventario>();
@@ -19,17 +19,17 @@ public class Personagem {
         this.vida = vida;
     }
     
-    public void atualizarStatus() {
-        if(this.vida <= 0) {
+    /* public void atualizarStatus() {
+        if(this.vida < 1) {
             this.status = Status.MORTO;
         }
-    }
+    } */
     
     protected Status getStatus() {
         return this.status;
     }
     
-    protected int getVida() {
+    protected double getVida() {
         return this.vida;
     }
     

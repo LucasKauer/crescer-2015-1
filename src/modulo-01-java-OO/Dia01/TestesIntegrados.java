@@ -10,6 +10,7 @@ import org.junit.Test;
  */
 public class TestesIntegrados
 {
+    private final double DELTA = 0.005;
     @Test
     public void umElfoAtiraEmDoisOrcs() {
         // Arrange
@@ -22,13 +23,13 @@ public class TestesIntegrados
         // Assert
         int experienciaEsperada = 2;
         int flechasEsperadas = 40;
-        int vidaEsperadaOrc = 100;
-        String toStringEsperadoOrc = "Vida atual: 100";
+        double vidaEsperadaOrc = 100;
+        String toStringEsperadoOrc = "Vida atual: 100.0";
         
         assertEquals(experienciaEsperada, umElfo.getExperiencia());
         assertEquals(flechasEsperadas, umElfo.getFlechas());
-        assertEquals(vidaEsperadaOrc, umOrc1.getVida());
-        assertEquals(vidaEsperadaOrc, umOrc2.getVida());
+        assertEquals(vidaEsperadaOrc, umOrc1.getVida(), DELTA);
+        assertEquals(vidaEsperadaOrc, umOrc2.getVida(), DELTA);
         assertEquals(toStringEsperadoOrc, umOrc1.toString());
         assertEquals(toStringEsperadoOrc, umOrc2.toString());
     }

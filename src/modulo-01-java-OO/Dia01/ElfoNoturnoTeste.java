@@ -10,6 +10,7 @@ import org.junit.Test;
  */
 public class ElfoNoturnoTeste
 {
+    private final double DELTA = 0.005;
     @Test
     public void elfoNoturnoNasceComNomeInformado() {
         // Arrange
@@ -124,63 +125,22 @@ public class ElfoNoturnoTeste
         // Assert
         umElfo.atiraFlecha(new Orc());
         
-        int esperado = 95;
-        int resultadoObtido = umElfo.getVida();
-        assertEquals(resultadoObtido, esperado);
+        double esperado = 95;
+        double resultadoObtido = umElfo.getVida();
+        assertEquals(esperado, resultadoObtido, DELTA);
     }
     
     @Test
-    public void elfoNoturnoMorreQuandoAtira45Flechas() {
+    public void elfoNoturnoMorreQuandoAtira90Flechas() {
         // Arrange
         // Act
         ElfoNoturno umElfo = new ElfoNoturno("umNome");
         // Assert
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
-        umElfo.atiraFlecha(new Orc());
         
+        for (int i = 0; i < 90; i++) {
+            umElfo.atiraFlecha(new Orc());
+        }
+
         Status esperado = Status.MORTO;
         Status resultadoObtido = umElfo.getStatus();
         assertEquals(resultadoObtido, esperado);
