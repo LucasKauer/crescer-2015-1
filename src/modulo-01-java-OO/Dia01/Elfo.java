@@ -45,6 +45,7 @@ public class Elfo extends Personagem {
         super.experiencia++;
         // experiencia = experiencia + 1;
         umOrc.recebeAtaque();
+        super.status = Status.ATACANDO;
     }
    
     /*public void setFlechas(int novaQtdFlechas) {
