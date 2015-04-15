@@ -6,6 +6,7 @@ import java.util.HashMap;
  */
 public class ExercitoDeElfos {
     private HashMap<String, Elfo> exercito = new HashMap<>();
+    private HashMap<Status, Elfo> exercitoAgrupadoPorStatus = new HashMap<>();
     
     /**
      * Alista o elfo no exército para que seja utilizado em batalha.
@@ -29,6 +30,16 @@ public class ExercitoDeElfos {
      */
     public Elfo buscarNomeDoElfo(String nome) {
         return exercito.get(nome);
+    }
+    
+    /**
+     * Agrupa os elfos do exército por Status.
+     */
+    public void agruparElfosPorStatus() {
+        for(String key : exercito.keySet()) {
+            Elfo umElfo = exercito.get(key);
+            exercitoAgrupadoPorStatus.put(umElfo.getStatus(), umElfo);
+        }
     }
     
     public HashMap<String, Elfo> getExercito() {
