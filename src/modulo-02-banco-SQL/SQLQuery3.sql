@@ -1,0 +1,11 @@
+CREATE TABLE Cidade
+(
+ IDCidade INT NOT NULL,
+ Nome VARCHAR(30) NOT NULL,
+ UF VARCHAR(2) NOT NULL,
+	CONSTRAINT PK_Cidade PRIMARY KEY (IDCidade),
+	CONSTRAINT UK_Cidade_nOME UNIQUE (Nome)
+);
+
+INSERT INTO Cidade VALUES (1, 'Novo Hamburgo', 'RS');
+SELECT * FROM Cidade;
