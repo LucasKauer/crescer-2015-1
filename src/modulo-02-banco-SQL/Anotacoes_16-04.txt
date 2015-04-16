@@ -1,0 +1,15 @@
+Resposta dos Exercícios (16/04):
+
+1) TABLE
+2) VIEW - SQL salvo no banco (consulta que tem uma restrição)
+3) Criar uma FUNCTIONS passando como parâmetro o ID
+4) PROCEDURE
+5) IDENTITY OR SEQUENCE
+6)
+7) ALTER TABLE (ESTRUTURA) [UPDATE (DADOS)]
+8) CHECK
+9)
+10) FOREIGN KEY
+
+
+e-Mail do Andre: andrenunes@cwi.com.br
