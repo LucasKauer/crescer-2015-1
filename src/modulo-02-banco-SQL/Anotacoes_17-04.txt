@@ -1,0 +1,4 @@
+Texto para a descrição de atividade dos contratos:
+- Aprimorar técnicas de desenvolvimento de software;
+- Identificar e oferecer soluções para bugs de software;
+- Compreender e aperfeiçoar a arquitetura e a qualidade de aplicações.
