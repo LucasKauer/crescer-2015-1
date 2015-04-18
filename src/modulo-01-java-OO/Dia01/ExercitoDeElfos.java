@@ -86,4 +86,8 @@ public class ExercitoDeElfos {
     public HashMap<Status, ArrayList<Elfo>> getExercitoAgrupadoPorStatus() {
         return this.exercitoAgrupadoPorStatus;
     }
+    
+    public ArrayList<Elfo> getOrdemDoUltimoAtaque() {
+        return this.estrategia.getOrdemDoUltimoAtaque();
+    }
 }
