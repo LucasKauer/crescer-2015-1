@@ -1,9 +1,14 @@
+import java.util.Arrays;
 /**
- * Escreva a descrição da classe ElfoVerde aqui.
+ * Define objetos ElfoVerde.
  * 
  * @author Lucas Kauer
  */
 public class ElfoVerde extends Elfo {
+    private final String[] ITENS_PERMITIDOS = new String[] {
+        "Espada de aço valiriano",
+        "Arco e Flecha de vidro"
+    };
     
     /**
      * Cria objetos Elfo Verde(construtor)
@@ -37,9 +42,9 @@ public class ElfoVerde extends Elfo {
     
     @Override
     public void adicionarItem(ItemDoInventario i) {
-        String descricaoDoItem = i.getDescricao();
-        boolean EEspadaDeAcoValirianoOuArcoEFlechaDeVidro = descricaoDoItem.equalsIgnoreCase("Espada de aço valiriano") || descricaoDoItem.equalsIgnoreCase("Arco e Flecha de vidro");; 
-        if (EEspadaDeAcoValirianoOuArcoEFlechaDeVidro) {
+        boolean descricaoValida = i != null && Arrays.asList(ITENS_PERMITIDOS).contains(i.getDescricao());
+
+        if (descricaoValida) {
             super.adicionarItem(i);
         }
     } 
