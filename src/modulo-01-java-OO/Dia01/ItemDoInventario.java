@@ -8,6 +8,13 @@ public class ItemDoInventario
     private String descricao;
     private int quantidade;
     
+    
+    /**
+     * Cria um item de inventário com a quantidade e descrição informadas.
+     * 
+     * @param quantidade Quantidade de unidades no inventário
+     * @param descricao Descrição do item
+     */
     public ItemDoInventario() {
     }
     
@@ -24,9 +31,6 @@ public class ItemDoInventario
         return this.descricao;
     }
     
-    public void setDescricao(String novaDescricao) {
-        this.descricao = novaDescricao;
-    }
     public void setQuantidade(int novaQuantidade) {
         this.quantidade = novaQuantidade;
     }

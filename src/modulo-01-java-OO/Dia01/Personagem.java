@@ -1,6 +1,6 @@
 import java.util.*;
 /**
- * Escreva a descrição da classe Personagem aqui.
+ * Classe base para todos Personagem objetos do jogo.
  * 
  * @author Lucas Kauer
  */
@@ -57,7 +57,7 @@ public class Personagem {
      * @param item Item a ser adicionado.
      */
     protected void adicionarItem(ItemDoInventario i) {
-        inventario.add(i);
+        this.inventario.add(i);
     }
     
     // Método para remover itens ao inventário.
@@ -68,7 +68,7 @@ public class Personagem {
      */
     protected void perderItem(ItemDoInventario i) {
         if(inventario.size() > 0){
-            inventario.remove(i);
+            this.inventario.remove(i);
         }
     }
     

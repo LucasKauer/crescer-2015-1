@@ -1,7 +1,7 @@
 import java.util.*;
 // IONIC!!! OLHAR ;DDD 10/04
 /**
- * Define o objeto Orc
+ * Define objetos Orc
  * 
  * @author Lucas Kauer
  */
@@ -92,7 +92,7 @@ public class Orc extends Personagem {
             numeroGerado *= 3;
         }
         
-        // Se o orc estiver fugindo, divida o número por 2.
+        // C. Se o orc estiver fugindo, divida o número por 2.
         // Senão se o orc estiver caçando ou dormindo adicione 1 ao número. 
         boolean estaFugindo = this.status == Status.FUGINDO;
         boolean estaCaçandoOuDormindo =
@@ -105,7 +105,7 @@ public class Orc extends Personagem {
             numeroGerado += 1;
         }
         
-        // Se a experiência do orc for par, eleve o número ao cubo.
+        // D. Se a experiência do orc for par, eleve o número ao cubo.
         // Se for ímpar e o orc tiver mais que 2 de experiência, eleve o número ao quadrado.
         boolean experienciaÉPar = this.experiencia % 2 == 0;
         

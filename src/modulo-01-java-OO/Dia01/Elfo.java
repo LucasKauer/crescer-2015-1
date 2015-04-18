@@ -1,5 +1,5 @@
 /**
- * Define o  objeto Elfo
+ * Define objetos Elfo
  * 
  * @author Lucas Kauer
  */

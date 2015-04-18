@@ -1,6 +1,6 @@
 import java.util.*;
 /**
- * Escreva a descrição da classe ExercitoDeElfos aqui.
+ * Abstração para um exército de Elfos.
  * 
  * @author Lucas Kauer
  */
@@ -59,7 +59,7 @@ public class ExercitoDeElfos {
             if (exercitoAgrupadoPorStatus.containsKey(status)) {
                 exercitoAgrupadoPorStatus.get(status).add(umElfo);
             } else {
-                exercitoAgrupadoPorStatus.put(status, new ArrayList<> (
+                this.exercitoAgrupadoPorStatus.put(status, new ArrayList<> (
                     Arrays.asList(umElfo)
                 ));
                 
@@ -72,7 +72,11 @@ public class ExercitoDeElfos {
     public void atacarHorda(ArrayList<Orc> orcs) {        
         ArrayList<Elfo> elfosQueVãoPraPeleia = buscarElfosPorStatus(Status.VIVO);
         
-        estrategia.atacarOrcs(elfosQueVãoPraPeleia, orcs);
+        this.estrategia.atacarOrcs(elfosQueVãoPraPeleia, orcs);
+    }
+    
+    public void mudarDeEstrategia(EstrategiaDeAtaque estrategia) {
+        this.estrategia = estrategia;
     }
     
     public HashMap<String, Elfo> getExercito() {
@@ -80,6 +84,6 @@ public class ExercitoDeElfos {
     }
     
     public HashMap<Status, ArrayList<Elfo>> getExercitoAgrupadoPorStatus() {
-        return exercitoAgrupadoPorStatus;
+        return this.exercitoAgrupadoPorStatus;
     }
 }

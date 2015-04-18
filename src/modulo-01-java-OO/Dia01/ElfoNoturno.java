@@ -1,5 +1,5 @@
 /**
- * Escreva a descrição da classe ElfoNoturno aqui.
+ * Descreve comportamento dos Elfos Noturnos
  * 
  * @author Lucas Kauer
  */
