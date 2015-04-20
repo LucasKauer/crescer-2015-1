@@ -74,3 +74,92 @@ SELECT IDCidade,
 	Nome
 FROM Cidade
 WHERE UF = 'RS';
+
+-- Exemplos COUNT --
+SELECT	COUNT (IDEmpregado) FROM Empregado;
+SELECT	COUNT (*)			FROM Empregado;
+SELECT	COUNT (1)			FROM Empregado;
+SELECT	COUNT (comissao),
+		COUNT (IDEmpregado),
+		COUNT (1)
+FROM Empregado;
+
+SELECT *, 1 FROM Empregado;
+
+
+-- Exemplo Distinct --
+SELECT	COUNT(1) as TotalEmpregados,
+		COUNT(DISTINCT Cargo) as TotalCargos
+FROM Empregado;
+
+SELECT DISTINCT Cargo FROM Empregado;
+
+SELECT COUNT(DISTINCT Cargo) AS total_cargos
+FROM Empregado;
+
+SELECT	SUM(salario)	AS soma,
+		MAX(salario)		AS maximo,
+		MIN(salario)	AS minimo
+FROM Empregado;
+
+SELECT	IDDepartamento,
+		SUM(salario)	AS soma,
+		MAX(salario)		AS maximo,
+		MIN(salario)	AS minimo
+FROM Empregado
+-- WHERE --
+GROUP BY IDDepartamento;
+-- ORDER BY --
+
+SELECT NomeEmpregado,
+		(Salario + Comissao) as Total_sal_a,
+		(Salario + (ISNULL(Comissao, 0))) as Total_sal_b,
+		Comissao
+FROM Empregado;
+
+SELECT	IDAssociado,
+		Nome,
+		CASE	WHEN sexo = 'F' THEN 'Feminino'
+				WHEN sexo = 'M' THEN 'Masculino'
+				ELSE		'Sei lá'
+				END	Genero
+FROM Associado;
+
+-- or --
+
+SELECT	IDAssociado,
+		Nome,
+		CASE	Sexo
+				WHEN 'F' THEN 'Feminino'
+				WHEN 'M' THEN 'Masculino'
+				ELSE		'Sei lá'
+				END	Genero2
+FROM Associado;
+
+-- Exercício SLIDE 17 (20/04) --
+
+-- 1 --
+SELECT SUBSTRING(Nome, 1, CHARINDEX(' ', Nome) -1) as Primeiro_Nome
+FROM Associado;
+
+-- 2 --
+SELECT	Nome,
+		DATEDIFF(DAY, DataNascimento, GETDATE()) / 365.25
+FROM Associado;
+
+-- 3 --
+SELECT NomeEmpregado,
+		DATEDIFF(MONTH, DataAdmissao, '31/12/2000') as Total_Meses_Trabalhados
+FROM Empregado
+WHERE DataAdmissao BETWEEN '01/05/1980' AND '20/01/82';
+
+-- 4 --
+SELECT TOP 1 Cargo AS Cargo_Possui_Mais_Empregados
+FROM Empregado;
+
+-- 5 --
+SELECT TOP 1 Nome AS Nome_Possui_Mais_Caracteres
+FROM Associado
+ORDER BY LEN(Nome) DESC;
+
+-- 6 --
