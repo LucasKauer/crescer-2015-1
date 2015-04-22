@@ -205,3 +205,56 @@ FROM Cidade
 GROUP BY Nome, UF;
 Select * From CopiaCidade;
 SP_HELP 'CopiaCidade'
+
+-- 11 --
+BEGIN TRANSACTION
+GO
+
+UPDATE Cidade
+SET Nome = '* ' + Nome
+WHERE Nome IN	(SELECT Nome
+				FROM Cidade
+				GROUP BY Nome
+				HAVING COUNT(1) > 1);
+
+SELECT * From Cidade;
+
+-- 12 --
+
+-- 13 --
+
+-- 14 --
+
+-- 15 --
+
+-- Relacionamentos --
+UPDATE Associado
+SET IDCidade = 1
+WHERE IDAssociado = 1;
+
+UPDATE Associado
+SET IDCidade = 32
+WHERE IDAssociado = 3;
+
+-- 1 --
+SELECT	e.NomeEmpregado,
+		d.NomeDepartamento
+FROM Empregado e
+		LEFT JOIN Departamento d on d.IDDepartamento = e.IDDepartamento
+
+-- 2 --
+SELECT	a.Nome,
+		c.Nome
+FROM Associado a
+		LEFT JOIN Cidade c on c.IDCidade = a.IDCidade
+
+-- 3 --
+SELECT	UF,
+		COUNT(Nome) AS [Total de Cidade S/ Associados]
+FROM Cidade c
+WHERE NOT EXISTS	(SELECT 1
+				FROM Associado a
+				WHERE a.IDCidade = c.IDCidade)
+GROUP BY UF;
+
+-- 4 --
