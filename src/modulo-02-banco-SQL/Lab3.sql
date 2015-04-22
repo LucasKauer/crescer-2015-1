@@ -139,27 +139,53 @@ FROM Associado;
 -- Exercício SLIDE 17 (20/04) --
 
 -- 1 --
-SELECT SUBSTRING(Nome, 1, CHARINDEX(' ', Nome) -1) as Primeiro_Nome
-FROM Associado;
+SELECT	SUBSTRING(Nome, 1, CHARINDEX(' ', Nome) -1) AS [Primeiro Nome]
+FROM	Associado;
 
 -- 2 --
-SELECT	Nome,
-		DATEDIFF(DAY, DataNascimento, GETDATE()) / 365.25
-FROM Associado;
+SELECT	Nome, 
+		DATEDIFF(YEAR, DataNascimento, GETDATE()) AS Idade
+FROM	Associado;
 
 -- 3 --
-SELECT NomeEmpregado,
-		DATEDIFF(MONTH, DataAdmissao, '31/12/2000') as Total_Meses_Trabalhados
-FROM Empregado
-WHERE DataAdmissao BETWEEN '01/05/1980' AND '20/01/82';
+SELECT	NomeEmpregado,
+		DATEDIFF(MONTH, DataAdmissao, CONVERT(DATETIME, '31/12/2000', 103)) AS [Total de Meses Trabalhados]
+FROM	Empregado
+WHERE	DataAdmissao	BETWEEN	CONVERT(DATETIME, '01/05/1980', 103)
+						AND		CONVERT(DATETIME, '20/01/1982', 103);
 
 -- 4 --
-SELECT TOP 1 Cargo AS Cargo_Possui_Mais_Empregados
-FROM Empregado;
+SELECT	TOP 1 WITH TIES
+		Cargo,
+		COUNT(1) AS [Cargo Que Possui Mais Empregados]
+FROM	Empregado
+GROUP BY Cargo
+ORDER BY [Cargo Que Possui Mais Empregados] DESC;
 
 -- 5 --
-SELECT TOP 1 Nome AS Nome_Possui_Mais_Caracteres
-FROM Associado
-ORDER BY LEN(Nome) DESC;
+SELECT TOP 1	Nome AS [Nome Que Possui Mais Caracteres]
+FROM			Associado
+ORDER BY		LEN(Nome) DESC;
 
 -- 6 --
+SELECT	Nome,
+		DATEADD(YEAR, 50, DataNascimento) as [Data dos 50 anos],
+		DATEPART(WEEKDAY, DATEADD(YEAR, 50, DataNascimento)) AS [Dia da Semana]
+FROM Associado;
+
+-- 7 --
+SELECT	UF,
+		COUNT(UF) AS [Quatidade de Cidades]
+FROM Cidade
+GROUP BY UF
+ORDER BY UF ASC;
+
+-- 8 --
+SELECT	Nome,
+		UF
+FROM Cidade
+GROUP BY Nome, UF
+HAVING	COUNT(Nome) > 1
+	AND COUNT(UF) > 1;
+
+-- 9 --
