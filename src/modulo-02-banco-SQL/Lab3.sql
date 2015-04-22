@@ -189,3 +189,7 @@ HAVING	COUNT(Nome) > 1
 	AND COUNT(UF) > 1;
 
 -- 9 --
+SELECT MAX(IDAssociado) + 1 AS [Próximo ID]
+FROM Associado;
+
+-- 10 --
