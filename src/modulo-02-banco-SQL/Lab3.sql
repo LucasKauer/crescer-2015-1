@@ -170,7 +170,8 @@ ORDER BY		LEN(Nome) DESC;
 -- 6 --
 SELECT	Nome,
 		DATEADD(YEAR, 50, DataNascimento) as [Data dos 50 anos],
-		DATEPART(WEEKDAY, DATEADD(YEAR, 50, DataNascimento)) AS [Dia da Semana]
+		DATEPART(WEEKDAY, DATEADD(YEAR, 50, DataNascimento)) AS [Dia da Semana],
+		DATENAME(WEEKDAY, DATEADD(YEAR, 50, DataNascimento)) AS [Dia da Semana (nome)]
 FROM Associado;
 
 -- 7 --
@@ -189,7 +190,18 @@ HAVING	COUNT(Nome) > 1
 	AND COUNT(UF) > 1;
 
 -- 9 --
-SELECT MAX(IDAssociado) + 1 AS [Próximo ID]
+SELECT ISNULL(MAX(IDAssociado), 0) + 1 AS [Próximo ID]
 FROM Associado;
 
 -- 10 --
+DELETE FROM CopiaCidade;
+
+INSERT INTO CopiaCidade
+			(IDCidade, Nome, UF)
+SELECT	MIN(IDCidade) Menor_IDCidade,
+		Nome,
+		UF
+FROM Cidade
+GROUP BY Nome, UF;
+Select * From CopiaCidade;
+SP_HELP 'CopiaCidade'
