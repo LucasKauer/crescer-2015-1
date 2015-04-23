@@ -1,0 +1,39 @@
+- Forma de Pagamento:
+#IDForma
+Descricao
+
+- Conta:
+#IDConta
+FK_IDForma
+FK_IDPedido
+ValorDaConta
+Data
+
+- Pedido:
+#IDPedido
+FK_Produto
+Mesa
+Quantidade
+ValorDoPedido
+
+- Produto:
+#IDProduto
+Descricao
+ValorDoProduto
+
+- Estoque_Produto
+#IDReceita
+FK_Estoque
+FK_Produto
+Quatidade
+
+- Estoque:
+#IDEstoque
+Descricao
+Quantidade'
+
+
+Legenda:
+
+- <ENTIDADE>
+# <CHAVE PRIMÁRIA>
