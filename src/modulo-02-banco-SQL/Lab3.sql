@@ -304,3 +304,23 @@ WHERE NOT EXISTS	(SELECT 1
 GROUP BY UF;
 
 -- 4 --
+SELECT Associado.Nome,
+	   Cidade.Nome AS Cidade,
+	   CASE Cidade.UF
+		    WHEN 'RS' THEN '***'
+			WHEN 'SC' THEN '***'
+			WHEN 'PR' THEN '***'
+			else null
+		END
+FROM Associado
+	LEFT JOIN Cidade ON Associado.IDCidade = Cidade.IDCidade;
+
+-- 5 --
+SELECT	e.NomeEmpregado AS [Nome do Empregado],
+		g.NomeEmpregado AS [Nome do Gerente],
+		d.NomeDepartamento AS [Nome do Departamento]
+FROM Empregado e
+	INNER JOIN Empregado g ON g.IDGerente = e.IDGerente
+	INNER JOIN Departamento d ON d.IDDepartamento = e.IDDepartamento;
+
+-- 6 --
