@@ -318,9 +318,26 @@ FROM Associado
 -- 5 --
 SELECT	e.NomeEmpregado AS [Nome do Empregado],
 		g.NomeEmpregado AS [Nome do Gerente],
-		d.NomeDepartamento AS [Nome do Departamento]
+		d.NomeDepartamento AS [Nome do Departamento do Empregado]
 FROM Empregado e
 	INNER JOIN Empregado g ON g.IDGerente = e.IDGerente
 	INNER JOIN Departamento d ON d.IDDepartamento = e.IDDepartamento;
 
 -- 6 --
+BEGIN TRANSACTION
+GO
+
+SELECT *
+INTO CopiaEmpregado
+FROM Empregado;
+
+ROLLBACK
+-- SEGUNDA PARTE
+BEGIN TRANSACTION
+GO
+
+UPDATE Empregado 
+SET Salario += (Salario*0.145)
+WHERE IDDepartamento in (10);
+
+-- 7 --
