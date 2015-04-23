@@ -220,12 +220,58 @@ WHERE Nome IN	(SELECT Nome
 SELECT * From Cidade;
 
 -- 12 --
+SELECT	Nome,
+		CASE Sexo
+			WHEN 'M' THEN 'Masculino'
+			WHEN 'F' THEN 'Feminino'
+			ELSE 'Outro'
+		END Genero
+FROM Associado;
 
 -- 13 --
+SELECT	NomeEmpregado,
+		Salario,
+		CASE
+			WHEN Salario BETWEEN 1164.01 AND 2326 THEN (Salario*0.15)
+			WHEN Salario > 2326 THEN (Salario*0.275)
+			ELSE 0
+		END Desconto_IR
+FROM Empregado
 
 -- 14 --
+BEGIN TRANSACTION
+GO
+
+DELETE FROM Cidade
+WHERE IDCidade in (SELECT MAX(IDCidade)
+					FROM Cidade
+					GROUP BY Nome, UF
+					HAVING COUNT(1) > 1);
+
+SELECT MAX(IDCidade), Nome, UF
+FROM Cidade
+GROUP BY Nome, UF
+HAVING COUNT(1) > 1;
+
+SELECT Nome, UF
+FROM Cidade
+GROUP BY Nome, UF
+HAVING Count(1) > 1;
 
 -- 15 --
+ALTER TABLE Cidade
+	ADD CONSTRAINT UK_Cidade_NomeUF
+	UNIQUE (Nome, UF);
+
+INSERT INTO Cidade
+	(IDCidade,
+	Nome,
+	UF)
+VALUES	(100,
+		'Bage',
+		'RS');
+
+Select * from Cidade;
 
 -- Relacionamentos --
 UPDATE Associado
