@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6A4D428A-9A5C-A352-12ED-968FD627FE6B" name="Conta">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>7C67C8A4-6158-5C25-D846-781A2C852239</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDConta" id="30A26B8E-B696-C5B0-C195-CFEA12726843">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>D26F0F3E-C077-4658-B4E5-1F5030A0EE0F</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorDaConta" id="EFC0774D-D438-3B99-8493-BA1D29263E90">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>D9FFBFCB-DD08-6B85-B3C9-09FE4C089011</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorPago" id="A5976367-B450-B410-E933-70820622C8E9">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>1C55965E-4C97-10B2-8087-A63B45719D07</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PercentualDeDesconto" id="33F9475E-4150-8F90-D52A-DA05DC123A14">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>8960351E-8601-B3EC-E65D-CB085E1BD8A3</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Observacao" id="794D5F84-68E7-6683-8338-B5602737610B">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>F504D058-30B7-A3AE-7AE1-3B0D18626ACC</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Data" id="9DC4F743-48CF-D23B-B87C-74131B132EFC">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>68BD0F2E-DF2D-8BBA-2EF8-7999A6E7CD47</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pedido_IDPedido" id="A40D7752-CAE9-97A5-319C-E316B98292D0">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>405EE14A-BD1D-2202-76DA-95DE20DF6925</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>348B00AB-3ECB-708D-24D1-BAE099C0E1C1</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9ABBA9D7-554B-56E1-BCEB-0D7946B4049D" referredColumn="348B00AB-3ECB-708D-24D1-BAE099C0E1C1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9AB21E6F-73C5-2447-E364-1AF8199E08F3" name="Conta_PK">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>0DF7589E-E30A-8499-E5E6-EEF1F329A518</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30A26B8E-B696-C5B0-C195-CFEA12726843"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0F180DE9-BE3E-BC59-7B1C-7235BB7BF39A" name="Conta__IDX">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>8BD34597-1471-B6DB-ED92-0F5979C5E429</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="A40D7752-CAE9-97A5-319C-E316B98292D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BE1A24E2-506A-565B-4F87-19EF8E4A4E4E" name="Conta_Pedido_FK">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>8BD34597-1471-B6DB-ED92-0F5979C5E429</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A40D7752-CAE9-97A5-319C-E316B98292D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

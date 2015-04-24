@@ -34,7 +34,7 @@ Quatidade
 #IDEstoque
 Descricao
 Quantidade
-*CustoDoProduto
+CustoDoProduto
 
 
 Legenda:
@@ -42,3 +42,8 @@ Legenda:
 - <ENTIDADE>
 # <CHAVE PRIMÁRIA>
 * Opcional (Sugestões André)
+
+6h - Planejamento
+
+6h - Criação do BD e Testes
+

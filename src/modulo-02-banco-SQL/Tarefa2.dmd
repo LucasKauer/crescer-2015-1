@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Tarefa2" id="1F671FF3-748C-6683-791D-3E484234C01D" version="3.5">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 19:45:51 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>1F671FF3-748C-6683-791D-3E484234C01D</designId>
+</OSDM_Design>

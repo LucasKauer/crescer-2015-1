@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="6A4D428A-9A5C-A352-12ED-968FD627FE6B" name="Conta" seqName="seg_0"/>
+   <object objectType="Table" objectID="BEB36953-2E6D-2E76-77C2-FC97886494E1" name="Estoque" seqName="seg_0"/>
+   <object objectType="Table" objectID="7814EA37-C9EB-444A-CF19-6736ABC2DBBC" name="FK_Estoque_Produto" seqName="seg_0"/>
+   <object objectType="Table" objectID="9D6682BE-CC1A-408F-F8B0-C541C1B55797" name="FormaDePagamento" seqName="seg_0"/>
+   <object objectType="Table" objectID="F862A5A0-6DEC-C4BC-8513-7FE32923D720" name="Pedido" seqName="seg_0"/>
+   <object objectType="Table" objectID="97E0DD1E-64CD-C1D9-7E3C-8D8E75FFF08E" name="Produto" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="9ABBA9D7-554B-56E1-BCEB-0D7946B4049D" name="Conta_Pedido_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="58E6477C-9E48-C8DB-D144-5CF31AAFB30D" name="FK_ASS_2" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="A8156B91-3BFA-5A3F-FF34-CF78EB632989" name="FK_ASS_3" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="2D151219-866D-73EB-FA1F-C587E99AA1BA" name="FormaDePagamento_Conta_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="EAC8BE32-D8B6-7B77-221A-54855B245674" name="Produto_Pedido_FK" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

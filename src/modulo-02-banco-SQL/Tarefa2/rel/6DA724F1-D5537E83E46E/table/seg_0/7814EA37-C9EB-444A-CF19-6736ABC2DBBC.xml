@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7814EA37-C9EB-444A-CF19-6736ABC2DBBC" name="FK_Estoque_Produto">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Estoque_IDEstoque" id="C9188820-E8F0-0036-8C67-23D1BD627BD0">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>659C8ACC-F357-639A-3F7B-342CE6631DAC</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="58E6477C-9E48-C8DB-D144-5CF31AAFB30D" referredColumn="659C8ACC-F357-639A-3F7B-342CE6631DAC"/>
+</associations>
+</Column>
+<Column name="Produto_IDProduto" id="0FB32F5C-9049-7086-83FB-95CD952A8558">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<delegate>6779F2A6-8E08-C0CA-B1E0-57A041CBC144</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A8156B91-3BFA-5A3F-FF34-CF78EB632989" referredColumn="6779F2A6-8E08-C0CA-B1E0-57A041CBC144"/>
+</associations>
+</Column>
+<Column name="Quantidade" id="7E1AA0E2-28D2-A73C-9FDC-50D218882C4E">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:04:14 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E8448CF9-B65F-7F2B-23E1-28DCE4C902FE" name="FK_Estoque_Produto_PK">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C9188820-E8F0-0036-8C67-23D1BD627BD0"/>
+<colUsage columnID="0FB32F5C-9049-7086-83FB-95CD952A8558"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BC351617-88D7-0CC7-72BB-81E78B35A26F" name="FK_ASS_2">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>5C5801D3-D048-B323-0D79-1841743A9098</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C9188820-E8F0-0036-8C67-23D1BD627BD0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="005BA516-84E0-ECF5-F249-6D2F64D3964D" name="FK_ASS_3">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:29 UTC</createdTime>
+<generatorID>5C5801D3-D048-B323-0D79-1841743A9098</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0FB32F5C-9049-7086-83FB-95CD952A8558"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

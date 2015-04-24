@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7C67C8A4-6158-5C25-D846-781A2C852239" name="Conta">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 19:53:28 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDConta" id="D26F0F3E-C077-4658-B4E5-1F5030A0EE0F">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 19:53:32 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="ValorDaConta" id="D9FFBFCB-DD08-6B85-B3C9-09FE4C089011">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 19:53:40 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+</Attribute>
+<Attribute name="ValorPago" id="1C55965E-4C97-10B2-8087-A63B45719D07">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 19:53:55 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+</Attribute>
+<Attribute name="PercentualDeDesconto" id="8960351E-8601-B3EC-E65D-CB085E1BD8A3">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 19:54:14 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+</Attribute>
+<Attribute name="Observacao" id="F504D058-30B7-A3AE-7AE1-3B0D18626ACC">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 19:54:39 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+</Attribute>
+<Attribute name="Data" id="68BD0F2E-DF2D-8BBA-2EF8-7999A6E7CD47">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 19:55:15 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+</Attribute>
+<Attribute name="IDPedido" id="405EE14A-BD1D-2202-76DA-95DE20DF6925">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:00:56 UTC</createdTime>
+<generatorID>8BD34597-1471-B6DB-ED92-0F5979C5E429</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<referedAttribute>94D078AF-60CA-7DA3-539E-D6175AE66F34</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0DF7589E-E30A-8499-E5E6-EEF1F329A518" name="{entity} PK">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 19:53:39 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D26F0F3E-C077-4658-B4E5-1F5030A0EE0F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

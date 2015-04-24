@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="7C67C8A4-6158-5C25-D846-781A2C852239" name="Conta" seqName="seg_0"/>
+   <object objectType="Entity" objectID="19B0CE71-4933-90C9-717F-C3085E9FF631" name="Estoque" seqName="seg_0"/>
+   <object objectType="Entity" objectID="F83FE05C-BA0C-AB10-0520-3E6C7B4A6B30" name="FormaDePagamento" seqName="seg_0"/>
+   <object objectType="Entity" objectID="7844FA5B-88B5-D5F9-E029-956AA5CD5400" name="Pedido" seqName="seg_0"/>
+   <object objectType="Entity" objectID="46DFD46D-DE95-07F0-BE9A-3373EB89EC2E" name="Produto" seqName="seg_0"/>
+   <object objectType="Relation" objectID="4963CBD3-EC3E-9A21-2060-0FB04758455A" name="FK_Conta_FormaDePagamento" seqName="seg_0"/>
+   <object objectType="Relation" objectID="5C5801D3-D048-B323-0D79-1841743A9098" name="FK_Estoque_Produto" seqName="seg_0"/>
+   <object objectType="Relation" objectID="8BD34597-1471-B6DB-ED92-0F5979C5E429" name="FK_Pedido_Conta" seqName="seg_0"/>
+   <object objectType="Relation" objectID="ED80CE50-95AB-0793-7BFD-FB720548D81A" name="FK_Produto_Pedido" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

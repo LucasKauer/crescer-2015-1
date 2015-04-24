@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_Estoque_Produto" directorySegmentName="seg_0" id="5C5801D3-D048-B323-0D79-1841743A9098">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 19:58:12 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>19B0CE71-4933-90C9-717F-C3085E9FF631</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>46DFD46D-DE95-07F0-BE9A-3373EB89EC2E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

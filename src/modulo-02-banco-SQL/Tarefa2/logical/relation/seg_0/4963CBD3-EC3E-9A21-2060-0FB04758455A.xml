@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_Conta_FormaDePagamento" directorySegmentName="seg_0" id="4963CBD3-EC3E-9A21-2060-0FB04758455A">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-24 20:01:12 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<sourcePk>0DF7589E-E30A-8499-E5E6-EEF1F329A518</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7C67C8A4-6158-5C25-D846-781A2C852239</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>F83FE05C-BA0C-AB10-0520-3E6C7B4A6B30</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
