@@ -360,3 +360,13 @@ SET Salario += (Salario*0.145)
 WHERE IDDepartamento in (10);
 
 -- 7 --
+SELECT SUM(Salario*0145) AS Soma
+FROM Empregado
+WHERE IDDepartamento IN (10);
+
+-- 8 --
+SELECT TOP 1 Empregado.IDDepartamento,
+			 Departamento.NomeDepartamento
+FROM Empregado
+	INNER JOIN departamento ON Departamento.IDDepartamento = Empregado.IDDepartamento
+ORDER BY (Salario) DESC;
