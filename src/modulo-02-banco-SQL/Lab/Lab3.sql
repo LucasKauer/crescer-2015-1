@@ -286,34 +286,53 @@ WHERE IDAssociado = 3;
 SELECT	e.NomeEmpregado,
 		d.NomeDepartamento
 FROM Empregado e
-		LEFT JOIN Departamento d on d.IDDepartamento = e.IDDepartamento
+		LEFT JOIN Departamento d ON d.IDDepartamento = e.IDDepartamento;
 
 -- 2 --
 SELECT	a.Nome,
 		c.Nome
 FROM Associado a
-		LEFT JOIN Cidade c on c.IDCidade = a.IDCidade
+		LEFT JOIN Cidade c ON c.IDCidade = a.IDCidade;
+
+-- Tirar asterisco
+BEGIN TRANSACTION
+GO
+
+UPDATE Cidade
+SET Nome = REPLACE(Nome, '*', '')
+WHERE  Nome LIKE '*%';
+
+SELECT IDCidade, Nome, REPLACE(Nome, '*', '') Novo_Nome
+FROM Cidade;
 
 -- 3 --
-SELECT	UF,
-		COUNT(Nome) AS [Total de Cidade S/ Associados]
+SELECT	c.UF,
+		COUNT(1) AS [Total de Cidade S/ Associados]
 FROM Cidade c
 WHERE NOT EXISTS	(SELECT 1
 				FROM Associado a
 				WHERE a.IDCidade = c.IDCidade)
-GROUP BY UF;
+GROUP BY c.UF;
 
 -- 4 --
-SELECT Associado.Nome,
-	   Cidade.Nome AS Cidade,
+/*	Criando uma view (exibicão)
+	View eh uma forma de salvar um comando sql para reaproveitar ele posteriormente ;D
+*/
+
+CREATE VIEW vw_Cidade_Regiao as
+SELECT Associado.Nome AS Nome_Associado,
+	   Cidade.Nome AS Nome_Cidade,
 	   CASE Cidade.UF
 		    WHEN 'RS' THEN '***'
 			WHEN 'SC' THEN '***'
 			WHEN 'PR' THEN '***'
-			else null
-		END
+			ELSE null
+		END AS Regiao_Sul
 FROM Associado
 	LEFT JOIN Cidade ON Associado.IDCidade = Cidade.IDCidade;
+
+-- Utilizando a view vw_Cidade_Regiao ;DD
+SELECT * FROM vw_Cidade_Regiao;
 
 -- 5 --
 SELECT	e.NomeEmpregado AS [Nome do Empregado],
