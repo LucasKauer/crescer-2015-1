@@ -40,21 +40,6 @@
 <dataTypeScale>2</dataTypeScale>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Pedido_IDPedido" id="9D00744F-AE85-D615-32E0-9A1517E8FC35">
-<createdBy>projetocrescer</createdBy>
-<createdTime>2015-04-24 20:01:29 UTC</createdTime>
-<generatorID>8D87E21F-3871-01F3-48A3-9DEFE7E4CF0F</generatorID>
-<ownerDesignName>Tarefa2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<delegate>348B00AB-3ECB-708D-24D1-BAE099C0E1C1</delegate>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="EAC8BE32-D8B6-7B77-221A-54855B245674" referredColumn="348B00AB-3ECB-708D-24D1-BAE099C0E1C1"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="A217D5D9-869F-46AD-D594-024F6B734C29" name="Produto_PK">
@@ -67,17 +52,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="6779F2A6-8E08-C0CA-B1E0-57A041CBC144"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="4D61604A-CA78-3436-8961-8726B6E25F5B" name="Produto_Pedido_FK">
-<createdBy>projetocrescer</createdBy>
-<createdTime>2015-04-24 20:01:29 UTC</createdTime>
-<generatorID>ED80CE50-95AB-0793-7BFD-FB720548D81A</generatorID>
-<ownerDesignName>Tarefa2</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="9D00744F-AE85-D615-32E0-9A1517E8FC35"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

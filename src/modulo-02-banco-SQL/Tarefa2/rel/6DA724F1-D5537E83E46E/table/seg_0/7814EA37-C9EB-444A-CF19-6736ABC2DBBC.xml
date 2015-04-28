@@ -64,7 +64,7 @@
 <colUsage columnID="0FB32F5C-9049-7086-83FB-95CD952A8558"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="BC351617-88D7-0CC7-72BB-81E78B35A26F" name="FK_ASS_2">
+<ind_PK_UK id="BC351617-88D7-0CC7-72BB-81E78B35A26F" name="FK_IDEstoque">
 <createdBy>projetocrescer</createdBy>
 <createdTime>2015-04-24 20:01:29 UTC</createdTime>
 <generatorID>5C5801D3-D048-B323-0D79-1841743A9098</generatorID>
@@ -75,7 +75,7 @@
 <colUsage columnID="C9188820-E8F0-0036-8C67-23D1BD627BD0"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="005BA516-84E0-ECF5-F249-6D2F64D3964D" name="FK_ASS_3">
+<ind_PK_UK id="005BA516-84E0-ECF5-F249-6D2F64D3964D" name="FK_IDProduto">
 <createdBy>projetocrescer</createdBy>
 <createdTime>2015-04-24 20:01:29 UTC</createdTime>
 <generatorID>5C5801D3-D048-B323-0D79-1841743A9098</generatorID>

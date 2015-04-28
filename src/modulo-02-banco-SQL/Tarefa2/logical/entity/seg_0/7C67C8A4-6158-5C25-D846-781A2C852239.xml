@@ -109,6 +109,21 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
+<Attribute name="Troco" id="DE4B86E3-8889-679B-F25D-E8086F240A84">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-27 16:27:44 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<engineerTo>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="0DF7589E-E30A-8499-E5E6-EEF1F329A518" name="{entity} PK">
@@ -116,8 +131,9 @@
 <createdTime>2015-04-24 19:53:39 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>Tarefa2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

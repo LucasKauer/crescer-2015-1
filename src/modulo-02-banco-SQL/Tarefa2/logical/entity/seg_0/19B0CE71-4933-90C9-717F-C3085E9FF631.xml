@@ -76,8 +76,9 @@
 <createdTime>2015-04-24 19:49:10 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>Tarefa2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

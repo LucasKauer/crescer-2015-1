@@ -35,7 +35,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT026</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
+<dataTypePrecision>4</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -49,6 +49,17 @@
 <logicalDatatype>LOGDT026</logicalDatatype>
 <dataTypePrecision>7</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Status" id="B5EC2C4F-76DB-DE16-0351-082D773D851B">
+<createdBy>projetocrescer</createdBy>
+<createdTime>2015-04-28 16:30:31 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Tarefa2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>

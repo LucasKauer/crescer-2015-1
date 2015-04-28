@@ -55,19 +55,6 @@
 <dataTypePrecision>7</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
 </Attribute>
-<Attribute name="IDPedido" id="8D87E21F-3871-01F3-48A3-9DEFE7E4CF0F">
-<createdBy>projetocrescer</createdBy>
-<createdTime>2015-04-24 20:00:10 UTC</createdTime>
-<generatorID>ED80CE50-95AB-0793-7BFD-FB720548D81A</generatorID>
-<ownerDesignName>Tarefa2</ownerDesignName>
-<engineerTo>
-<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
-</engineerTo>
-<referedAttribute>94D078AF-60CA-7DA3-539E-D6175AE66F34</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="A6725AEC-C38B-2C63-993A-2CD4FB0B22AC" name="{entity} PK">
@@ -75,8 +62,9 @@
 <createdTime>2015-04-24 19:50:56 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>Tarefa2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="true"/>
+<item key="6DA724F1-5266-992D-574E-D5537E83E46E" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
