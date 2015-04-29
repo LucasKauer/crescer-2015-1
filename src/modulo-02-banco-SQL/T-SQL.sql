@@ -92,3 +92,37 @@ BEGIN
 END
 
 -- 3 --
+SELECT	COUNT(DISTINCT Pedido.IDPedido) AS Total_Pedido,
+		COUNT(1) AS  Total_Itens
+FROM Pedido
+	INNER JOIN PedidoItem ON PedidoItem.IDPedido = Pedido.IDPedido
+WHERE EXISTS	(SELECT 1
+				FROM ProdutoMaterial
+				WHERE ProdutoMaterial.IDProduto = PedidoItem.IDProduto
+				AND ProdutoMaterial.IDMaterial IN (SELECT IDMaterial FROM vwMateriais_Mais_Utilizados)
+				);
+
+CREATE VIEW vwMateriais_Mais_Utilizados AS
+SELECT	TOP 1 WITH TIES
+		Material.IDMaterial,
+		Material.Descricao,
+		COUNT(DISTINCT ProdutoMaterial.IDProduto) AS Total
+FROM Material
+	INNER JOIN ProdutoMaterial ON ProdutoMaterial.IDMaterial = Material.IDMaterial
+	INNER JOIN Produto		   ON Produto.IDProduto = ProdutoMaterial.IDProduto
+GROUP BY Material.IDMaterial,
+		 Material.Descricao
+ORDER BY total DESC
+
+sp_help 'ProdutoMaterial'
+SELECT Pedido.IDPedido,
+	   PedidoItem.IDPedidoItem,
+	   Produto.IDProduto,
+	   Produto.Nome,
+	   PedidoItem.Quantidade
+FROM Pedido
+	INNER JOIN PedidoItem		ON PedidoItem.IDPedido	= Pedido.IDPedido
+	INNER JOIN Produto			ON Produto.IDProduto	= PedidoItem.IDProduto
+	INNER JOIN ProdutoMaterial	ON ProdutoMaterial.IDProduto = Produto.IDProduto
+	-- INNER JOIN PordutoMaterial ON ProdutoMaterial.IDProduto = Produto.IDProduto
+WHERE Pedido.DataPedido BETWEEN DATEADD(DAY, 60, GETDATE()) AND GETDATE();
