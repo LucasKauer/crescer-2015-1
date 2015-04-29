@@ -1,5 +1,7 @@
 /*
+Anotações:
 #6 - Toda chave estrangeira (FK) deve ter índice!
+Oracle APEX
 */
 
 -- 1 --
