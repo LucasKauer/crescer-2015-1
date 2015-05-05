@@ -1,0 +1,79 @@
+<html>
+	
+	<head>
+		<title>Cadastro de Elfos</title>
+		<meta charset="utf-8">
+	</head>
+	
+	<body>
+		<h3>Castro de Elfos</h3>
+		
+		<form type="post">
+		
+			<div style="height: 50px;">
+				<label for="nome">
+					Nome do Elfo
+				</label>
+				<input id="nome" name="nome" type="text">
+			</div>
+			
+			<div style="height: 50px;">
+				<label for="sexo">
+					Sexo (Masculino / Feminino)
+				</label>
+				<input type="checkbox" for="sexo" name="sexo" value="masculino">Masculino
+				<input type="checkbox" for="sexo" name="sexo" value="feminino">Feminino
+			</div>
+			
+			<div style="height: 50px;">
+				<label for="qtdFlechas">
+					Quantidade de flechas inciais do Elfo
+				</label>
+				<input id="qtdFlechas" name="qtdFlechas" type="number" value="42">
+			</div>
+			
+			<div style="height: 50px;">
+				<label for="dtNascimento">
+					Data de nascimento
+				</label>
+				<input id="dtNascimento" name="dtNascimento" type="date">
+			</div>
+			
+			<div style="height: 50px;">
+				<label for="status">
+					Status inicial do Elfo (Dormindo ou 
+					Caçando ou Contando piada)
+				</label>
+				<input type="radio" for="status" name="status" value="dormindo">Dormindo
+				<input type="radio" for="status" name="status" value="dormindo">Caçando
+				<input type="radio" for="status" name="status" value="dormindo">Contando piada
+			</div>
+			
+			<div style="height: 100px;">
+				<label for="item">
+					Itens iniciais do Elfo 
+					(Arco e Flecha e/ou Espada de aço Porto-alegrense 
+					e/ou Escudo de amburana e/ou Poção HP)
+				</label>
+				<input type="checkbox" for="item" name="item" value="arcoEFlecha">Arco e Flecha
+				<input type="checkbox" for="item" name="item" value="espada">Espada de aço Porto-alegrense 
+				<input type="checkbox" for="item" name="item" value="escudo">Escudo de amburana
+				<input type="checkbox" for="item" name="item" value="pocao">Poção HP
+
+			</div>
+			
+			<div style="height: 50px0px;">
+				<label for="avatar">
+					Upload de uma imagem avatar do Elfo 
+					(apenas image/jpg, image/png)
+				</label>
+				<input id="avatar" name="avatar" type="file" accept="image/*">
+			</div>
+			
+			<div style="height: 100px;">
+				<input type="submit" value="Cadastrar">
+			</div>
+		</form>
+	</body>
+
+</html>
