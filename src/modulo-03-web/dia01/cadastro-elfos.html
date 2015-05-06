@@ -14,7 +14,8 @@
 				<label for="nome">
 					Nome do Elfo
 				</label>
-				<input id="nome" required name="nome" type="text" pattern=".{6,}">
+				<!-- Site para expressões regulares: regex101 -->
+				<input id="nome" required name="nome" placeholder="Seu nome aqui" type="text" pattern=".{6,}">
 			</div>
 			
 			<div style="height: 50px;">
@@ -26,17 +27,17 @@
 			</div>
 			
 			<div style="height: 50px;">
-				<label for="qtdFlechas">
+				<label for="qtd_flechas">
 					Quantidade de flechas inciais do Elfo
 				</label>
-				<input id="qtdFlechas" name="qtdFlechas" type="number" value="42">
+				<input id="qtd_flechas" name="qtd_flechas" type="number" value="42">
 			</div>
 			
 			<div style="height: 50px;">
-				<label for="dtNascimento">
+				<label for="dt_nascimento">
 					Data de nascimento
 				</label>
-				<input id="dtNascimento" required name="dtNascimento" type="date">
+				<input id="dt_nascimento" required name="dt_nascimento" type="date">
 			</div>
 			
 			<div style="height: 50px;">
@@ -55,23 +56,24 @@
 					(Arco e Flecha e/ou Espada de aço Porto-alegrense 
 					e/ou Escudo de amburana e/ou Poção HP)
 				</label>
-				<input type="checkbox" for="item" name="item" value="arcoEFlecha" CHECKED>Arco e Flecha
+				<input type="checkbox" for="item" name="item" value="arco_e_flecha" CHECKED>Arco e Flecha
 				<input type="checkbox" for="item" name="item" value="espada">Espada de aço Porto-alegrense 
 				<input type="checkbox" for="item" name="item" value="escudo" CHECKED>Escudo de amburana
 				<input type="checkbox" for="item" name="item" value="pocao">Poção HP
 
 			</div>
 			
+
 			<div style="height: 50px;">
 				<label for="avatar">
 					Upload de uma imagem avatar do Elfo 
 					(apenas image/jpg, image/png)
 				</label>
-				<input id="avatar" name="avatar" type="file" accept="image/*">
+				<input id="avatar" name="avatar" type="file" accept=".png, .jpeg, .jpg">
 			</div>
 			
 			<div style="height: 100px;">
-				<input type="submit" value="Cadastrar">
+				<input type="submit" value="cadastrar">
 			</div>
 		</form>
 	</body>
