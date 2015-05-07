@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Using Position</title>
+		<meta charset="utf-8">
+		<!-- verifica css: http://csslint.net/ -->
+		<!-- verifica html: http://validator.w3.org/ -->
+		<style>
+			img {
+				height: 200px;
+				width: 185px;
+			}
+		
+			.pos_relative {
+				position: relative; 
+				top: 10px;
+			}
+			
+			.pos_fixed {
+				position: fixed; 
+				top: 50px;
+				left: 700px;
+			}
+			
+			.pos_absolute {
+				position: absolute; 
+				top: 70px;
+				right: -70px;
+			}
+			
+			.div_aux {
+				position: relative;
+				top: 50px;
+				width: 450px;
+				height: 200px;
+				background-color: blue;
+			}
+		
+		</style>
+	</head>
+	
+	<body>		
+		<img class="pos_fixed" alt="Hufflepuff!" src="file:///C:/Users/projetocrescer/WhyKauer/src/modulo-03-web/dia04/hufflepuff.png"/>
+		
+		<img class="pos_relative" alt="Hufflepuff!" src="file:///C:/Users/projetocrescer/WhyKauer/src/modulo-03-web/dia04/hufflepuff.png"/>
+		
+		<div class="div_aux">
+			<img class="pos_absolute" alt="Hufflepuff!" src="file:///C:/Users/projetocrescer/WhyKauer/src/modulo-03-web/dia04/hufflepuff.png"/>
+		</div>
+
+	</body>
+</html>
