@@ -1,0 +1,45 @@
+Java Script:
+
+/* 1 */
+alert("Hello JS!");
+undefined
+var s = 12;
+undefined
+typeof s
+"number"
+s + 12
+24
+1 + 2 + "3"
+"33"
+"1" + 2 + 3
+"123"
+1 + "2" + 3
+"123"
+
+/* 2 */
+var str = "oi";
+undefined
+typeof str
+"string"
+var d = new Date();
+undefined
+d
+Thu May 07 2015 16:57:42 GMT-0300 (Hora oficial do Brasil)
+typeof d
+"object"
+
+/* 3 */
+var y;
+undefined
+y===undefined
+true
+typeof y
+"undefined"
+typeof y === "undefined";
+true
+function isDefined(x) { return typeof x !== 'undefined'; }
+undefined
+isDefined(u)
+VM1019:2 Uncaught ReferenceError: u is not defined(anonymous function) @ VM1019:2InjectedScript._evaluateOn @ VM769:883InjectedScript._evaluateAndWrap @ VM769:816InjectedScript.evaluate @ VM769:682
+isDefined(y)
+false
