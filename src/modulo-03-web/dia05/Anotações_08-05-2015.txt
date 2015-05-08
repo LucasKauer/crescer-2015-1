@@ -1,0 +1,73 @@
+Src:
+
+var allEvenBacon = (function (arrray) {
+	var concatenarBacon = function(i) {
+	
+		/*var fn = function(i) {
+			return i + "Bacon";
+		};
+		
+
+		return fn(i);*/
+
+		return i + (indice % 2 == 0 ? " Bacon" : "");
+		
+		/*if (indice % 2 == 0) {
+			return i + "Bacon";
+		} else {
+			return i;
+		}*/
+
+		return i + "Bacon";
+	};
+
+		// concatenarBacon('Bernardo');
+		
+	return array.map(concatenarBacon);
+});
+
+// (allBacon(['a', 'b', 'c']);
+
+allEvenBacon
+
+------------------------------------------------------------
+
+var cerveja = ['skol', 'polar', 'colonia'];
+cerveja.forEach(function(i) {
+	alert(i + " #sqn");
+});
+
+var alertar = function(i) {
+	alert(i + " #sqn");
+};
+
+cerveja.forEach(alertar);
+
+------------------------------------------------------------
+
+var arr = [1, 2, 3 ];
+
+count = arr.reduce(function(a, b) {
+	return a + b;
+});
+
+// jsperf.com
+
+------------------------------------------------------------
+
+var str = ['a', 'b', 'c'];
+
+
+
+var uhul = str.reduce(function(a, b) {
+	return a + b;
+});
+
+------------------------------------------------------------
+
+var soma = pessoas.map(function(i) {
+	return i.idade;
+})
+.reduce(function(a, b) {
+	return a + b;
+});
