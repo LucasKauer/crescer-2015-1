@@ -1,11 +1,12 @@
 // 1. Brewdog
 function brewdog(strA, strB) {
 	var numeroCaracteresDiferentes = 0;
-	var strMaior = strA.length > strB.length ? strA.length : strB.length;
+	/* var strMaior = strA.length > strB.length ? strA.length : strB.length; */
+	var strMaior = Math.max(strA, strB);
 	
 	for(var i = 0; i < strMaior; i++) {
-		var caracteresSaoIguais = (strA.charAt(i) != strB.charAt(i));
-		if (caracteresSaoIguais) {
+		/* var caracteresSaoIguais = (strA.charAt(i) != strB.charAt(i)); */
+		if ((strA[i] != strB[i]) {
 			numeroCaracteresDiferentes++;
 		}
 	}
