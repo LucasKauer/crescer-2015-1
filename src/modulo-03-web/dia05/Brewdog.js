@@ -5,8 +5,13 @@ function brewdog(strA, strB) {
 	var strMaior = Math.max(strA.length, strB.length);
 	
 	for(var i = 0; i < strMaior; i++) {
-		/*var caracteresSaoIguais = (strA.charAt(i) != strB.charAt(i));*/
-		if (strA[i] != strB[i]) {
+		/* var caracteresSaoIguais = (strA.charAt(i) != strB.charAt(i));
+		 * NAO ESQUECER DE QUE O != É DO MAU E QUE DEVE USAR !== SEMPRE
+		 * NAO ESQUECE, OKAY?
+		 * OKAY?
+		 * OKAY!
+		 */
+		if (strA[i] !== strB[i]) {
 			numeroCaracteresDiferentes++;
 		}
 	}
