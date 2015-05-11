@@ -13,7 +13,8 @@ function Emprestimo(valorTotal, taxaDeJuros, quantidadeParcelas) {
 	this.valorParcela = function() {
 		
 		var valor = (this.valorTotal * this.taxaDeJuros) / (1 - (1 / Math.pow((1 + this.taxaDeJuros), this.quantidadeParcelas)));
-		return parseFloat(valor.toFixed(2));
+		/* return parseFloat(valor.toFixed(2)); */
+		return (Math.round (valor * 100) / 100);
 	}
 }
 
