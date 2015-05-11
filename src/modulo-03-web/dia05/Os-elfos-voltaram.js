@@ -4,11 +4,17 @@ function Elfo (nome, flechas) {
 	this.flechas = flechas || 42;
 	this.experiencia = 0;
 	
-	this.atirarFlecha = function() {
+	/*	Duplica "objetos" (funcoes) em memória
+		this.atirarFlecha = function() {
 		this.flechas--;
 		this.experiencia++;
-	}
-	
+	}*/
+}
+
+/* Jeitinho maroto de não replicar código em memória */
+Elfo.prototype.atirarFlecha = function() {
+	this.flechas--;
+	this.experiencia++;
 }
 
 function Elfo (options) {
@@ -18,9 +24,10 @@ function Elfo (options) {
 	this.flechas = options.flechas || 42;
 	this.experiencia = 0;
 	
-	this.atirarFlecha = function() {
+	/*	Duplica "objetos" (funcoes) em memória
+		this.atirarFlecha = function() {
 		this.flechas--;
 		this.experiencia++;
-	}
+	} */
 	
 }
