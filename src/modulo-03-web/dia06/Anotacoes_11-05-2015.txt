@@ -1,0 +1,19 @@
+
+var oi = 'oi';
+
+String.prototype.toBacon = function() {
+	return this + "Bacon";
+}
+
+
+oi.toBacon();
+
+prototype serve para adicionar funções a classe pré-informada
+Sintáxe: NomeDaClasse.prototype.NomeDaFuncao = function() { /* funcoes */ }
+
+------------------------------------------------------------
+thizz = this
+Geralmente é declarado como self ou that.
+
+------------------------------------------------------------
+<!-- JQLite versao mobile -->
