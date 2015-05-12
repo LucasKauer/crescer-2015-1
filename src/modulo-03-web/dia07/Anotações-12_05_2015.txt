@@ -1,0 +1,24 @@
+addClass() - ADICIONA UMA CLASSE AO ELEMENTO
+hasClass() - VÊ SE O ELEMENTO POSSUI CLASSE
+toggleClass() - SE O ELEMENTO NÃO TEM CLASS, COLOCA. SE NÃO, TIRA
+after() - INCLUI UM ELEMENTO DEPOIS DE OUTRO
+clone() - CLONA UM ELEMENTO
+remove() - REMOVE UM ELEMENTO DA TELA
+html() - PEGA O HTML QUE ESTÁ DENTRO DO ELEMENTO (OU "SETA" ELE)
+val() - RETORNA O VALOR DE UM ELEMENTO (INPUT, POR EXEMPLO)
+attr() - FAZ ATRIBUICAO OU LEITURA DE ATRIBUTO (getter/ setter)
+
+JSON
+/* in JS is: JSON.stringify(object) */
+
+JSONLint - VALIDA O CÓDIGO JSON
+
+AJAX
+$.ajax
+
+$.ajax({
+	url: '\webservice', type: 'GET' })
+		.done(function(response) { })
+			.fail(function(error) { });
+
+http://open-platform.theguardian.com/

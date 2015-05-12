@@ -1,3 +1,11 @@
+/* CoffeeScript > JQuery 4ever 
+ * Tem a sintaxe parecida com a do Ruby > all
+ */
+ 
+/* Normalize CSS eh show tambem
+ * "flatuicolors(.com) eh uma paleta de cores na moda" by: Bernardo
+ */
+
 /* http://simplesideias.com.br/usando-jquery-na-pratica
  * http://zkdesign.com.br/tutoriais-e-artigos/seletores-jquery-parte-1
  * http://eufacoprogramas.com/jquery-selecao-de-elemento/
