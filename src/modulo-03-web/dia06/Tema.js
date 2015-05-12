@@ -59,3 +59,17 @@ $('img:last, h3:last');
  */
 
 // 1.I
+/* text() concatena tudo */
+$('#myList .current ~ li').text().length;
+/* $('#myList .current ~ li').nextAll().text().length; */
+
+// 3.C
+
+$('div.module')
+	.last()
+	.after(
+		$('<div/>').addClass('module')
+			.append(
+				$('img:eq(0)' ).clone()
+			)
+	);
