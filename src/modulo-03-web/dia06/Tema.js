@@ -46,14 +46,6 @@ console.log(ex1G);
 
 // 1.H
 /* Será? */
-var ex1H = $("img, h3").last(function(){
-    if(this.tagName() == 'img' ) {
-		$('img:last-of-type');
-    } else if (this.tagName() == 'h3' ) {
-		$('h3:last-of-type');
-	}
-});
-
-console.log(ex1H);
+$('img:eq(2), h3:last-of-type :last');
 
 // 1.I
