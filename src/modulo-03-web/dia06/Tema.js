@@ -46,6 +46,8 @@ console.log(ex1G);
 
 // 1.H
 /* Será? */
-$('img:eq(2), h3:last-of-type :last');
+// GAMB $('img:eq(2), h3:last-of-type :last');
+// Sem GAMB
+$('img:last, h3:last-of-type :last');
 
 // 1.I
