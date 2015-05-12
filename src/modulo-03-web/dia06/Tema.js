@@ -11,20 +11,22 @@ console.log(ex1A);
 /* https://api.jquery.com/nth-child-selector/ */
 var ex1B = $('#myList:nth-child(2)');
 
-/* Testar essas resoluções
+/* Outras opcoes:
  * var ex1B = $('#myList li').eq(2);
- * var ex1B = $('#myList li:eq(2)');
+ * var ex1B = $('#myList:eq(2)');
  */
  
 console.log(ex1B);
 
 // 1.C
-var ex1C = $("label[for='q']");
+var ex1C = $("#search label[for='q']");
+/* or $("label[for='q']"); */
 console.log(ex1C);
 
 // 1.D
 /* https://api.jquery.com/has-attribute-selector/ */
 var ex1D = $('[alt]').length;
+/* $('[alt]').size(); */
 console.log(ex1D);
 
 // 1.E
@@ -33,11 +35,13 @@ console.log(ex1D);
  * https://api.jquery.com/first-child-selector/
  */
 var ex1E = $('#fruits tr:even:not(:first-child)');
+/* $('#fruits tbody tr:odd'); */
 console.log(ex1E);
 
 // 1.F
 /* https://api.jquery.com/attribute-contains-selector/ */
-var ex1F = $('h2:contains("B"):contains("e")')
+var ex1F = $('h2:contains("B"):contains("e")').length();
+/* $('h2:contains("B"):contains(\'e\')').size(); */
 console.log(ex1F);
 
 // 1.G
@@ -48,6 +52,10 @@ console.log(ex1G);
 /* Será? */
 // GAMB $('img:eq(2), h3:last-of-type :last');
 // Sem GAMB
-$('img:last, h3:last-of-type :last');
+$('img:last, h3:last');
+
+/* $('li:last-of-type img, li:last-of-type h3');
+ * $('html:last img:last, html:last h3:last');
+ */
 
 // 1.I
