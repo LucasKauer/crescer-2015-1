@@ -5,13 +5,13 @@ INDEX VERSION 1.127+C:\Users\projetocrescer\WhyKauer\src\modulo-04-Marlon\dia01\
 1530861385.index
 2346237577.index
 530282154.index
-288042975.index
+1348710767.index
+2961793328.index
 55593696.index
+288042975.index
+1576913576.index
 1740101647.index
 1061609049.index
-2961793328.index
-1576913576.index
-1348710767.index
 1653389528.index
 199186984.index
 1039617268.index
