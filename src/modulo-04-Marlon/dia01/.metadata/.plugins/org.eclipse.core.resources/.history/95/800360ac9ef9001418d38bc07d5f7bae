@@ -1,0 +1,22 @@
+package filmator;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class FilmatorTest {
+	@Test
+	public void atores() throws Exception {
+		Ator a1 = new Ator("Ator 1");
+		Ator a2 = new Ator("Ator 2");
+		Ator a3 = new Ator("Nao deve encontrar esse");
+		
+		Filme f = new Filme("Filme 1");
+		
+		f.newActor(a1);
+		f.newActor(a2);
+		f.newActor(a3);
+		
+		System.out.println(f.actorsContainsStr("Ator"));
+	}
+}

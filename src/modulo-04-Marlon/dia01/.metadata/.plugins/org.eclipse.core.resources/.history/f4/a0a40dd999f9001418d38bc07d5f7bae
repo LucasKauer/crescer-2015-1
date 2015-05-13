@@ -1,0 +1,10 @@
+package filmater;
+
+public class Filme {
+	String nome;
+	
+	public Filme(String nome) {
+		this.nome = nome;
+	}
+	
+}

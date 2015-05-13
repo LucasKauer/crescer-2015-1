@@ -1,0 +1,19 @@
+package filmator;
+
+import java.util.ArrayList;
+
+public class Netflox {
+	ArrayList<Ator> listMovies = new ArrayList<Ator>();
+	
+	public void reproduzirFilme(Filme movie){
+		System.out.println("Reproduzindo: " + movie.getName());
+		movie.gender.countValue();
+		System.out.println(movie.gender.getValue());
+		movie.gender.countValue();
+		System.out.println(movie.gender.getValue());
+	}
+	
+	public void geraRelatorio() {
+		
+	}
+}

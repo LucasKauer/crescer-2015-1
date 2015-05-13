@@ -1,0 +1,24 @@
+package filmater;
+
+import java.util.ArrayList;
+
+public class Filme {
+	String nome;
+	ArrayList<Ator> listaAtor = new ArrayList<Ator>();
+	
+	public static void main(String[] args) {
+		
+	}
+
+	public Filme(String nome) {
+		this.nome = nome;
+	}
+	
+	private void novoAtor(Ator ator) {
+		listaAtor.add(ator);
+	}
+	
+	public String toString() {
+		return this.nome;
+	}
+}

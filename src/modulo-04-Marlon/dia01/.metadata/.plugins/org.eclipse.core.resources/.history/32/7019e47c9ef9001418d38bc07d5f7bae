@@ -1,0 +1,12 @@
+package filmator;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class FilmatorTest {
+	@Test
+	public void testName() throws Exception {
+		
+	}
+}

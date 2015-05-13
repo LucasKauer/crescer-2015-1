@@ -1,0 +1,31 @@
+package filmater;
+
+import java.util.ArrayList;
+
+public class Filme {
+	String nome;
+	ArrayList<Ator> listaAtor = new ArrayList<Ator>();
+	
+	public static void main(String[] args) {
+		
+	}
+
+	public Filme(String nome) {
+		this.nome = nome;
+	}
+	
+	public void novoAtor(Ator ator) {
+		listaAtor.add(ator);
+	}
+	
+	public ArrayList<Ator> atoresPossuemString(String str) {
+		for (Ator ator : listaAtor) {
+			ator.
+		}
+		return;
+	}
+	
+	public String toString() {
+		return this.nome;
+	}
+}

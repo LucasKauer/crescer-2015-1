@@ -1,0 +1,27 @@
+package filmator;
+
+import java.util.ArrayList;
+
+public class Netflox {
+	ArrayList<Filme> listMovies = new ArrayList<Filme>();
+	
+	public void adicionarFilmeNoAcervoDaNetflox(Filme movie) {
+		listMovies.add(movie);
+	}
+	
+	public static void reproduzirFilme(Filme movie){
+		System.out.println("Reproduzindo: " + movie.getName());
+		movie.gender.countValue();
+	}
+	
+	public static void gerarRelatorio() {
+		
+		Genero[] gender = Genero.values();
+		
+		for(Genero g : gender){
+			
+			System.out.println(g);
+			
+		}
+	}
+}
