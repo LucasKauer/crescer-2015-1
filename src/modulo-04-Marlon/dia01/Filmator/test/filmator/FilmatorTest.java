@@ -65,35 +65,41 @@ public class FilmatorTest {
 	
 	@Test
 	public void addMovieInTheCollectionAndPlayMovie() throws Exception {
+		NetfloxAndIltube nextflox = new NetfloxAndIltube("netflox");
+		
 		Movie movie = new Movie("Glee", Gender.MUSICAL);
 		
-		Netflox.addMovieInTheCollection(movie);
+		nextflox.addMovieInTheCollection(movie);
 		
-		Netflox.playMovie(movie);
+		nextflox.playMovie(movie);
 	}
 	
 	@Test
 	public void addMovieInTheCollectionAndNotPlayMovie() throws Exception {
+		NetfloxAndIltube nextflox = new NetfloxAndIltube("netflox");
+		
 		Movie movie = new Movie("Glee", Gender.MUSICAL);
 		Movie movie2 = new Movie("Love, Rose", Gender.ROMANCE);
 		
-		Netflox.addMovieInTheCollection(movie);
-		Netflox.playMovie(movie2);
+		nextflox.addMovieInTheCollection(movie);
+		nextflox.playMovie(movie2);
 	}
 	
 	@Test
 	public void createReport() throws Exception {
+		NetfloxAndIltube nextflox = new NetfloxAndIltube("netflox");
+
 		Movie movie = new Movie("Glee", Gender.MUSICAL);
 		Movie movie2 = new Movie("Love, Rose", Gender.ROMANCE);
 		
-		Netflox.addMovieInTheCollection(movie);
-		Netflox.addMovieInTheCollection(movie2);
+		nextflox.addMovieInTheCollection(movie);
+		nextflox.addMovieInTheCollection(movie2);
 		
-		Netflox.playMovie(movie);
-		Netflox.playMovie(movie2);
-		Netflox.playMovie(movie2);
+		nextflox.playMovie(movie);
+		nextflox.playMovie(movie2);
+		nextflox.playMovie(movie2);
 		
 		// retornar um musical a mais porque o ENUM nao foi resetado (PRECISA CORRIGIR ISSO)
-		Netflox.createReport();
+		nextflox.createReport();
 	}
 }
