@@ -1,3 +1,11 @@
+/**
+ * Genero 
+ * @author CWI Software
+ * 
+ * Created by Lucas Kauer on 14/05/2015.
+ * Last updated on: 15/05/2015
+ */
+
 package filmator;
 
 public enum Gender {

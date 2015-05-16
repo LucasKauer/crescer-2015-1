@@ -99,7 +99,8 @@ public class FilmatorTest {
 		nextflox.playMovie(movie2);
 		nextflox.playMovie(movie2);
 		
-		// retornar um musical a mais porque o ENUM nao foi resetado (PRECISA CORRIGIR ISSO)
 		nextflox.createReport();
 	}
+	
+	
 }

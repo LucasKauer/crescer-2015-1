@@ -1,3 +1,11 @@
+/**
+ * TV Online  
+ * @author CWI Software
+ * 
+ * Created by Lucas Kauer on 14/05/2015.
+ * Last updated on: 15/05/2015
+ */
+
 package filmator;
 
 import java.util.ArrayList;
@@ -14,45 +22,65 @@ public class NetfloxAndIltube {
 		  NetfloxAndIltube iltube = new NetfloxAndIltube("iltube");
 	} */
 	
+	/**
+	 * Cria novas empresas de TV Online
+	 * @param companyName
+	 * 
+	 * Created by Lucas Kauer on 14/05/2015.
+	 */
 	public NetfloxAndIltube(String companyName) {
 		this.companyName = companyName;
 	}
 	
+	/**
+	 * Adiciona filmes ao acervo da empresa de TV Online
+	 * @param movie Filme que será adicionado no acervo da empresa
+	 * 
+	 * Created by Lucas Kauer on 14/05/2015.
+	 */
 	// adiciona um filme ao acervo da Netflox
 	public void addMovieInTheCollection(Movie movie) {
 		listOfMovies.add(movie);
 	}
 	
+	/**
+	 * Reproduz filmes que estão no acervo da empresa de TV Online
+	 * @param movie Filme que será reproduzido
+	 * 
+	 * Created by Lucas Kauer on 14/05/2015
+	 */
 	/* Se o filme estiver no acervo, ele reproduz o mesmo.
 	 * Se nao, ele retorna uma mensagem alertando o usuario que tal conteudo
 	 * nao esta acessivel no momento
 	 */
 	public void playMovie(Movie movie) {
 		// percorre o ArrayList e verifica se tem o filme passado como parametro
-		if(listOfMovies.contains(movie)) {
-			// int aux = genderCount.getOrDefault(movie.getGender(), 0);
-			// aux++;
-			// genderCount.put(movie.getGender(), aux);
-			
+		if(listOfMovies.contains(movie)) {			
 			Gender genderOfMovie = movie.getGender();
-
-			if(genderCount.containsKey(genderOfMovie)) {
+			
+			int aux = genderCount.getOrDefault(genderOfMovie, 0);
+			genderCount.put(genderOfMovie, ++aux);
+			
+			/*if(genderCount.containsKey(genderOfMovie)) {
 				int aux = genderCount.get(genderOfMovie);
 				aux++;
 				genderCount.put(genderOfMovie, aux);
 			} else {
 				genderCount.put(movie.getGender(), 1);
-			}
+			}*/
 			
 			System.out.println("Reproduzindo: " + movie.getName());
-			// chama o metodo viewsCount que acrescenta +1 ao numero de visualizacoes
-			// movie.getGender().viewsCount();;
 			
 		} else {
 			System.out.println("Erro: o filme selecionado não se encontra no acervo.");
 		}
 	}
 	
+	/**
+	 * Gera relatórios da quantidade de filmes que foram reproduzidos por genero
+	 * 
+	 * Created by Lucas Kauer on 14/05/2015
+	 */
 	public void createReport() {
 		
 		for (Map.Entry<Gender, Integer> entry : genderCount.entrySet()) {
@@ -78,7 +106,7 @@ public class NetfloxAndIltube {
 	}
 	
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		NetfloxAndIltube netflox = new NetfloxAndIltube("netflox");
 		Movie movie = new Movie("Glee", Gender.MUSICAL);
 		Movie movie2 = new Movie("Glee 2", Gender.MUSICAL);
@@ -92,5 +120,5 @@ public class NetfloxAndIltube {
 		netflox.playMovie(movie3);
 		
 		netflox.createReport();
-	}
+	}*/
 }

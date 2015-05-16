@@ -1,3 +1,11 @@
+/**
+ * Filme 
+ * @author CWI Software
+ * 
+ * Created by Lucas Kauer on 14/05/2015.
+ * Last updated on: 14/05/2015
+ */
+
 package filmator;
 
 import java.util.ArrayList;
@@ -22,17 +30,37 @@ public class Movie {
 		System.out.println(m.actorsContainsStr("Ator")); */
 		
 	}
-
+	
+	/**
+	 * Cria novos filmes
+	 * @param name Nome do filme
+	 * @param gender Genero do filme
+	 * 
+	 * Created by Lucas Kauer on 14/05/2015.
+	 */
 	public Movie(String name, Gender gender) {
 		this.name = name;
 		this.gender = gender; 
 	}
 	
+	/**
+	 * Adiciona atores ao elenco do filme
+	 * @param actor Ator que será adiciona ao elenco do filme
+	 * 
+	 * Created by Lucas Kauer on 14/05/2015.
+	 */
 	// adiciona um ator ao elenco do filme
 	public void newActor (Actor actor) {
 		listOfActors.add(actor);
 	}
 	
+	/**
+	 * Verifica os atores do elenco que contem uma determina String no nome 
+	 * @param str String que fará o filtro
+	 * @return Retorna os atores do elenco que contem no nome a String informada
+	 * 
+	 * Created by Lucas Kauer on 14/05/2015.
+	 */
 	// verifica e retorna os atores do elenco que contem no nome a str passada como parametro
 	public ArrayList<Actor> actorsContainsStr(String str) {
 		ArrayList<Actor> listContains = new ArrayList<Actor>();
