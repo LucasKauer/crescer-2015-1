@@ -1,0 +1,12 @@
+Receita
+	- String nome
+	- List<Ingrediente>
+	- List<Instrucao>
+
+Ingrediente
+	- String nome
+	- double quantidade
+	- UnidadeMedida unidadeMedida (ex: grama, unidade, xícara, colher_sopa, ...)
+
+Instrucao
+	- String descricao
