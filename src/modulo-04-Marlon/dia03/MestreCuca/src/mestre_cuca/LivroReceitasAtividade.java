@@ -77,10 +77,8 @@ public class LivroReceitasAtividade {
 	public List<Receita> protecaoAosAlergicos(List<Ingrediente> listaDeIngredientesDosAlergicos) {
 		List<Receita> listaDeReceitaDosAlergicos = new ArrayList<>();
 		
-		for(int i = 0; i < livroDeReceita.size(); i++) {
-			
-			Receita receitaAtual = livroDeReceita.get(i);
-			
+		for (Receita receitaAtual : livroDeReceita) {
+						
 			List<Ingrediente> listaIngredientesDaReceitaAtual = receitaAtual.getListaDeIngredientes();
 			
 			for(int j = 0; j < listaIngredientesDaReceitaAtual.size(); j++) {
@@ -107,17 +105,39 @@ public class LivroReceitasAtividade {
 	}
 	
 	/*
-	 * Lista de compras: faça um método que receba uma lista de receitas
-	 * e retorne uma "lista de compras", agrupando todos os ingredientes
+	 * agrupando todos os ingredientes
 	 * que possuem o mesmo nome e unidade de medida.
+	 */
+	
+	/*
+	 * forEach >
+	 * If (JÁ TEM NO MAP)
+	 * ELSE IF (NAO TEM NO MAP)
+	 * EQUALS ALTERADO PARA VERIFICAR NOME E UNIDADE DE MEDIDA
+	 * GET DO HASH BUSCA A CHAVE COM EQUALS (NO CASO, O DO OVERRIDE)
+	 * 
 	 */
 	
 	public List<Ingrediente> compras(List<Receita> listaDeReceitas) {
 		List<Ingrediente> listaDeCompras = new ArrayList<>();
-		Map<Ingrediente, String> compras = new HashMap<>();
+		Map<Ingrediente, Double> compras = new HashMap<>();
 		
-		for (int i = 0; i < listaDeReceitas.size(); i++) {
+		for (Receita receitaAtual : livroDeReceita) {
 			
+			List<Ingrediente> listaIngredientesDaReceitaAtual = receitaAtual.getListaDeIngredientes();
+			
+			for(int j = 0; j < listaIngredientesDaReceitaAtual.size(); j++) {
+				Ingrediente ingredienteAtual = listaIngredientesDaReceitaAtual.get(j);
+				if(!compras.containsKey(ingredienteAtual)) {
+					compras.put(ingredienteAtual, ingredienteAtual.getQuantidade());
+				} else {
+					double valorAntigo = compras.get(ingredienteAtual);
+					double valorAtual = ingredienteAtual.getQuantidade();
+					
+					compras.put(ingredienteAtual, valorAntigo + valorAtual);
+				}
+			
+			}
 		}
 		
 		return listaDeCompras;
