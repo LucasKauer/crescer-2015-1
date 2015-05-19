@@ -1,5 +1,6 @@
 package mestre_cuca;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Receita {
@@ -11,6 +12,30 @@ public class Receita {
 		this.nome = nome;
 		this.listaDeIngredientes = listaDeIngredientes;
 		this.listaDeInstrucao = listaDeInstrucao;
+	}
+	
+	public static void main(String[] args) {
+		// LISTA DE INGREDIENTES 1
+		List<Ingrediente> listaDeIngrediente = new ArrayList<>();
+		listaDeIngrediente.add(new Ingrediente("Ingrediente", 1, 2.0, UnidadeMedida.GRAMA));
+		listaDeIngrediente.add(new Ingrediente("Ingrediente 2", 1, 3.0, UnidadeMedida.UNIDADE));
+				
+		// LISTA DE INSTRUCAO 1
+		List<Instrucao> listaDeInstrucao = new ArrayList<>();
+		listaDeInstrucao.add(new Instrucao("Instrucao"));
+
+		// LISTA DE RECEITA
+		Receita receita = new Receita("Receita", listaDeIngrediente, listaDeInstrucao);
+		
+		System.out.println(receita.valorTotalReceita(receita));
+	}
+	
+	public double valorTotalReceita(Receita receita) {
+		double valorTotal = 0;
+		for (int i = 0; i < listaDeIngredientes.size(); i++) {
+			valorTotal += listaDeIngredientes.get(i).getValor();
+		}
+		return valorTotal;
 	}
 	
 	public String getNome() {
@@ -35,6 +60,11 @@ public class Receita {
 	
 	public void setListaDeInstrucao(List<Instrucao> listaDeInstrucao) {
 		this.listaDeInstrucao = listaDeInstrucao;
+	}
+	
+	@Override
+	public String toString() {
+		return getNome();
 	}
 
 }
