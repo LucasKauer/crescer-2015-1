@@ -105,11 +105,6 @@ public class LivroReceitasAtividade {
 	}
 	
 	/*
-	 * agrupando todos os ingredientes
-	 * que possuem o mesmo nome e unidade de medida.
-	 */
-	
-	/*
 	 * forEach >
 	 * If (JÁ TEM NO MAP)
 	 * ELSE IF (NAO TEM NO MAP)
@@ -130,15 +125,25 @@ public class LivroReceitasAtividade {
 				Ingrediente ingredienteAtual = listaIngredientesDaReceitaAtual.get(j);
 				if(!compras.containsKey(ingredienteAtual)) {
 					compras.put(ingredienteAtual, ingredienteAtual.getQuantidade());
+					// listaDeCompras.add(ingredienteAtual);
 				} else {
 					double valorAntigo = compras.get(ingredienteAtual);
 					double valorAtual = ingredienteAtual.getQuantidade();
 					
-					compras.put(ingredienteAtual, valorAntigo + valorAtual);
+					compras.put(ingredienteAtual, valorAntigo+valorAtual);
+					
+					// int indexIngredienteAtual = listaDeCompras.indexOf(ingredienteAtual);
+					// Ingrediente setIngrediente = new Ingrediente(ingredienteAtual.getNome(), valorAtual, ingredienteAtual.getValor(), ingredienteAtual.getUnidadeMedida());
+					// listaDeCompras.set(indexIngredienteAtual, setIngrediente);
+					
 				}
-			
-			}
+			}	
 		}
+		
+		/* MUDAR O RETORNO DO MÉTODO PARA HASH OU IMPLENTAR
+		 * UM FOR AQUI PARA PASSAR OS VALORES DO HASH
+		 * PARA UMA LIST E RETORNAR ESSA LIST
+		 */
 		
 		return listaDeCompras;
 	}
