@@ -99,4 +99,39 @@ public class mestre_cuca {
 		
 		System.out.println(livro2.protecaoAosAlergicos(listaDeIngredienteAlergicos));
 	}
+	
+	@Test
+	public void protecaoAosAlergicos3() throws Exception {
+		//LISTA DE INGREDIENTES
+		List<Ingrediente> listaIngredientesBolo = new ArrayList<Ingrediente>();
+		listaIngredientesBolo.add(new Ingrediente("Farinha", 3, 2.5, UnidadeMedida.XICARA));
+		listaIngredientesBolo.add(new Ingrediente("Fermento", 1, 2.25, UnidadeMedida.COLHER_SOPA));
+		listaIngredientesBolo.add(new Ingrediente("Ovo", 1, 0.5, UnidadeMedida.UNIDADE));
+
+		List<Ingrediente> listaIngredientesPanqueca = new ArrayList<Ingrediente>();
+		listaIngredientesPanqueca.add(new Ingrediente("Farinha", 3, 2.5, UnidadeMedida.XICARA));
+		listaIngredientesPanqueca.add(new Ingrediente("Ovo", 1, 0.5, UnidadeMedida.UNIDADE));		
+
+		//LISTA DE INSTRUCAO
+		List<Instrucao> instrucaoBolo = new ArrayList<Instrucao>();
+		instrucaoBolo.add(new Instrucao("Misturar e por no forno"));
+		List<Instrucao> instrucaoPanqueca = new ArrayList<Instrucao>();
+		instrucaoPanqueca.add(new Instrucao("Instrucao"));
+
+		//RECEITAS
+		Receita bolo = new Receita("Bolo", listaIngredientesBolo, instrucaoBolo);
+		Receita panqueca = new Receita("Panqueca", listaIngredientesPanqueca, instrucaoPanqueca);
+		
+		//LISTA DE RECEITAS
+		List<Receita> listaReceitas = new ArrayList<Receita>();
+		listaReceitas.add(bolo);
+		listaReceitas.add(panqueca);
+		
+		//LIVRO DE RECEITAS
+		LivroReceitasAtividade livroReceitas = new LivroReceitasAtividade();
+		livroReceitas.inserir(bolo);
+		livroReceitas.inserir(panqueca);
+				
+		System.out.println(livroReceitas.compras(listaReceitas));
+	}
 }

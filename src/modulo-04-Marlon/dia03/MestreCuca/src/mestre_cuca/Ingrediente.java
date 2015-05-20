@@ -34,7 +34,7 @@ public class Ingrediente {
 
 	@Override
 	public String toString() {
-		return getUnidadeMedida() + " de " + getNome();
+		return getQuantidade() + " " + getUnidadeMedida() + " de " + getNome();
 	}
 
 	@Override

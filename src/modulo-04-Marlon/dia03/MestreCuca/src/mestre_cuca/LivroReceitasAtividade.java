@@ -140,6 +140,14 @@ public class LivroReceitasAtividade {
 			}	
 		}
 		
+		for (Ingrediente chaveAtual : compras.keySet()) {
+			
+			Double valorAtual = compras.get(chaveAtual);
+			Ingrediente ingredienteAtual = new Ingrediente(chaveAtual.getNome(), valorAtual, chaveAtual.getQuantidade(), chaveAtual.getUnidadeMedida());
+			listaDeCompras.add(ingredienteAtual);
+
+		}
+		
 		/* MUDAR O RETORNO DO MÉTODO PARA HASH OU IMPLENTAR
 		 * UM FOR AQUI PARA PASSAR OS VALORES DO HASH
 		 * PARA UMA LIST E RETORNAR ESSA LIST
