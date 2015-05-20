@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<!-- http://illuminati.instaweb.com.br:6789/exercicios?token=d31cd9b4ec38 -->
+<html>
+	<head>
+	  <meta charset="UTF-8">
+	  <title>Document</title>
+	  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	</head>
+	<body>
+	  <h1>AJAX</h1>
+	  <button id="btn" style="padding: 20px; background: red; color: #fff">BUSCAR</button>
+	  
+	  </ul>
+	  <script>
+		$(function(){
+		  $('#btn').click(function(){
+
+		   exercicioUm();
+		  
+		  })
+		})
+		
+		var nome = {nome: 'Lucas'};
+		
+		function enviaNome(){
+			$.ajax({
+				url: 'http://illuminati.instaweb.com.br:6789/autentica',
+				type: 'POST',
+				contentType: 'application/json',
+				dataType: 'json',
+				data: JSON.stringify(nome)
+			}).done(function(resposta) {
+				alert(resposta);
+			});
+		};
+		var ex1 = {nome: 'Exercício 1', instrucoes: 'Faça um POST /exercicios para enviar a resposta correta, no formato { resposta: RESPOSTA }.', dados: 8};
+		function exercicioUm(){
+			$.ajax({
+				url: 'http://illuminati.instaweb.com.br:6789/autentica',
+				type: 'POST',
+				contentType: 'application/json',
+				dataType: 'json',
+				data: JSON.stringify(ex1)
+			}).done(function(resposta) {
+				alert(resposta);
+			});
+		};
+	  </script>
+	</body>
+</html>
