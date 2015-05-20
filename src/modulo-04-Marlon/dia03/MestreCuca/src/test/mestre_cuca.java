@@ -63,7 +63,7 @@ public class mestre_cuca {
 		List<Receita> expecteds = new ArrayList<Receita>();
 		expecteds.add(receitaLeiteChocolate);
 		List<Receita> actuals = livroOFLC2
-				.protecaoAosAlergicos(listaDeIngredienteAlergicos);
+				.buscaReceitasSemIngredientesProibidos(listaDeIngredienteAlergicos);
 
 		assertEquals(expecteds, actuals);
 	}
@@ -115,7 +115,7 @@ public class mestre_cuca {
 		List<Receita> expecteds = new ArrayList<Receita>();
 		expecteds.add(receitaLeiteChocolate);
 		List<Receita> actuals = livroOFLC
-				.protecaoAosAlergicos(listaDeIngredienteAlergicos);
+				.buscaReceitasSemIngredientesProibidos(listaDeIngredienteAlergicos);
 
 		assertEquals(expecteds, actuals);
 	}
@@ -160,7 +160,7 @@ public class mestre_cuca {
 		
 		List<Receita> expecteds = new ArrayList<>();
 		expecteds.add(panqueca);
-		List<Receita> actuals = livroReceitas.protecaoAosAlergicos(listaDeIngredienteProibidos);
+		List<Receita> actuals = livroReceitas.buscaReceitasSemIngredientesProibidos(listaDeIngredienteProibidos);
 		assertEquals(expecteds, actuals);
 	}
 
@@ -208,7 +208,7 @@ public class mestre_cuca {
 				UnidadeMedida.GRAMA));
 		expecteds.add(new Ingrediente("Ovo", 5, 0.5, UnidadeMedida.UNIDADE));
 
-		List<Ingrediente> actuals = livroReceitas.compras(listaReceitas);
+		List<Ingrediente> actuals = livroReceitas.geraListaDeCompras(listaReceitas);
 		assertEquals(expecteds, actuals);
 	}
 }

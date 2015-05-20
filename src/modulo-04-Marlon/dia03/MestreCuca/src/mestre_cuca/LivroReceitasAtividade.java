@@ -82,7 +82,7 @@ public class LivroReceitasAtividade {
 		return valorTotal;
 	}
 	
-	public List<Receita> protecaoAosAlergicos(List<Ingrediente> listaDeIngredientesDosAlergicos) {
+	public List<Receita> buscaReceitasSemIngredientesProibidos(List<Ingrediente> listaDeIngredientesDosAlergicos) {
 		List<Receita> listaDeReceitaDosAlergicos = new ArrayList<>();
 		
 		for (Receita receitaAtual : livroDeReceita) {
@@ -112,17 +112,13 @@ public class LivroReceitasAtividade {
 		return listaDeReceitaDosAlergicos;
 	}
 	
-	public List<Ingrediente> compras(List<Receita> listaDeReceitas) {
+	public List<Ingrediente> geraListaDeCompras(List<Receita> listaDeReceitas) {
 		List<Ingrediente> listaDeCompras = new ArrayList<>();
 		Map<Ingrediente, Double> compras = new LinkedHashMap<>();
 		// LinkedHashMap resolve o bug do Milênio
 		
 		for (Receita receitaAtual : livroDeReceita) {
-			
-			List<Ingrediente> listaIngredientesDaReceitaAtual = receitaAtual.getListaDeIngredientes();
-			
-			for(int j = 0; j < listaIngredientesDaReceitaAtual.size(); j++) {
-				Ingrediente ingredienteAtual = listaIngredientesDaReceitaAtual.get(j);
+			for(Ingrediente ingredienteAtual : receitaAtual.getListaDeIngredientes()) {
 				if(!compras.containsKey(ingredienteAtual)) {
 					compras.put(ingredienteAtual, ingredienteAtual.getQuantidade());
 					// listaDeCompras.add(ingredienteAtual);
