@@ -27,10 +27,10 @@ public class Receita {
 		// LISTA DE RECEITA
 		Receita receita = new Receita("Receita", listaDeIngrediente, listaDeInstrucao);
 		
-		System.out.println(receita.valorTotalReceita(receita));
+		System.out.println(receita.valorTotalReceita());
 	}
 	
-	public double valorTotalReceita(Receita receita) {
+	public double valorTotalReceita() {
 		double valorTotal = 0;
 		for (Ingrediente ingredienteAtual : listaDeIngredientes) {
 			valorTotal += ingredienteAtual.getValor();

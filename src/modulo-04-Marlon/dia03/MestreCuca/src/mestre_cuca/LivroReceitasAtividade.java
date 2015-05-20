@@ -77,7 +77,7 @@ public class LivroReceitasAtividade {
 	public double valorTotalReceitas(List<Receita> listaDeReceitas) {
 		double valorTotal = 0;
 		for (Receita receitaAtual : listaDeReceitas) {
-			valorTotal += receitaAtual.valorTotalReceita(receitaAtual);
+			valorTotal += receitaAtual.valorTotalReceita();
 		}
 		return valorTotal;
 	}
