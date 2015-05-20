@@ -1,4 +1,4 @@
-// andre_298
+// Skype: andre_298
 
 package mestre_cuca;
 
@@ -21,15 +21,12 @@ public class LivroReceitasAtividade {
 	}
 	
 	public void atualizar(String nome, Receita receitaAtualizada) {
-		Receita receita = null;
 		int x = 0;
-		for (int i = 0; i < livroDeReceita.size(); i++) {
-			Receita receitaAtual = livroDeReceita.get(i);
+		for (Receita receitaAtual : livroDeReceita) {
 
 			if(receitaAtual.getNome() == nome) {
-				receita = livroDeReceita.get(i);
 				/*boolean receitaEhNula = receita.equals(null);*/
-				boolean receitaSemNome = receita.getNome().isEmpty();
+				boolean receitaSemNome = receitaAtual.getNome().isEmpty();
 				if(receitaSemNome == false /*|| receitaEhNula != true*/) {
 					livroDeReceita.set(x, receitaAtualizada);
 				}
@@ -41,11 +38,17 @@ public class LivroReceitasAtividade {
 	}
 	
 	public void excluir(String nome) {
-		for (int i = 0; i < livroDeReceita.size(); i++) {
+		/*for (int i = 0; i < livroDeReceita.size(); i++) {
 			Receita receitaAtual = livroDeReceita.get(i);
 			
 			if(receitaAtual.getNome() == nome) {
 				livroDeReceita.remove(i);
+			}
+		}*/
+		
+		for (Receita receitaAtual : livroDeReceita) {
+			if(receitaAtual.getNome() == nome) {
+				livroDeReceita.remove(receitaAtual);
 			}
 		}
 	}
@@ -55,10 +58,16 @@ public class LivroReceitasAtividade {
 	}
 	
 	public Receita buscaReceitaPeloNome(String nome) {
-		for (int i = 0; i < livroDeReceita.size(); i++) {
+		/*for (int i = 0; i < livroDeReceita.size(); i++) {
 			Receita receitaAtual = livroDeReceita.get(i);
 			if(receitaAtual.getNome() == nome) {
 				return livroDeReceita.get(i);
+			}
+		}*/
+		
+		for (Receita receitaAtual : livroDeReceita) {
+			if(receitaAtual.getNome() == nome) {
+				return receitaAtual;
 			}
 		}
 		
@@ -137,7 +146,7 @@ public class LivroReceitasAtividade {
 	}
 	
 	public static void main(String[] args) {		
-		/* // LISTA DE INGREDIENTES 1
+		// LISTA DE INGREDIENTES 1
 		List<Ingrediente> listaDeIngrediente = new ArrayList<>();
 		listaDeIngrediente.add(new Ingrediente("Ingrediente", 1, 2.0, UnidadeMedida.GRAMA));
 		
@@ -170,7 +179,7 @@ public class LivroReceitasAtividade {
 		System.out.println(livro.buscaReceitaPeloNome("Receita 2"));
 		
 		//livro.excluir("Receita 2");
-		//System.out.println(livro.getTodasReceitas()); */
+		//System.out.println(livro.getTodasReceitas());
 		
 	}
 }

@@ -32,8 +32,8 @@ public class Receita {
 	
 	public double valorTotalReceita(Receita receita) {
 		double valorTotal = 0;
-		for (int i = 0; i < listaDeIngredientes.size(); i++) {
-			valorTotal += listaDeIngredientes.get(i).getValor();
+		for (Ingrediente ingredienteAtual : listaDeIngredientes) {
+			valorTotal += ingredienteAtual.getValor();
 		}
 		return valorTotal;
 	}
