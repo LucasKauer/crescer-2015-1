@@ -93,7 +93,7 @@ public class LivroReceitasAtividade {
 				} else if(listaDeIngredientesDosAlergicos.contains(ingredienteAtual) && listaDeReceitaDosAlergicos.contains(receitaAtual)) {
 						
 					listaDeReceitaDosAlergicos.remove(receitaAtual);
-					continue;
+					break;
 				}
 				
 				break;
