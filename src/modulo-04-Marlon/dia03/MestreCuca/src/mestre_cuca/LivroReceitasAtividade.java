@@ -3,7 +3,7 @@
 package mestre_cuca;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -104,18 +104,10 @@ public class LivroReceitasAtividade {
 		return listaDeReceitaDosAlergicos;
 	}
 	
-	/*
-	 * forEach >
-	 * If (JÁ TEM NO MAP)
-	 * ELSE IF (NAO TEM NO MAP)
-	 * EQUALS ALTERADO PARA VERIFICAR NOME E UNIDADE DE MEDIDA
-	 * GET DO HASH BUSCA A CHAVE COM EQUALS (NO CASO, O DO OVERRIDE)
-	 * 
-	 */
-	
 	public List<Ingrediente> compras(List<Receita> listaDeReceitas) {
 		List<Ingrediente> listaDeCompras = new ArrayList<>();
-		Map<Ingrediente, Double> compras = new HashMap<>();
+		Map<Ingrediente, Double> compras = new LinkedHashMap<>();
+		// LinkedHashMap resolve o bug do Milênio
 		
 		for (Receita receitaAtual : livroDeReceita) {
 			
@@ -131,27 +123,15 @@ public class LivroReceitasAtividade {
 					double valorAtual = ingredienteAtual.getQuantidade();
 					
 					compras.put(ingredienteAtual, valorAntigo+valorAtual);
-					
-					// int indexIngredienteAtual = listaDeCompras.indexOf(ingredienteAtual);
-					// Ingrediente setIngrediente = new Ingrediente(ingredienteAtual.getNome(), valorAtual, ingredienteAtual.getValor(), ingredienteAtual.getUnidadeMedida());
-					// listaDeCompras.set(indexIngredienteAtual, setIngrediente);
-					
 				}
 			}	
 		}
 		
 		for (Ingrediente chaveAtual : compras.keySet()) {
-			
 			Double valorAtual = compras.get(chaveAtual);
 			Ingrediente ingredienteAtual = new Ingrediente(chaveAtual.getNome(), valorAtual, chaveAtual.getQuantidade(), chaveAtual.getUnidadeMedida());
 			listaDeCompras.add(ingredienteAtual);
-
 		}
-		
-		/* MUDAR O RETORNO DO MÉTODO PARA HASH OU IMPLENTAR
-		 * UM FOR AQUI PARA PASSAR OS VALORES DO HASH
-		 * PARA UMA LIST E RETORNAR ESSA LIST
-		 */
 		
 		return listaDeCompras;
 	}

@@ -21,40 +21,45 @@ public class mestre_cuca {
 		Ingrediente i3 = new Ingrediente("Leite", 1, 2.0, UnidadeMedida.XICARA);
 		Ingrediente i4 = new Ingrediente("Chocolate", 500, 5.0, UnidadeMedida.GRAMA);
 		// LISTA DE INGREDIENTES 1
-		List<Ingrediente> listaDeIngrediente3 = new ArrayList<>();
+		List<Ingrediente> listaDeIngredienteOvoFarinha = new ArrayList<>();
 		
-		listaDeIngrediente3.add(i);
-		listaDeIngrediente3.add(i2);
+		listaDeIngredienteOvoFarinha.add(i);
+		listaDeIngredienteOvoFarinha.add(i2);
 
 		// LISTA DE INSTRUCAO 1
-		List<Instrucao> listaDeInstrucao3 = new ArrayList<>();
-		listaDeInstrucao3.add(new Instrucao("Instrucao"));
+		List<Instrucao> listaDeInstrucaoOvoFarinha = new ArrayList<>();
+		listaDeInstrucaoOvoFarinha.add(new Instrucao("Instrucao"));
 
 		// LISTA DE RECEITA
-		Receita receita3 = new Receita("Ovo|Farinha", listaDeIngrediente3, listaDeInstrucao3);
+		Receita receitaOvoFarinha = new Receita("Ovo|Farinha", listaDeIngredienteOvoFarinha, listaDeInstrucaoOvoFarinha);
 		
 		// LISTA DE INGREDIENTES 1
-		List<Ingrediente> listaDeIngrediente4 = new ArrayList<>();
-		listaDeIngrediente4.add(i3);
-		listaDeIngrediente4.add(i4);
+		List<Ingrediente> listaDeIngredienteLeiteChocolate = new ArrayList<>();
+		listaDeIngredienteLeiteChocolate.add(i3);
+		listaDeIngredienteLeiteChocolate.add(i4);
 
 		// LISTA DE INSTRUCAO 1
-		List<Instrucao> listaDeInstrucao4 = new ArrayList<>();
-		listaDeInstrucao4.add(new Instrucao("Instrucao"));
+		List<Instrucao> listaDeInstrucaoLeiteChocolate = new ArrayList<>();
+		listaDeInstrucaoLeiteChocolate.add(new Instrucao("Instrucao"));
 
 		// LISTA DE RECEITA
-		Receita receita4 = new Receita("Leite|Chocolate", listaDeIngrediente4, listaDeInstrucao4);
+		Receita receitaLeiteChocolate = new Receita("Leite|Chocolate", listaDeIngredienteLeiteChocolate, listaDeInstrucaoLeiteChocolate);
 		
-		LivroReceitasAtividade livro = new LivroReceitasAtividade();
-		livro.inserir(receita3);
-		livro.inserir(receita4);
+		LivroReceitasAtividade livroOFLC2 = new LivroReceitasAtividade();
+		livroOFLC2.inserir(receitaOvoFarinha);
+		livroOFLC2.inserir(receitaLeiteChocolate);
 		
 		// LISTA DE INGREDIENTES
 		List<Ingrediente> listaDeIngredienteAlergicos = new ArrayList<>();
 		listaDeIngredienteAlergicos.add(i);
 		listaDeIngredienteAlergicos.add(i2);
 		
-		System.out.println(livro.protecaoAosAlergicos(listaDeIngredienteAlergicos));
+		//System.out.println(livroOFLC2.protecaoAosAlergicos(listaDeIngredienteAlergicos));
+		List<Receita> expecteds = new ArrayList<Receita>();
+		expecteds.add(receitaLeiteChocolate);
+		List<Receita> actuals = livroOFLC2.protecaoAosAlergicos(listaDeIngredienteAlergicos);
+	
+		assertEquals(expecteds, actuals);
 	}
 	
 	@Test
@@ -64,59 +69,62 @@ public class mestre_cuca {
 		Ingrediente i3 = new Ingrediente("Leite", 1, 2.0, UnidadeMedida.XICARA);
 		Ingrediente i4 = new Ingrediente("Chocolate", 500, 5.0, UnidadeMedida.GRAMA);
 		// LISTA DE INGREDIENTES 1
-		List<Ingrediente> listaDeIngrediente3 = new ArrayList<>();
+		List<Ingrediente> listaDeIngredienteOvoFarinha = new ArrayList<>();
 		
-		listaDeIngrediente3.add(i);
-		listaDeIngrediente3.add(i2);
+		listaDeIngredienteOvoFarinha.add(i);
+		listaDeIngredienteOvoFarinha.add(i2);
 
 		// LISTA DE INSTRUCAO 1
-		List<Instrucao> listaDeInstrucao3 = new ArrayList<>();
-		listaDeInstrucao3.add(new Instrucao("Instrucao"));
+		List<Instrucao> listaDeInstrucaoOvoFarinha = new ArrayList<>();
+		listaDeInstrucaoOvoFarinha.add(new Instrucao("Instrucao"));
 
 		// LISTA DE RECEITA
-		Receita receita3 = new Receita("Ovo|Farinha", listaDeIngrediente3, listaDeInstrucao3);
+		Receita receitaOvoFarinha = new Receita("Ovo|Farinha", listaDeIngredienteOvoFarinha, listaDeInstrucaoOvoFarinha);
 		
 		// LISTA DE INGREDIENTES 1
-		List<Ingrediente> listaDeIngrediente4 = new ArrayList<>();
-		listaDeIngrediente4.add(i3);
-		listaDeIngrediente4.add(i4);
+		List<Ingrediente> listaDeIngredienteLeiteChocolate = new ArrayList<>();
+		listaDeIngredienteLeiteChocolate.add(i3);
+		listaDeIngredienteLeiteChocolate.add(i4);
 
 		// LISTA DE INSTRUCAO 1
-		List<Instrucao> listaDeInstrucao4 = new ArrayList<>();
-		listaDeInstrucao4.add(new Instrucao("Instrucao"));
+		List<Instrucao> listaDeInstrucaoLeiteChocolate = new ArrayList<>();
+		listaDeInstrucaoLeiteChocolate.add(new Instrucao("Instrucao"));
 
 		// LISTA DE RECEITA
-		Receita receita4 = new Receita("Leite|Chocolate", listaDeIngrediente4, listaDeInstrucao4);
+		Receita receitaLeiteChocolate = new Receita("Leite|Chocolate", listaDeIngredienteLeiteChocolate, listaDeInstrucaoLeiteChocolate);
 		
-		LivroReceitasAtividade livro2 = new LivroReceitasAtividade();
-		livro2.inserir(receita3);
-		livro2.inserir(receita4);
+		LivroReceitasAtividade livroOFLC = new LivroReceitasAtividade();
+		livroOFLC.inserir(receitaOvoFarinha);
+		livroOFLC.inserir(receitaLeiteChocolate);
 		
 		// LISTA DE INGREDIENTES PROIBIDOS
 		List<Ingrediente> listaDeIngredienteAlergicos = new ArrayList<>();
 		listaDeIngredienteAlergicos.add(i);
-		// listaDeIngredienteAlergicos.add(i2);
-		
-		System.out.println(livro2.protecaoAosAlergicos(listaDeIngredienteAlergicos));
+
+		List<Receita> expecteds = new ArrayList<Receita>();
+		expecteds.add(receitaLeiteChocolate);
+		List<Receita> actuals = livroOFLC.protecaoAosAlergicos(listaDeIngredienteAlergicos);
+	
+		assertEquals(expecteds, actuals);
 	}
 	
 	@Test
-	public void protecaoAosAlergicos3() throws Exception {
+	public void listaDeComprasTest() throws Exception {
 		//LISTA DE INGREDIENTES
 		List<Ingrediente> listaIngredientesBolo = new ArrayList<Ingrediente>();
-		listaIngredientesBolo.add(new Ingrediente("Farinha", 3, 2.5, UnidadeMedida.XICARA));
-		listaIngredientesBolo.add(new Ingrediente("Fermento", 1, 2.25, UnidadeMedida.COLHER_SOPA));
-		listaIngredientesBolo.add(new Ingrediente("Ovo", 1, 0.5, UnidadeMedida.UNIDADE));
+		listaIngredientesBolo.add(new Ingrediente("Farinha", 4, 2.5, UnidadeMedida.XICARA));
+		listaIngredientesBolo.add(new Ingrediente("Chocolate", 500, 2.25, UnidadeMedida.GRAMA));
+		listaIngredientesBolo.add(new Ingrediente("Ovo", 4, 0.5, UnidadeMedida.UNIDADE));
 
 		List<Ingrediente> listaIngredientesPanqueca = new ArrayList<Ingrediente>();
-		listaIngredientesPanqueca.add(new Ingrediente("Farinha", 3, 2.5, UnidadeMedida.XICARA));
+		listaIngredientesPanqueca.add(new Ingrediente("Farinha", 1, 2.5, UnidadeMedida.XICARA));
 		listaIngredientesPanqueca.add(new Ingrediente("Ovo", 1, 0.5, UnidadeMedida.UNIDADE));		
 
 		//LISTA DE INSTRUCAO
 		List<Instrucao> instrucaoBolo = new ArrayList<Instrucao>();
-		instrucaoBolo.add(new Instrucao("Misturar e por no forno"));
+		instrucaoBolo.add(new Instrucao("Instrucao do Bolo"));
 		List<Instrucao> instrucaoPanqueca = new ArrayList<Instrucao>();
-		instrucaoPanqueca.add(new Instrucao("Instrucao"));
+		instrucaoPanqueca.add(new Instrucao("Instrucao da Panqueca"));
 
 		//RECEITAS
 		Receita bolo = new Receita("Bolo", listaIngredientesBolo, instrucaoBolo);
@@ -131,7 +139,14 @@ public class mestre_cuca {
 		LivroReceitasAtividade livroReceitas = new LivroReceitasAtividade();
 		livroReceitas.inserir(bolo);
 		livroReceitas.inserir(panqueca);
-				
-		System.out.println(livroReceitas.compras(listaReceitas));
+			
+		List<Ingrediente> expecteds = new ArrayList<Ingrediente>();
+		expecteds.add(new Ingrediente("Farinha", 5, 0.5, UnidadeMedida.XICARA));
+		expecteds.add(new Ingrediente("Chocolate", 500, 0.5, UnidadeMedida.GRAMA));
+		expecteds.add(new Ingrediente("Ovo", 5, 0.5, UnidadeMedida.UNIDADE));
+
+		
+		List<Ingrediente> actuals = livroReceitas.compras(listaReceitas);
+		assertEquals(expecteds, actuals);
 	}
 }
