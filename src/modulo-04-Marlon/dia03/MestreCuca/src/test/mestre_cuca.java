@@ -157,9 +157,11 @@ public class mestre_cuca {
 		// LISTA DE INGREDIENTES PROIBIDOS
 		List<Ingrediente> listaDeIngredienteProibidos = new ArrayList<Ingrediente>();
 		listaDeIngredienteProibidos.add(fermento);
-
-		System.out.println(livroReceitas
-				.protecaoAosAlergicos(listaDeIngredienteProibidos));
+		
+		List<Receita> expecteds = new ArrayList<>();
+		expecteds.add(panqueca);
+		List<Receita> actuals = livroReceitas.protecaoAosAlergicos(listaDeIngredienteProibidos);
+		assertEquals(expecteds, actuals);
 	}
 
 	@Test
