@@ -13,21 +13,20 @@
 		<div id="rosqueNaVeia"></div>
 		
 		<script>
-	
-		$(function() {
-		
-				$.ajax({
-					url: 'https://api.spotify.com/v1/artists/6mdiAmATAx73kdxrNrnlao/albums?limit=50',
-					type: 'GET'
-				}).done(function(data) {
+			$(function() {
+				var cacheSelector = $('#rosqueNaVeia');
+					$.ajax({
+						url: 'https://api.spotify.com/v1/artists/6mdiAmATAx73kdxrNrnlao/albums?limit=50',
+						type: 'GET'
+					}).done(function(data) {
 				
-					data.items.forEach(function(i) {
+						data.items.forEach(function(i) {
 					
-						$('#rosqueNaVeia').append($("<img>")
-							.attr("src", i.images[1].url))
+							cacheSelector.append($("<img>")
+								.attr("src", i.images[1].url))
 			
+						});
 					});
-				});
 			});
 		</script>
 	</body>

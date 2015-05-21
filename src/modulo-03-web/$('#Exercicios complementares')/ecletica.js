@@ -2,6 +2,7 @@
 
 $(function(){
 	$('.button').click(function() {
+			var cacheSelector = $('#NerverSayNever');
 			var search = $('input[name=search]').val();
 			$.ajax({
 				url: 'https://api.spotify.com/v1/search?q='+search+'&type=artist',
@@ -16,7 +17,7 @@ $(function(){
 				})
 				.done(function(data) {
 					data.items.forEach(function(i) {
-						$('#NerverSayNever').append($("<img>")
+						cacheSelector.append($("<img>")
 							.attr("src", i.images[1].url))
 					});
 				});
