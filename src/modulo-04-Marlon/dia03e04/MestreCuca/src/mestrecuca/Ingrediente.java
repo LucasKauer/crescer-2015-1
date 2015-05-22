@@ -1,4 +1,12 @@
-package mestre_cuca;
+/**
+ * Ingrediente
+ * @author CWI Software
+ * 
+ * Created by Lucas Kauer on 18/05/2015.
+ * Last updated on: 18/05/2015
+ */
+
+package mestrecuca;
 
 public class Ingrediente {
 	private String nome;
@@ -6,6 +14,16 @@ public class Ingrediente {
 	private double valor;
 	private UnidadeMedida unidadeMedida;
 	
+	/**
+	 * Cria novos ingredientes
+	 * 
+	 * @param nome Nome do Ingrediente
+	 * @param quantidade Quantidade do Ingrediente
+	 * @param valor Valor do Ingrediente
+	 * @param unidadeMedida Unidade de Medida do Ingrediente
+	 * 
+	 * Created by Lucas Kauer on 18/05/2015
+	 */
 	public Ingrediente(String nome, double quantidade, double valor,UnidadeMedida unidadeMedida) {
 		this.nome = nome;
 		this.quantidade = quantidade;

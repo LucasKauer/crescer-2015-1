@@ -1,6 +1,13 @@
 // Skype: andre_298
+/**
+ * Atividade do Livro de Receita
+ * @author CWI Software
+ * 
+ * Created by Lucas Kauer on 19/05/2015.
+ * Last updated on: 20/05/2015
+ */
 
-package mestre_cuca;
+package mestrecuca;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

@@ -1,4 +1,4 @@
-package mestre_cuca;
+package mestrecuca;
 
 import java.util.List;
 

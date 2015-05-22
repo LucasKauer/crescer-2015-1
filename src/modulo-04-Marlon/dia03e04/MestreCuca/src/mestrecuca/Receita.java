@@ -1,13 +1,31 @@
-package mestre_cuca;
+/**
+ * Receita
+ * @author CWI Software
+ * 
+ * Created by Lucas Kauer on 18/05/2015.
+ * Last updated on: 19/05/2015
+ */
+
+package mestrecuca;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Receita {
 	private String nome;
 	private List<Ingrediente> listaDeIngredientes;
 	private List<Instrucao> listaDeInstrucao;
 	
+	/**
+	 * Cria novas receitas
+	 * 
+	 * @param nome Nome da Receita
+	 * @param listaDeIngredientes Lista de ingredientes da receita
+	 * @param listaDeInstrucao Lista de instrucoes da receita
+	 * 
+	 * Created by Lucas Kauer on 18/05/2015
+	 */
 	public Receita(String nome, List<Ingrediente> listaDeIngredientes, List<Instrucao> listaDeInstrucao) {
 		this.nome = nome;
 		this.listaDeIngredientes = listaDeIngredientes;
@@ -30,6 +48,13 @@ public class Receita {
 		System.out.println(receita.valorTotalReceita());
 	}
 	
+	/**
+	 * Calcula o valor total da receita
+	 * 
+	 * @return Retorna o valor total da receita
+	 * 
+	 * Created by Lucas Kauer on 19/05/2015
+	 */
 	public double valorTotalReceita() {
 		double valorTotal = 0;
 		for (Ingrediente ingredienteAtual : listaDeIngredientes) {
@@ -37,7 +62,7 @@ public class Receita {
 		}
 		return valorTotal;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -50,18 +75,6 @@ public class Receita {
 		return listaDeInstrucao;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	public void setListaDeIngredientes(List<Ingrediente> listaDeIngredientes) {
-		this.listaDeIngredientes = listaDeIngredientes;
-	}
-	
-	public void setListaDeInstrucao(List<Instrucao> listaDeInstrucao) {
-		this.listaDeInstrucao = listaDeInstrucao;
-	}
-	
 	@Override
 	public String toString() {
 		return getNome();
