@@ -1,9 +1,13 @@
-package mestrecuca;
+package test;
 
 import static org.junit.Assert.assertEquals;
-import mestrecuca.model.Ingrediente;
-import mestrecuca.model.Receita;
-import mestrecuca.model.UnidadeMedida;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import mestrecuca.Ingrediente;
+import mestrecuca.Receita;
+import mestrecuca.UnidadeMedida;
 
 import org.junit.Test;
 
@@ -12,11 +16,14 @@ public class ReceitaTest {
 
 	@Test
 	public void valorTotalReceitaDeveSerSomaDoValorDosIngredientes() throws Exception {
-		Receita receita = new Receita("Feijoada");
-		receita.adicionarIngrediente(new Ingrediente("Feij√£o", UnidadeMedida.KG, 0.5, 5));
-		receita.adicionarIngrediente(new Ingrediente("Sal", UnidadeMedida.COLHER_SOPA, 1, 1));
+		List<Ingrediente> listaDeIngrediente = new ArrayList<>();
 		
-		double resultado = receita.calcularValorTotal();
+		listaDeIngrediente.add(new Ingrediente("Feij„o", 0.5, 5, UnidadeMedida.KG));
+		listaDeIngrediente.add(new Ingrediente("Sal", 1, 1, UnidadeMedida.COLHER_SOPA));
+		
+		Receita receita = new Receita("Feijoada", listaDeIngrediente, null);
+		
+		double resultado = receita.valorTotalReceita();
 		assertEquals(6, resultado, 0.0005);
 	}
 	
