@@ -1,0 +1,30 @@
+<html>
+	<body>
+		<marquee><img src="/img/dogao.gif"></marquee>
+		{{#mensagem}}
+			<h1>olá {{mensagem}}</h1>
+		{{/mensagem}}
+		
+		{{#millisegundos}}
+			<h2>{{millisegundos}}<h2>
+		{{/millisegundos}}
+		
+		<ul>
+			{{#filmes}}
+				<li>{{nome}}</li>
+			{{/filmes}}
+		</ul>
+		
+		<ul>
+			{{#nome}}
+				<li>{{nome}}</li>
+			{{/nome}}
+		</ul>
+		
+		<form action="\salvar" method="post">
+			<label>Nome</label>
+			<input name="nome">
+			<button>Salvar</button>
+		</form>
+	</body>
+</html>

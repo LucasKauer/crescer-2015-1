@@ -79,3 +79,6 @@ preparedStatement.setDouble(2, 40.20);
 preparedStatement.executeUpdate();
 connection.close();
 ```
+
+### Material para Estudo
+[Apostila Caelum - JDBC](http://www.caelum.com.br/apostila-java-web/bancos-de-dados-e-jdbc/)
