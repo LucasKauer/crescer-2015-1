@@ -1,0 +1,11 @@
+1º Desafio com banco de dados
+-----------------------------
+
+   I - Será necessário importar uma base de dados Oracle.
+
+  II - Não é obrigatório utilizar de códigos PL/SQL para resolver este problema (podem utilizar java/javascript/c#, c++, ...).
+       Caso precisem de ajuda neste assunto podem enviar e-mail solicitando exemplos e material de apoio.
+
+ III - A premiação será informada nos próximos dias.
+
+  IV - Apenas os 2 primeiros serão premiados.
