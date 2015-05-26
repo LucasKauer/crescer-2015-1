@@ -1,0 +1,33 @@
+<html>
+	<head>
+		{{> head}}
+	    {{> styleformulario}}
+	    <meta charset="utf-8">
+	    <title>Filmator - Cadastro Usuario</title>
+		
+	</head>
+	<body>
+       {{> nav}}
+       {{> navhome}}
+       
+		<div align="center">
+			<form action="/salvarUsuario" method="post">
+				<div class="divformulario">
+					<label>Login:</label>
+					<input name="login" type="text" required placeholder="Login"></input>
+				</div>
+				
+				<div class="divformulario">
+					<label>Password:</label>
+					<input name="password" type="password" required placeholder="Password"></input>
+				</div>
+			
+				<div class="divformulario">
+					<input name="cadastrar" type="submit" required value="Cadastrar">
+				</div>
+			</form>
+		</div>
+	
+		{{> scripts}}
+	</body>
+</html>

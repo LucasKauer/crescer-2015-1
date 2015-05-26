@@ -1,0 +1,22 @@
+<html>
+<head>
+{{> head}}
+	<meta charset="utf-8">
+	   
+	    <title>Filmator</title>
+	
+</head>
+<body>
+{{> navhome}}
+	<div align="center">
+   		<form action="/cadastroFilme" method="GET">
+			<input type="submit" value="Cadastrar filme"></input>
+		</form>
+		<form action="/consulta" method="GET">
+			<input type="submit" value="Consultar filmes"></input>
+		</form>
+	</div>
+
+{{> scripts}}
+</body>
+</html>

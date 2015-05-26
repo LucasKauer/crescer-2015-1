@@ -1,0 +1,34 @@
+<html>
+	<head>
+		{{> head}}
+		{{> styletabela}}
+		<meta charset="utf-8">
+		<title>Filmator - Consulta</title>
+	</head>
+	<body>
+		{{> nav}}
+		{{> navhome}}
+		
+		<div align="center">
+			<table border=1>
+				<tr> 
+					<td>Nome</td>
+					<td>Gênero</td>
+					<td>Ano de Lançamento</td>
+					<td>Diretor</td>
+					<td>Sinopse</td>  
+				</tr>
+				{{#Filmes}}
+				<tr>
+					<td>{{nome}}</td>	
+					<td>{{genero}}</td>
+					<td>{{anoLancamento}}</td>
+					<td>{{diretor}}</td>
+					<td>{{sinopse}}</td>
+				</tr>
+				{{/Filmes}}
+			</table>	
+		</div>
+		{{> scripts}}
+	</body>
+</html>

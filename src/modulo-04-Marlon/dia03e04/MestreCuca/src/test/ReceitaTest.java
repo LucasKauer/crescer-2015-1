@@ -1,4 +1,4 @@
-package mestrecuca;
+/*package mestrecuca;
 
 import static org.junit.Assert.assertEquals;
 import mestrecuca.model.Ingrediente;
@@ -21,4 +21,4 @@ public class ReceitaTest {
 	}
 	
 
-}
+}*/

@@ -1,0 +1,22 @@
+<html>
+<head>
+{{> head}}
+	<meta charset="utf-8">
+	   
+	    <title>Filmator</title>
+	
+</head>
+<body>
+{{> navhome}}
+	<div align="center">
+   		<form action="/cadastroUsuario" method="GET">
+			<input type="submit" value="Cadastrar usuário"></input>
+		</form>
+		<form action="/autenticoUsuario" method="GET">
+			<input type="submit" value="Autenticar usuário"></input>
+		</form>
+	</div>
+
+{{> scripts}}
+</body>
+</html>
