@@ -1,0 +1,54 @@
+<html>
+	<head>
+		{{> head}}
+		{{> styleformulario}}
+		<meta charset="utf-8">
+		<title>Filmator - Cadastro</title>
+		
+	</head>
+	<body>
+		{{> navmenu}}
+		<header id="top" class="header">
+			<div class="text-vertical-center">
+				<h1>Filmator</h1>
+				<h3>Assista a séries e filmes quando quiser, onde quiser.</h3>
+				<br>
+				<form action="/salvarFilme" method="post">
+					<div class="divformulario">
+					<label>Nome:</label>
+						<input name="nome" type="text" required placeholder="Nome do filme"></input>
+					</div>
+				
+					<div class="divformulario">
+						<label>Gênero:</label>
+						<select name="genero">
+							{{#listaGeneros}}
+								<option value="{{name}}">{{descricao}}</option>
+							{{/listaGeneros}}
+						</select>
+					</div>
+				
+					<div class="divformulario">
+						<label>Ano de lançamento:</label>
+						<input name="anoLancamento" type="text" required placeholder="Ano de lançamento do filme">
+					</div>
+					
+					<div class="divformulario">
+						<label>Diretor:</label>
+						<input name="diretor" type="text" required placeholder="Diretor do filme">
+					</div>
+					
+					<div class="divformulario">
+						<label>Sinopse:</label>
+						<input name="sinopse" type="text" required placeholder="Sinopse do filme">
+					</div>
+					
+					<div class="divformulario">
+						<input name="cadastrar" class="btn btn-dark btn-lg" type="submit" required value="Cadastrar">
+					</div>
+				</form>
+			</div>
+		</header>
+		{{> scripts}}
+	</body>
+</html>

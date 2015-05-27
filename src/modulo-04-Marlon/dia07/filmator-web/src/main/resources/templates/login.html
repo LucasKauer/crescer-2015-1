@@ -7,30 +7,35 @@
 		
 	</head>
 	<body>
-       {{> nav}}
        {{> navhome}}
-       
-		<div align="center">
-			<form action="/autenticarUsuario" method="post">
-				<div class="divformulario">
-					<label>Login:</label>
-					<input name="login" type="text" required placeholder="Login"></input>
-				</div>
-				
-				<div class="divformulario">
-					<label>Password:</label>
-					<input name="password" type="password" required placeholder="Password"></input>
-				</div>
+       <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>Filmator</h1>
+            <h3>Assista a séries e filmes quando quiser, onde quiser.</h3>
+            <br>
 			
-				<div class="divformulario">
-					<input name="autenticar" type="submit" required value="Autenticar">
-				</div>
-			</form>
-			{{#mensagemerro}}
-				<h1>{{mensagemerro}}</h1>
-			{{/mensagemerro}}
+				<div align="center">
+				<form action="/autenticarUsuario" method="post">
+					<div class="divformulario">
+						<label>Login:</label>
+						<input name="login" type="text" required placeholder="Login"></input>
+					</div>
+					
+					<div class="divformulario">
+						<label>Password:</label>
+						<input name="password" type="password" required placeholder="Password"></input>
+					</div>
+				
+					<div class="divformulario">
+						<input name="autenticar" class="btn btn-dark btn-lg" type="submit" required value="Autenticar">
+					</div>
+				</form>
+				{{#mensagemerro}}
+					<h1>{{mensagemerro}}</h1>
+				{{/mensagemerro}}
+			</div>
 		</div>
-		
+		</header>
 	
 		{{> scripts}}
 	</body>

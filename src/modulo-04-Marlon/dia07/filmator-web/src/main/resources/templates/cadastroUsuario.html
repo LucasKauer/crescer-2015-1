@@ -7,27 +7,32 @@
 		
 	</head>
 	<body>
-       {{> nav}}
-       {{> navhome}}
-       
-		<div align="center">
-			<form action="/salvarUsuario" method="post">
-				<div class="divformulario">
-					<label>Login:</label>
-					<input name="login" type="text" required placeholder="Login"></input>
-				</div>
+		{{> navhome}}
+		<header id="top" class="header">
+		<div class="text-vertical-center">
+			<h1>Filmator</h1>
+			<h3>Assista a séries e filmes quando quiser, onde quiser.</h3>
+			<br>
+			<div align="center">
+				<form action="/salvarUsuario" method="post">
+					<div class="divformulario">
+						<label>Login:</label>
+						<input name="login" type="text" required placeholder="Login"></input>
+					</div>
+					
+					<div class="divformulario">
+						<label>Password:</label>
+						<input name="password" type="password" required placeholder="Password"></input>
+					</div>
 				
-				<div class="divformulario">
-					<label>Password:</label>
-					<input name="password" type="password" required placeholder="Password"></input>
-				</div>
-			
-				<div class="divformulario">
-					<input name="cadastrar" type="submit" required value="Cadastrar">
-				</div>
-			</form>
+					<div class="divformulario">
+						<input name="cadastrar" class="btn btn-dark btn-lg" type="submit" required value="Cadastrar">
+					</div>
+				</form>
+			</div>
 		</div>
-	
+		</header>
+		
 		{{> scripts}}
 	</body>
 </html>

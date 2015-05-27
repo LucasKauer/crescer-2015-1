@@ -42,4 +42,13 @@ public class UsuarioDao {
 		}
 		return false;
 	}
+	
+	public boolean verificaSeEhAdministrador(String login, String password) {
+		if(autenticaUsuario(login, password)) {
+			if(login.equals("administrador")) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

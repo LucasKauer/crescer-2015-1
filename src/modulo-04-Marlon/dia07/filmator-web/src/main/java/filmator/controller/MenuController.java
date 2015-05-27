@@ -20,17 +20,28 @@ public class MenuController {
 	public String menu() {
 		return "menu";
 	}
+	
+	@RequestMapping(value = "/menunormal", method = RequestMethod.GET)
+	public String menunormal() {
+		return "menunormal";
+	}
 
 	@RequestMapping(value = "/cadastroFilme", method = RequestMethod.GET)
 	public String cadastraFilme(Model model) {
 		model.addAttribute("listaGeneros", Genero.values()); 
-		return "cadastro";
+		return "cadastroFilme";
 	}
 
 	@RequestMapping(value = "/consulta", method = RequestMethod.GET)
 	public String consultaFilme(Model model) {
 		model.addAttribute("Filmes", filmeDao.consultarFilme());
 		return "consulta";
+	}
+	
+	@RequestMapping(value = "/consultaNormal", method = RequestMethod.GET)
+	public String consultaFilmeNormal(Model model) {
+		model.addAttribute("Filmes", filmeDao.consultarFilme());
+		return "consultanormal";
 	}
 
 }

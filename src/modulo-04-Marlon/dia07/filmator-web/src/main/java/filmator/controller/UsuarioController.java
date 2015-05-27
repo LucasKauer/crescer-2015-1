@@ -18,13 +18,17 @@ public class UsuarioController {
 	@RequestMapping(value = "/salvarUsuario", method = RequestMethod.POST)
 	public String salvar(Usuario usuario) {
 		usuarioDao.inserirUsuario(usuario);
-		return "redirect:/";
+		return "redirect:/login";
 	}
 	
 	@RequestMapping(value = "/autenticarUsuario", method = RequestMethod.POST)
 	public String autenticar(String login, String password, Model model) {
 		if(usuarioDao.autenticaUsuario(login, password)) {
-			return "redirect:/menu";	
+			if(usuarioDao.verificaSeEhAdministrador(login, password)) {
+				return "redirect:/menu";
+			} else {
+				return "redirect:/menunormal";
+			}
 		}
 		
 		model.addAttribute("mensagemerro", "Credenciais Inválidas!");

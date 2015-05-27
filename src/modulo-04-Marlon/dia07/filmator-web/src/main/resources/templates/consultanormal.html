@@ -6,7 +6,7 @@
 		<title>Filmator - Consulta</title>
 	</head>
 	<body>
-		{{> navmenu}}
+		{{> navmenunormal}}
 		<header id="top" class="header">
         <div class="text-vertical-center">
             <h1>Filmator</h1>
@@ -19,7 +19,9 @@
 						<td>Gênero</td>
 						<td>Ano de Lançamento</td>
 						<td>Diretor</td>
-						<td>Sinopse</td>  
+						<td>Sinopse</td>
+						<td>Avaliação</td>
+						<td>Sua Avaliação</td> 
 					</tr>
 					{{#Filmes}}
 					<tr>
@@ -28,9 +30,20 @@
 						<td>{{anoLancamento}}</td>
 						<td>{{diretor}}</td>
 						<td>{{sinopse}}</td>
+						<td>0</td>
+						<td>
+							<select class="form-control">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+						</td>
 					</tr>
 					{{/Filmes}}
-				</table>	
+				</table>
+				
 			</div>
 		</div>
 		</header>
