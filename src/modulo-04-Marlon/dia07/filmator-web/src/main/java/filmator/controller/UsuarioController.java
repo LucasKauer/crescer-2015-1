@@ -22,9 +22,13 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping(value = "/autenticarUsuario", method = RequestMethod.POST)
-	public String autenticar(Usuario usuario) {
-		usuarioDao.inserirUsuario(usuario);
-		return "redirect:/menu";
+	public String autenticar(String login, String password, Model model) {
+		if(usuarioDao.autenticaUsuario(login, password)) {
+			return "redirect:/menu";	
+		}
+		
+		model.addAttribute("mensagemerro", "Credenciais Inválidas!");
+		return "login"; // --> Futuramente retornará para uma página de erro.
 	}
 
 }

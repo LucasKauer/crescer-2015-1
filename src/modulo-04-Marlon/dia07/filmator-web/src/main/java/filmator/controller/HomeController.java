@@ -26,9 +26,9 @@ public class HomeController {
 		return "cadastroUsuario";
 	}
 	
-	@RequestMapping(value = "/autenticoUsuario", method = RequestMethod.GET)
-	public String autenticaUsuario() {
-		return "autenticoUsuario";
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login() {
+		return "login";
 	}
 
 }

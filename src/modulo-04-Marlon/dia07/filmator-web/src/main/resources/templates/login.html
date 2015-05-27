@@ -26,7 +26,11 @@
 					<input name="autenticar" type="submit" required value="Autenticar">
 				</div>
 			</form>
+			{{#mensagemerro}}
+				<h1>{{mensagemerro}}</h1>
+			{{/mensagemerro}}
 		</div>
+		
 	
 		{{> scripts}}
 	</body>
