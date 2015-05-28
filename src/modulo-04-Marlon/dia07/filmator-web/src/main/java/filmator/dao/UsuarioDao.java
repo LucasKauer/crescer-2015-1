@@ -45,7 +45,7 @@ public class UsuarioDao {
 	
 	public boolean verificaSeEhAdministrador(String login, String password) {
 		if(autenticaUsuario(login, password)) {
-			if(login.equals("administrador")) {
+			if(login.equals("Administrador")) {
 				return true;
 			}
 		}

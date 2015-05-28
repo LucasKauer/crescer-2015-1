@@ -7,17 +7,19 @@ public class Filme {
 	private int anoLancamento;
 	private String diretor;
 	private String sinopse;
+	private String imagem;
 
 	public Filme() {
 	}
 
 	public Filme(String nome, Genero genero, int anoLancamento, String diretor,
-			String sinopse) {
+			String sinopse, String imagem) {
 		setNome(nome);
 		setGenero(genero);
 		setAnoLancamento(anoLancamento);
 		setDiretor(diretor);
 		setSinopse(sinopse);
+		setImagem(imagem);
 	}
 
 	public String getNome() {
@@ -58,6 +60,14 @@ public class Filme {
 
 	public void setSinopse(String sinopse) {
 		this.sinopse = sinopse;
+	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
 	}
 
 }

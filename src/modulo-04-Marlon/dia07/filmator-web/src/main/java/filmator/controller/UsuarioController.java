@@ -25,7 +25,7 @@ public class UsuarioController {
 	@RequestMapping(value = "/autenticar-usuario", method = RequestMethod.POST)
 	public String autenticar(String login, String password, Model model, HttpSession session) {
 		if(usuarioDao.autenticaUsuario(login, password)) {
-			session.setAttribute("usuarioLogado", true);
+			session.setAttribute("usuarioLogado", login);
 			if(usuarioDao.verificaSeEhAdministrador(login, password)) {
 				session.setAttribute("isAdministrador", true);
 				return "redirect:/menu";

@@ -19,10 +19,10 @@ public class FilmeDao {
 
 	public void inserirFilme(Filme filme) {
 		jdbcTemplate
-				.update("INSERT INTO FILME (NOME, GENERO, ANO_LANCAMENTO, DIRETOR, SINOPSE) VALUES (?, ?, ?, ?, ?)",
+				.update("INSERT INTO FILME (NOME, GENERO, ANO_LANCAMENTO, DIRETOR, SINOPSE, IMAGEM) VALUES (?, ?, ?, ?, ?, ?)",
 						filme.getNome(), filme.getGenero().name(),
 						filme.getAnoLancamento(), filme.getDiretor(),
-						filme.getSinopse());
+						filme.getSinopse(), filme.getImagem());
 	}
 
 	public List<Filme> consultarFilme() {
@@ -34,6 +34,7 @@ public class FilmeDao {
 			filme.setAnoLancamento(results.getInt("ANO_LANCAMENTO"));
 			filme.setDiretor(results.getString("DIRETOR"));
 			filme.setSinopse(results.getString("SINOPSE"));
+			filme.setImagem(results.getString("IMAGEM"));
 			return filme;
 		});
 

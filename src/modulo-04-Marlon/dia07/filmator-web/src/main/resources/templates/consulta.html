@@ -4,25 +4,35 @@
 		{{> styletabela}}
 		<meta charset="utf-8">
 		<title>Filmator - Consulta</title>
+		<style>
+			.with-opacity {
+				background-color: white;
+				opacity: 0.8;
+			}
+			
+		</style>
 	</head>
 	<body>
 		{{> navmenu}}
 		<header id="top" class="header">
         <div class="text-vertical-center">
+        	<br><br><br>
             <h1>Filmator</h1>
             <h3>Assista a séries e filmes quando quiser, onde quiser.</h3>
-            <br>		
+            <br>
 			<div align="center">
-				<table border=1>
+				<table border=1 class="with-opacity">
 					<tr> 
+						<td>Imagem</td>
 						<td>Nome</td>
 						<td>Gênero</td>
 						<td>Ano de Lançamento</td>
 						<td>Diretor</td>
-						<td>Sinopse</td>  
+						<td>Sinopse</td>
 					</tr>
 					{{#Filmes}}
 					<tr>
+						<td><img src="{{imagem}}" height="120" width="180"></td>
 						<td>{{nome}}</td>	
 						<td>{{genero}}</td>
 						<td>{{anoLancamento}}</td>

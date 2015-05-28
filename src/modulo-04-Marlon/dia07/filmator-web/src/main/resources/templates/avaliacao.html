@@ -1,0 +1,51 @@
+<html>
+	<head>
+		{{> head}}
+		{{> styletabela}}
+		<meta charset="utf-8">
+		<title>Filmator - Consulta</title>
+		<style>
+			.with-opacity {
+				background-color: white;
+				opacity: 0.8;
+			}
+			
+		</style>
+	</head>
+	<body>
+		{{> navmenu}}
+		<header id="top" class="header">
+        <div class="text-vertical-center">
+        	<br><br><br>
+            <h1>Filmator</h1>
+            <h3>Assista a séries e filmes quando quiser, onde quiser.</h3>
+            <br>
+			<div align="center">
+				<form action="/salvar-filme" method="post">
+					<div class="divformulario">
+						<label>Filme:</label>
+						<select name="filme">
+							{{#listaFilmes}}
+								<option value="">{{nome}} ({{anoLancamento}})</option>
+							{{/listaFilmes}}
+						</select>
+						
+						<label>Nota:</label>
+						<select name="avaliacao">
+							
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							
+						</select>
+						<input name="salvar" class="btn btn-dark btn-lg" type="submit" required value="Salvar">
+					</div>
+				</form>
+			</div>
+		</div>
+		</header>
+		{{> scripts}}
+	</body>
+</html>
