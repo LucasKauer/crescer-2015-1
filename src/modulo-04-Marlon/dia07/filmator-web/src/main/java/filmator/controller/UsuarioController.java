@@ -1,6 +1,7 @@
 package filmator.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,19 +16,22 @@ public class UsuarioController {
 	@Inject
 	UsuarioDao usuarioDao;
 
-	@RequestMapping(value = "/salvarUsuario", method = RequestMethod.POST)
+	@RequestMapping(value = "/salvar-usuario", method = RequestMethod.POST)
 	public String salvar(Usuario usuario) {
 		usuarioDao.inserirUsuario(usuario);
 		return "redirect:/login";
 	}
 	
-	@RequestMapping(value = "/autenticarUsuario", method = RequestMethod.POST)
-	public String autenticar(String login, String password, Model model) {
+	@RequestMapping(value = "/autenticar-usuario", method = RequestMethod.POST)
+	public String autenticar(String login, String password, Model model, HttpSession session) {
 		if(usuarioDao.autenticaUsuario(login, password)) {
+			session.setAttribute("usuarioLogado", true);
 			if(usuarioDao.verificaSeEhAdministrador(login, password)) {
+				session.setAttribute("isAdministrador", true);
 				return "redirect:/menu";
 			} else {
-				return "redirect:/menunormal";
+				session.setAttribute("isAdministrador", false);
+				return "redirect:/menu";
 			}
 		}
 		

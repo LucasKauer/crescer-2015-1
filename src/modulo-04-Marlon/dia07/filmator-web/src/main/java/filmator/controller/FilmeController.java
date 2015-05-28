@@ -16,7 +16,7 @@ public class FilmeController {
 	@Inject
 	FilmeDao filmeDao;
 
-	@RequestMapping(value = "/salvarFilme", method = RequestMethod.POST)
+	@RequestMapping(value = "/salvar-filme", method = RequestMethod.POST)
 	public String salvar(Model model, Filme filme) {
 		System.out.println(filme.getNome());
 		filmeDao.inserirFilme(filme);

@@ -21,7 +21,7 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/cadastroUsuario", method = RequestMethod.GET)
+	@RequestMapping(value = "/cadastro-usuario", method = RequestMethod.GET)
 	public String cadastraUsuario() {
 		return "cadastroUsuario";
 	}

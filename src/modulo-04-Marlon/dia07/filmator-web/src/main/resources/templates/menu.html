@@ -11,15 +11,15 @@
 			<div class="text-vertical-center">
 				<h1>Filmator</h1>
 				<h3>Assista a séries e filmes quando quiser, onde quiser.</h3>
-				<br>	
+				<br>
+				{{#exibeMenu}}	
 					<div align="center">
-						<form action="/cadastroFilme" method="GET">
-							<input type="submit" class="btn btn-dark btn-lg" value="Cadastrar filme"></input>
-						</form>
-						<form action="/consulta" method="GET">
-							<input type="submit" class="btn btn-dark btn-lg" value="Consultar filmes"></input>
-						</form>	
+						{{#exibeMenuAdministrador}}
+							<a href="/cadastro-filme" class="btn btn-dark btn-lg">Cadastrar filme</a>
+						{{/exibeMenuAdministrador}}
+							<a href="/consulta" class="btn btn-dark btn-lg">Consultar filme</a>
 					</div>
+				{{/exibeMenu}}
 			</div>
 			</header>
 	{{> scripts}}

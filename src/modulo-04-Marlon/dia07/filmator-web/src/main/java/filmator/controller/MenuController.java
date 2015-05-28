@@ -1,6 +1,7 @@
 package filmator.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,16 +18,27 @@ public class MenuController {
 	private FilmeDao filmeDao;
 
 	@RequestMapping(value = "/menu", method = RequestMethod.GET)
-	public String menu() {
+	public String menu(HttpSession session, Model model) {
+		Boolean isAdministrador = (Boolean) session.getAttribute("isAdministrador");
+		Boolean usuarioLogado = (Boolean) session.getAttribute("usuarioLogado");
+		// verifica se é usuário. Se for, exibe menu.
+		if(usuarioLogado != null && usuarioLogado) {
+			model.addAttribute("exibeMenu", true);
+			
+			// verifica se é administrador. Se for, exibe menu para administrador.
+			if(isAdministrador != null && isAdministrador){
+				model.addAttribute("exibeMenuAdministrador", true);
+			}else{
+				model.addAttribute("exibeMenuAdministrador", false);
+			}
+			
+		} else {
+			model.addAttribute("exibeMenu", false);
+		}
 		return "menu";
 	}
-	
-	@RequestMapping(value = "/menunormal", method = RequestMethod.GET)
-	public String menunormal() {
-		return "menunormal";
-	}
 
-	@RequestMapping(value = "/cadastroFilme", method = RequestMethod.GET)
+	@RequestMapping(value = "/cadastro-filme", method = RequestMethod.GET)
 	public String cadastraFilme(Model model) {
 		model.addAttribute("listaGeneros", Genero.values()); 
 		return "cadastroFilme";
@@ -36,12 +48,6 @@ public class MenuController {
 	public String consultaFilme(Model model) {
 		model.addAttribute("Filmes", filmeDao.consultarFilme());
 		return "consulta";
-	}
-	
-	@RequestMapping(value = "/consultaNormal", method = RequestMethod.GET)
-	public String consultaFilmeNormal(Model model) {
-		model.addAttribute("Filmes", filmeDao.consultarFilme());
-		return "consultanormal";
 	}
 
 }
