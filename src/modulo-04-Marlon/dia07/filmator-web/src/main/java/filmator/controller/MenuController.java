@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import filmator.dao.AvaliacaoDao;
 import filmator.dao.FilmeDao;
 import filmator.model.Genero;
 
@@ -16,6 +17,9 @@ public class MenuController {
 	
 	@Inject
 	private FilmeDao filmeDao;
+	
+	@Inject
+	private AvaliacaoDao avaliacaoDao;
 
 	// Controla a tela do home quando estiver logado.
 	@RequestMapping(value = "/menu", method = RequestMethod.GET)

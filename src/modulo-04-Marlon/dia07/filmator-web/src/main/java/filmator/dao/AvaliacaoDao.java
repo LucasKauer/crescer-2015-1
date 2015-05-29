@@ -29,38 +29,11 @@ public class AvaliacaoDao {
 		}, idFilme, loginUsuario);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/* public int getMediaFilme(int idFilme){
+	public int getMediaFilme(int idFilme){
 		jdbcTemplate.query("SELECT AVG(nota) as media FROM Avaliacao WHERE id = ?", (ResultSet rs, int rowNum) -> {
 			return rs.getString(1);
 	}, idFilme);
 		return 0;
-	}*/
+	}
+	
 }

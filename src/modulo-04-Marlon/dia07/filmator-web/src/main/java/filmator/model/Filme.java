@@ -9,7 +9,8 @@ public class Filme {
 	private String diretor;
 	private String sinopse;
 	private String imagem;
-
+	private double nota;
+	
 	public Filme() {
 		
 	}
@@ -68,6 +69,14 @@ public class Filme {
 
 	public void setIdFilme(int idFilme) {
 		this.idFilme = idFilme;
+	}
+
+	public double getNota() {
+		return nota;
+	}
+
+	public void setNota(double nota) {
+		this.nota = nota;
 	}
 
 }

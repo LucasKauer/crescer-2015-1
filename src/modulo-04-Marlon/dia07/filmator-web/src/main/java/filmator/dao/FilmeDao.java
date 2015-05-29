@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import filmator.model.Avaliacao;
 import filmator.model.Filme;
 import filmator.model.Genero;
 
@@ -16,6 +17,9 @@ public class FilmeDao {
 
 	@Inject
 	private JdbcTemplate jdbcTemplate;
+	
+	@Inject
+	private AvaliacaoDao avaliacaoDao;
 
 	public void inserirFilme(Filme filme) {
 		jdbcTemplate
@@ -26,14 +30,17 @@ public class FilmeDao {
 	}
 
 	public List<Filme> consultarFilme() {
-		return jdbcTemplate.query("SELECT * FROM FILME", (ResultSet results,
+		List<Filme> filmes = jdbcTemplate.query(
+				"SELECT f.*,"
+				+ " (SELECT AVG(nota) FROM Avaliacao a WHERE a.id = f.id) as MEDIA"
+				+ " FROM FILME f ", (ResultSet results,
 				int rowNum) -> {
+			
 			Filme filme = new Filme(
-					
 					
 						// 1
 						// 2
-						//..
+						// ...
 						// 64
 					);
 			filme.setIdFilme(results.getInt("ID"));
@@ -43,8 +50,21 @@ public class FilmeDao {
 			filme.setDiretor(results.getString("DIRETOR"));
 			filme.setSinopse(results.getString("SINOPSE"));
 			filme.setImagem(results.getString("IMAGEM"));
+			filme.setNota(results.getDouble("MEDIA"));
 			return filme;
-		});
+		});		
+		
+		/* List<Avaliacao> avaliacoes = avaliacaoDao.buscaTodasMediasFilmes();
+		
+		for(Filme filme : filmes){
+			for(Avaliacao avaliacao : avaliacoes){
+				if (avaliacao.getIdFilme().equals(filme.getIdFilme()) {
+					filme.setNota(avaliacao.getNota());
+				}
+			}
+		}*/
+		
+		return filmes;
 
 	}
 
