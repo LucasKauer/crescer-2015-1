@@ -18,12 +18,14 @@ public class UsuarioDao {
 	@Inject
 	private JdbcTemplate jdbcTemplate;
 
+	// Adiciona um usuario no banco
 	public void inserirUsuario(Usuario usuario) {
 		jdbcTemplate.update(
 				"INSERT INTO USUARIO (LOGIN, PASSWORD) VALUES (?, ?)",
 				usuario.getLogin(), usuario.getPassword());
 	}
 
+	// Verifica se o login/password informados correspondem com alguma combinação de login/password salva no banco
 	public boolean autenticaUsuario(String autenticaLogin, String autenticaPassword) {
 		List<Usuario> usuario = this.jdbcTemplate.query(
 				"SELECT * FROM USUARIO WHERE LOGIN = ? AND PASSWORD = ?",

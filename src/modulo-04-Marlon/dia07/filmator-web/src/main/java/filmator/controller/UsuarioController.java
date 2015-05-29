@@ -16,12 +16,14 @@ public class UsuarioController {
 	@Inject
 	UsuarioDao usuarioDao;
 
+	// Salva usuario no banco
 	@RequestMapping(value = "/salvar-usuario", method = RequestMethod.POST)
 	public String salvar(Usuario usuario) {
 		usuarioDao.inserirUsuario(usuario);
 		return "redirect:/login";
 	}
 	
+	// Verifica se o login/password informados correspondem com alguma combinação de login/password salva no banco
 	@RequestMapping(value = "/autenticar-usuario", method = RequestMethod.POST)
 	public String autenticar(String login, String password, Model model, HttpSession session) {
 		if(usuarioDao.autenticaUsuario(login, password)) {

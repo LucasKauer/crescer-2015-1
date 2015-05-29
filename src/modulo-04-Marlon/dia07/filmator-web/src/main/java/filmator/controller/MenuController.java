@@ -17,6 +17,7 @@ public class MenuController {
 	@Inject
 	private FilmeDao filmeDao;
 
+	// Controla a tela do home quando estiver logado.
 	@RequestMapping(value = "/menu", method = RequestMethod.GET)
 	public String menu(HttpSession session, Model model) {
 		boolean isUserLogged = isUserLogged(session, model);
@@ -27,7 +28,8 @@ public class MenuController {
 			return "acessonegado";
 		}
 	}
-
+	
+	// Controla a tela de cadastro de filme
 	@RequestMapping(value = "/cadastro-filme", method = RequestMethod.GET)
 	public String cadastraFilme(HttpSession session, Model model) {
 		boolean isUserLogged = isUserLogged(session, model);
@@ -39,7 +41,8 @@ public class MenuController {
 			return "acessonegado";
 		}
 	}
-
+	
+	// Controla a tela de consulta
 	@RequestMapping(value = "/consulta", method = RequestMethod.GET)
 	public String consultaFilme(HttpSession session, Model model) {
 		boolean isUserLogged = isUserLogged(session, model);
@@ -51,7 +54,7 @@ public class MenuController {
 		}
 	}
 	
-	// EM CONSTRUCAO
+	// EM CONSTRUCAO!!!
 	@RequestMapping(value = "/avaliacao", method = RequestMethod.GET)
 	public String avaliacaoFilme(HttpSession session, Model model) {
 		boolean isUserLogged = isUserLogged(session, model);
@@ -63,6 +66,7 @@ public class MenuController {
 		}
 	}
 	
+	// verifica se o usuario eh do tipo administrador. Se for, retorna true; caso não, false.
 	private boolean isAdministrator(HttpSession session, Model model) {
 		Boolean isAdministrator = (Boolean) session.getAttribute("isAdministrator");
 		if(isAdministrator != null && isAdministrator){
@@ -74,6 +78,7 @@ public class MenuController {
 		}
 	}
 	
+	// verifica se o usuario está logado. Se estiver, retorna true; caso não, false.
 	private boolean isUserLogged(HttpSession session, Model model) {
 		String usuarioLogado = (String) session.getAttribute("userLogged");
 		if(usuarioLogado != null) {
