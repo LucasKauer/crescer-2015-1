@@ -14,55 +14,76 @@ import filmator.model.Genero;
 @Controller
 public class MenuController {
 	
-	// Model model;
-	
 	@Inject
 	private FilmeDao filmeDao;
 
 	@RequestMapping(value = "/menu", method = RequestMethod.GET)
 	public String menu(HttpSession session, Model model) {
-		// verifica se é usuário. Se for, exibe menu.
-		isUsuarioLogado(session, model);
-		return "menu";
+		boolean isUserLogged = isUserLogged(session, model);
+		if(isUserLogged) {
+			model.addAttribute("Filmes", filmeDao.consultarFilme());
+			return "menu";
+		} else {
+			return "acessonegado";
+		}
 	}
 
 	@RequestMapping(value = "/cadastro-filme", method = RequestMethod.GET)
 	public String cadastraFilme(HttpSession session, Model model) {
-		isUsuarioLogado(session, model);
-		model.addAttribute("listaGeneros", Genero.values()); 
-		return "cadastroFilme";
+		boolean isUserLogged = isUserLogged(session, model);
+		boolean isAdministrator = isAdministrator(session, model);
+		if(isUserLogged && isAdministrator) {
+			model.addAttribute("listaGeneros", Genero.values()); 
+			return "cadastroFilme";
+		} else {
+			return "acessonegado";
+		}
 	}
 
 	@RequestMapping(value = "/consulta", method = RequestMethod.GET)
-	public String consultaFilme(Model model) {
-		model.addAttribute("Filmes", filmeDao.consultarFilme());
-		return "consulta";
-	}
-	
-	// PRECISA SER REVISADO
-	@RequestMapping(value = "/avaliacao", method = RequestMethod.GET)
-	public String avaliacaoFilme(Model model) {
-		model.addAttribute("listaFilmes", filmeDao.consultarFilme());
-		return "avaliacao";
-	}
-	
-	private void isAdministrador(HttpSession session, Model model) {
-		Boolean isAdministrador = (Boolean) session.getAttribute("isAdministrador");
-		if(isAdministrador != null && isAdministrador){
-			model.addAttribute("exibeMenuAdministrador", true);
-		}else{
-			model.addAttribute("exibeMenuAdministrador", false);
+	public String consultaFilme(HttpSession session, Model model) {
+		boolean isUserLogged = isUserLogged(session, model);
+		if(isUserLogged) {
+			model.addAttribute("Filmes", filmeDao.consultarFilme());
+			return "consulta";
+		} else {
+			return "acessonegado";
 		}
 	}
 	
-	private void isUsuarioLogado(HttpSession session, Model model) {
-		String usuarioLogado = (String) session.getAttribute("usuarioLogado");
+	// EM CONSTRUCAO
+	@RequestMapping(value = "/avaliacao", method = RequestMethod.GET)
+	public String avaliacaoFilme(HttpSession session, Model model) {
+		boolean isUserLogged = isUserLogged(session, model);
+		if(isUserLogged) {
+			model.addAttribute("listaFilmes", filmeDao.consultarFilme());
+			return "avaliacao";
+		} else {
+			return "acessonegado";
+		}
+	}
+	
+	private boolean isAdministrator(HttpSession session, Model model) {
+		Boolean isAdministrator = (Boolean) session.getAttribute("isAdministrator");
+		if(isAdministrator != null && isAdministrator){
+			model.addAttribute("exibeMenuAdministrador", true);
+			return true;
+		}else{
+			model.addAttribute("exibeMenuAdministrador", false);
+			return false;
+		}
+	}
+	
+	private boolean isUserLogged(HttpSession session, Model model) {
+		String usuarioLogado = (String) session.getAttribute("userLogged");
 		if(usuarioLogado != null) {
 			model.addAttribute("exibeMenu", true);
 			// verifica se é administrador. Se for, exibe menu para administrador.
-			isAdministrador(session, model);
+			isAdministrator(session, model);
+			return true;
 		} else {
 			model.addAttribute("exibeMenu", false);
+			return false;
 		}
 	}
 }
