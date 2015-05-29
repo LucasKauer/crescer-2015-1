@@ -18,10 +18,8 @@ public class FilmeController {
 
 	@RequestMapping(value = "/salvar-filme", method = RequestMethod.POST)
 	public String salvar(Model model, Filme filme) {
-		// System.out.println(filme.getNome());
 		filmeDao.inserirFilme(filme);
 		model.addAttribute("listaGeneros", Genero.values());
 		return "redirect:/menu";
 	}
-
 }

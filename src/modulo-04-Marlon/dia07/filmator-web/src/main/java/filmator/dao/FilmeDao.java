@@ -28,7 +28,15 @@ public class FilmeDao {
 	public List<Filme> consultarFilme() {
 		return jdbcTemplate.query("SELECT * FROM FILME", (ResultSet results,
 				int rowNum) -> {
-			Filme filme = new Filme();
+			Filme filme = new Filme(
+					
+					
+						// 1
+						// 2
+						//..
+						// 64
+					);
+			filme.setIdFilme(results.getInt("ID"));
 			filme.setNome(results.getString("NOME"));
 			filme.setGenero(Genero.valueOf(results.getString("GENERO")));
 			filme.setAnoLancamento(results.getInt("ANO_LANCAMENTO"));

@@ -5,10 +5,8 @@ public class Avaliacao {
 	private String loginUsuario;
 	private int nota;
 	
-	public Avaliacao(int idFilme, String loginUsuario, int nota) {
-		this.setIdFilme(idFilme);
-		this.setLoginUsuario(loginUsuario);
-		this.setNota(nota);
+	public Avaliacao() {
+		
 	}
 
 	public int getIdFilme() {

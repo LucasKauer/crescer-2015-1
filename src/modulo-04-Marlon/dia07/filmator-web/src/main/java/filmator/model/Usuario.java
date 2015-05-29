@@ -8,11 +8,6 @@ public class Usuario {
 
 	}
 
-	public Usuario(String login, String password) {
-		setLogin(login);
-		setPassword(password);
-	}
-
 	public String getLogin() {
 		return login;
 	}
