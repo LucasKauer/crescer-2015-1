@@ -1,0 +1,6 @@
+C:\Users\projetocrescer\why_kauer\src\modulo-05-dotNet\dia01\ConsoleApplication\ConsoleApplication\bin\Debug\ConsoleApplication.exe.config
+C:\Users\projetocrescer\why_kauer\src\modulo-05-dotNet\dia01\ConsoleApplication\ConsoleApplication\bin\Debug\ConsoleApplication.exe
+C:\Users\projetocrescer\why_kauer\src\modulo-05-dotNet\dia01\ConsoleApplication\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
+C:\Users\projetocrescer\why_kauer\src\modulo-05-dotNet\dia01\ConsoleApplication\ConsoleApplication\obj\Debug\ConsoleApplication.exe
+C:\Users\projetocrescer\why_kauer\src\modulo-05-dotNet\dia01\ConsoleApplication\ConsoleApplication\obj\Debug\ConsoleApplication.pdb
+C:\Users\projetocrescer\why_kauer\src\modulo-05-dotNet\dia01\ConsoleApplication\ConsoleApplication\obj\Debug\Dia01.ConsoleApp.csprojResolveAssemblyReference.cache
