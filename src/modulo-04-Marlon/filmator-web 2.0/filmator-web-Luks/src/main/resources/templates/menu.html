@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{> head}}
+</head>
+<body>
+	<div class="full">
+			<div class="menu">
+				<ul>
+					<li><a href="/"><div class="hm"><i class="home1"></i><i class="home2"></i></div></a></li>
+					<li><a class="active" href="/menu"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
+					{{#exibeMenuAdministrador}}
+						<li><a href="/cadastro-filme"><div class="video"><i class="videos"></i><i class="videos1"></i></div></a></li>
+					{{/exibeMenuAdministrador}}
+				</ul>
+			</div>
+		<div class="main">
+		<div class="review-content">
+			<div class="top-header span_top">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" alt="" /></a>
+					<p>Filmator</p>
+				</div>
+				<div class="search v-search">
+					<form>
+						<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
+						<input type="submit" value="">
+					</form>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="reviews-section">
+				<h3 class="head">Movie Reviews</h3>
+					<div class="col-md-9 reviews-grids">
+						{{#Filmes}}
+						<div class="review">
+							<div class="movie-pic">
+								<a href="single.html"><img src="{{imagem}}" height="120" width="180" alt="" /></a>
+							</div>
+							<div class="review-info">
+								<h3 class="span" href="single.html">{{nome}}  <i>Movie Review</i></h3>
+								<p class="dirctr">{{diretor}}</p>								
+								<p class="ratingview">Nota:</p>
+								<div class="rating">
+									<span>☆</span>
+									<span>☆</span>
+									<span>☆</span>
+									<span>☆</span>
+									<span>☆</span>
+								</div>
+								<p class="ratingview">
+								&nbsp;{{nota}}/5
+								</p>
+								<div class="clearfix"></div>
+								<form action="/salvar-avaliacao" method="post">
+									<div class="yrw">
+										<div class="dropdown-button">
+											<select name="nota" class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+												<option value="1">1</option>	
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+										</div>
+										<div class="clearfix"></div>
+										<input type="submit" name="review" required value="REVIEW THIS MOVIE">
+										<input type="radio" name="idFilme" value="{{idFilme}}" checked>
+									</div>
+								</form>
+								<p class="info">DIRETOR: &nbsp;&nbsp;&nbsp;&nbsp;{{diretor}}</p>
+								<p class="info">GENERO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{genero}}</p>
+								<p class="info">DATA DE LANÇAMENTO:&nbsp;&nbsp;&nbsp; &nbsp; {{anoLancamento}}</p>
+								<h4 class="info">SINOPSE:&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{sinopse}}</h1>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						{{/Filmes}}
+					</div>
+
+					<div class="clearfix"></div>
+			</div>
+			</div>
+			{{> nav}}	
+	</div>
+	<div class="clearfix"></div>
+	</div>
+</body>
+</html>

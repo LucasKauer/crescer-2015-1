@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{> head}}
+</head>
+<body>
+	<div class="full">
+			<div class="menu">
+				<ul>
+					<li><a class="active" href="/"><i class="home"></i></a></li>
+					<li><a href="/menu"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
+					{{#exibeMenuAdministrador}}
+						<li><a href="/cadastro-filme"><div class="video"><i class="videos"></i><i class="videos1"></i></div></a></li>
+					{{/exibeMenuAdministrador}}
+				</ul>
+			</div>
+		<div class="main">
+		<div class="header">
+			<div class="top-header">
+				<div class="logo">
+					<a href="#"><img src="images/logo.png" alt="" /></a>
+					<p>Filmator</p>
+				</div>
+				<div class="search">
+					<form>
+						<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
+						<input type="submit" value="">
+					</form>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="header-info">
+				<h1>HOJE EU QUERO VOLTAR SOZINHO</h1>
+				<p class="age"><a href="#">+ 12</a> Daniel Ribeiro</p>
+				<p class="review">Nota	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;  8.5/10</p>
+				<p class="review reviewgo">Genero	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp; Drama, Romance</p>
+				<p class="review">Ano de Lançamento &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp; 10 de abril 2014</p>
+				<p class="special">Leonardo (Ghilherme Lobo), um adolescente cego, tenta lidar com a mãe superprotetora ao mesmo tempo em que busca sua independência. Quando Gabriel (Fabio Audi) chega na cidade, novos sentimentos começam a surgir em Leonardo, fazendo com que ele descubra mais sobre si mesmo e sua sexualidade. </p>
+				<a class="video" href="/cadastro-usuario"><i class="video1"></i>CADASTRAR-SE</a>
+				<a class="book" href="/login"><i class="book1"></i>LOGAR</a>
+			</div>
+		</div>
+		{{> nav}}
+	
+	</div>
+	</div>
+	<div class="clearfix"></div>
+</body>
+</html>

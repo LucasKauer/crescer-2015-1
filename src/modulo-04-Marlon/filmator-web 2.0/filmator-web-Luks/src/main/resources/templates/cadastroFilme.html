@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{> head}}
+</head>
+<body>
+	<div class="full">
+		<div class="menu">
+			<ul>
+				<li><a href="/"><div class="hm"><i class="home1"></i><i class="home2"></i></div></a></li>
+				<li><a href="/menu"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
+				{{#exibeMenuAdministrador}}
+					<li><a href="/cadastro-filme"><div class="video"><i class="videos"></i><i class="videos1"></i></div></a></li>
+				{{/exibeMenuAdministrador}}
+			</ul>
+		</div>
+		<div class="main">
+			<div class="header">
+				<div class="top-header">
+					<div class="logo">
+						<a href="#"><img src="images/logo.png" alt="" /></a>
+						<p>Filmator</p>
+					</div>
+					<div class="search v-search">
+						<form>
+							<input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
+							<input type="submit" value="">
+						</form>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+
+
+		<div class="formholder">
+			<div class="randompad">
+				<form action="/salvar-filme" method="post" class="form-horizontal">
+					<div class="form-group">
+						<label>Nome:</label>
+						<input name="nome" type="text" required placeholder="Homem Aranha"></input>
+						
+						<label>Gênero:</label>
+						<select name="genero">
+							{{#listaGeneros}}
+								<option value="{{name}}">{{descricao}}</option>
+							{{/listaGeneros}}
+						</select>
+						
+						<label>Ano de lançamento:</label>
+						<input name="anoLancamento" type="text" required placeholder="Ex.: 2002">
+						
+						<label>Diretor:</label>
+						<input name="diretor" type="text" required placeholder="Ex.: Sam Raimi">
+						
+						<label>Sinopse:</label>
+						<input name="sinopse" type="text" required placeholder="Peter Parker (Tobey Maguire) é um jovem">
+						
+						<label>Imagem:</label>
+						<input name="imagem" type="url" required placeholder="http://www.capa-de-filmes.com.br/imagem-do-filme.png">
+						
+						<ul class="login-buttons">
+							<li><input type="submit" value="REGISTRAR"/></li>
+							<li><input type="submit" value="CANCELAR"/></li>
+						</ul>
+					
+				</form>
+			</div>
+		</div>
+						
+						
+						
+						
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</body>
+</html>
