@@ -18,7 +18,7 @@
 		<div class="review-content">
 			<div class="top-header span_top">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt="" /></a>
+					<a href="/"><img src="images/movie-logo.png" style="width:46px; height:46" alt="" /></a>
 					<p>Filmator</p>
 				</div>
 				<div class="search v-search">
@@ -35,10 +35,10 @@
 						{{#Filmes}}
 						<div class="review">
 							<div class="movie-pic">
-								<a href="single.html"><img src="{{imagem}}" height="120" width="180" alt="" /></a>
+								<a href="/menu"><img src="{{imagem}}" height="120" width="180" alt="" /></a>
 							</div>
 							<div class="review-info">
-								<h3 class="span" href="single.html">{{nome}}  <i>Movie Review</i></h3>
+								<h3 class="span" href="/menu">{{nome}}  <i>Movie Review</i></h3>
 								<p class="dirctr">{{diretor}}</p>								
 								<p class="ratingview">Nota:</p>
 								<div class="rating">
@@ -64,7 +64,7 @@
 											</select>
 										</div>
 										<div class="clearfix"></div>
-										<input type="submit" name="review" required value="REVIEW THIS MOVIE">
+										<input id="avaliacao" type="submit" name="review" required value="REVIEW THIS MOVIE">
 										<input type="radio" name="idFilme" value="{{idFilme}}" checked>
 									</div>
 								</form>
@@ -85,5 +85,16 @@
 	</div>
 	<div class="clearfix"></div>
 	</div>
+	<script>
+		$(function() {
+				var avaliacao = $('#avaliacao');
+					$.ajax({
+						url: '/avaliacao',
+						type: 'POST'
+					}).done(
+						Console.log('sucesso!')
+					);
+			});
+	</script>
 </body>
 </html>
