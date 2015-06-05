@@ -47,6 +47,7 @@
 									<span>☆</span>
 									<span>☆</span>
 									<span>☆</span>
+									<input type="hidden" name="nota" value="{{idFilme}}">
 								</div>
 								<p class="ratingview">
 								&nbsp;{{nota}}/5
@@ -85,16 +86,34 @@
 	</div>
 	<div class="clearfix"></div>
 	</div>
-	<script>
-		$(function() {
-				var avaliacao = $('#avaliacao');
-					$.ajax({
-						url: '/avaliacao',
-						type: 'POST'
-					}).done(
-						Console.log('sucesso!')
-					);
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('.rating span').click(function(){
+				var $this = $( this );
+				var div = $this.parent('div');
+				var rating = $this.index()+1;
+				var id_filme = div.parent('span').find("input[name='nota']").val();
+		
+		
+				if( $this.hasClass('active') && !$this.next('span').hasClass('active') ){
+					$( div ).find('span').removeClass('active');
+					rating = 0;
+				}
+				else{
+					$( div ).find('span').removeClass('active');
+					for( var i=0; i<rating; i++ ){
+						$( div ).find('span').eq( i ).addClass('active');
+					};
+				}
+		
+				$.ajax({
+					type: "GET",
+					url: "/avaliacao",
+					success: function( data ){
+						$('#sql').html( data );
+					}
+				});
 			});
-	</script>
+		</script>
 </body>
 </html>
